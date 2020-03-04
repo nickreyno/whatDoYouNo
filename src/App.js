@@ -11,7 +11,9 @@ class App extends Component {
 		return (
 			<Fragment>
 				<header></header>
-				<main></main>
+				<main>
+					<Question/>
+				</main>
 				<footer></footer>
 			</Fragment>
 		);
