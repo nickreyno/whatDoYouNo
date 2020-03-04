@@ -1,5 +1,9 @@
 import React, { Component, Fragment } from "react";
-import logo from "./logo.svg";
+import Dictionary from "./Components/Dictionary.js";
+import LeaderBoard from "./Components/LeaderBoard.js";
+import Question from "./Components/Question.js";
+import Results from "./Components/Results.js";
+import StartScreen from "./Components/StartScreen.js";
 import "./App.css";
 
 class App extends Component {
