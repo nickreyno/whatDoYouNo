@@ -58,12 +58,18 @@ findRandomWord = () =>{
 		return (
 
 			<Fragment>
-				<header></header>
+				<div className ="wrapper">
+					<header>
+						<h1>What Do You No</h1>
+						<h2>expand your vocabulary with homophones</h2>
+						<button onClick={this.findRandomWord}>start game</button>
+					</header>
 				<main>
 					<Question/>
 				</main>
 				<footer></footer>
-				<button onClick={this.findRandomWord}></button>
+				
+				</div>
 			</Fragment>
 		);
 	}
