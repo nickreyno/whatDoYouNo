@@ -5,16 +5,65 @@ import Question from "./Components/Question.js";
 import Results from "./Components/Results.js";
 import StartScreen from "./Components/StartScreen.js";
 import "./App.css";
+import axios from 'axios'
+import library from './Components/library'
+import { easyWords, mediumWords, hardWords } from './Components/library'
 
 class App extends Component {
+
+constructor(){
+	super();
+	this.state ={
+		words: []
+	}
+}
+
+componentDidMount(){
+	axios({
+		url: `http://api.datamuse.com/words?`,
+		method: 'GET',
+		params: {
+			rel_hom: 'selectedWordFromLocalArray',
+			md: 'd',
+
+		}
+	}).then(response =>{
+		console.log(response);
+	})
+}
+
+// populate our call with a word from our local array
+
+findRandomWord = () =>{
+	for (let i = easyWords.length - 1; i > 0; i--) {
+        const getRandomNumber = Math.floor(Math.random() * (i + 1));
+        [easyWords[i], easyWords[getRandomNumber]] = [easyWords[getRandomNumber], easyWords[i]];
+	};
+	
+	const selectedWordFromLocalArray = easyWords[0][0];
+	console.log(selectedWordFromLocalArray);
+	
+}
+
+
+
+
+
+// return homophones that inclue definitions 
+
+// make a number randomiser (that takes an entry from our local array) take first [0] entry
+
 	render() {
+		
 		return (
+
 			<Fragment>
 				<header></header>
 				<main>
 					<Question/>
 				</main>
 				<footer></footer>
+				<button onClick={this.findRandomWord}></button>
 			</Fragment>
 		);
 	}
