@@ -8,6 +8,7 @@ import StartScreen from "./Components/StartScreen.js";
 import "./App.css";
 import axios from "axios";
 import library from "./Components/library";
+import firebase from "./Components/firebase.js"
 import { easyWords, mediumWords, hardWords } from "./Components/library";
 
 class App extends Component {
@@ -58,6 +59,13 @@ class App extends Component {
 					<main>
 						<Route path="/questions">
 							<Question words={this.state.words} />
+							<Link className="toResults" to="/results">
+							Show Results
+							</Link>
+						</Route>
+						<Route path="/results">
+							<Results  />
+
 						</Route>
 					</main>
 					<footer></footer>

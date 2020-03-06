@@ -56,7 +56,7 @@ class Question extends Component {
 
 	handleClick = theWord => {
 		if (this.state.questionNumber >= 10) {
-			console.log("its OVER");
+			// show results button
 		} else if (theWord === this.state.correctWord) {
 			this.setState(
 				{
