@@ -8,7 +8,7 @@ import StartScreen from "./Components/StartScreen.js";
 import "./App.css";
 import axios from "axios";
 import library from "./Components/library";
-import firebase from "./Components/firebase.js"
+import firebase from "./Components/firebase.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
 
 class App extends Component {
@@ -48,7 +48,9 @@ class App extends Component {
 			<Router>
 				<div className="wrapper">
 					<header>
-						<h1>What Do You No</h1>
+						<Link to="/">
+							<h1>What Do You No</h1>
+						</Link>
 						<Route path="/" exact>
 							<h2>expand your vocabulary with homophones</h2>
 							<Link className="mainButton" to="/questions">
@@ -57,14 +59,14 @@ class App extends Component {
 						</Route>
 					</header>
 					<main>
-						<Route path="/questions" >
-							<Question words={this.state.words} getScore={this.getScore}/>
+						<Route path="/questions">
+							<Question words={this.state.words} getScore={this.getScore} />
 							<Link className="toResults" to="/results">
-							Show Results
+								Show Results
 							</Link>
 						</Route>
 						<Route path="/results">
-							<Results  />
+							<Results />
 						</Route>
 					</main>
 					<footer></footer>

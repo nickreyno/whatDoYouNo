@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { easyWords, mediumWords, hardWords } from "./library.js";
-import question from './question.css'
+import question from "./question.css";
 import axios from "axios";
 
 class Question extends Component {
@@ -13,7 +13,9 @@ class Question extends Component {
 			score: 0,
 			questionNumber: 1,
 			wrongAnswers: [],
-			buttons: []
+			buttons: [],
+			timer: 0,
+			gameOver: false
 		};
 	}
 	//////////////////////////////////////////////////////////
@@ -21,8 +23,11 @@ class Question extends Component {
 	//////////////////////////////////////////////////////////
 	componentDidMount() {
 		this.getComparison(this.props.words[0]);
+		this.startTimer();
+		this.setState({
+			gameOver: false
+		});
 	}
-
 
 	//////////////////////////////////////////
 	// -----------axios call----------------//
@@ -36,10 +41,9 @@ class Question extends Component {
 				md: "d"
 			}
 		})
-
-		///////////////////////////////////////////////////////////////////
-		//------------to make sure if the word has definition-------------//
-		////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////
+			//------------to make sure if the word has definition-------------//
+			////////////////////////////////////////////////////////////////////
 			.then(response => {
 				response = response.data;
 				const wordsWithDefs = response.filter(word => {
@@ -51,7 +55,6 @@ class Question extends Component {
 						correctWord: wordsWithDefs[0].word
 					},
 					() => {
-
 						// ---randomize which button holds the correct answer---//
 						this.formatDefinition();
 						this.buttonRandomizer();
@@ -62,18 +65,38 @@ class Question extends Component {
 				console.log(error, "you gooft it");
 			});
 
-			///////////////////////////////////////////////////////
-			//------------ still need to work on it--------------///
-			////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////
+		//------------ still need to work on it--------------///
+		////////////////////////////////////////////////////////
 		this.formatDefinition = () => {
 			const defToBeFormatted = this.state.definition;
 			const endSplice = defToBeFormatted.indexOf("/");
 		};
 	};
 
+	startTimer = () => {
+		const gameTime = setInterval(() => {
+			this.setState(
+				{
+					timer: this.state.timer + 1
+				},
+				() => {
+					console.log("working");
+				}
+			);
+		}, 1000);
+
+		if (this.state.gameOver === true) {
+			clearInterval(gameTime);
+		}
+	};
+
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
 	handleClick = theWord => {
 		if (this.state.questionNumber >= 10) {
+			this.setState({
+				gameOver: true
+			});
 			console.log("its OVER");
 		} else if (theWord === true) {
 			this.setState(
@@ -82,7 +105,6 @@ class Question extends Component {
 					questionNumber: this.state.questionNumber + 1
 				},
 				() => {
-
 					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
 					this.getComparison(this.props.words[this.state.questionNumber - 1]);
 				}
@@ -97,25 +119,25 @@ class Question extends Component {
 					wrongAnswers: dictionary
 				},
 				() => {
-                // -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
-                this.getComparison(
-                  this.props.words[this.state.questionNumber - 1]
-                );
-              }
+					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
+					this.getComparison(this.props.words[this.state.questionNumber - 1]);
+				}
 			);
 		}
 	};
 
 	//----randomize the buttons so users don't know where the right answer button is----//
-	buttonRandomizer = () =>{
-		const buttonsReadyForStates =  [{
-			word: this.props.words[this.state.questionNumber - 1],
-			answer: false,
-		},
+	buttonRandomizer = () => {
+		const buttonsReadyForStates = [
 			{
-			word: this.state.correctWord,
-			answer: true,
-		}] 
+				word: this.props.words[this.state.questionNumber - 1],
+				answer: false
+			},
+			{
+				word: this.state.correctWord,
+				answer: true
+			}
+		];
 
 		//---every time the random number is 1, reverse the order of the array---//
 		const randomQs = Math.round(Math.random() * 1);
@@ -124,37 +146,40 @@ class Question extends Component {
 		}
 		this.setState({
 			buttons: buttonsReadyForStates
-		})
-	}
+		});
+	};
 
 	render() {
 		return (
 			<div className="questionBox">
 				<h2>Question {this.state.questionNumber}</h2>
+				<div className="timer">
+					<p>{this.state.timer} seconds</p>
+				</div>
+				{this.state.questionNumber > 1 ? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
 
-				<div className='progressBar'>
+				<div className="progressBar">
 					<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
 				</div>
 
-				<p className='definition'>{this.state.definition}</p>
+				<p className="definition">{this.state.definition}</p>
 
-				{this.state.questionNumber > 1 ? <p>Your current score is : {this.state.score}</p> : null}
-				<div className='buttonParent'>
-					{this.state.buttons.length > 0 ? 
-						this.state.buttons.map((button,i) => {
-							return(
-							<button
-								key={i}
-								className='wordButton'
-								onClick={() => {
-									this.handleClick(button.answer);
-								}}
-							>
-								{button.word, button.word}
-							</button>
-							)
-						})
-					: null}
+				<div className="buttonParent">
+					{this.state.buttons.length > 0
+						? this.state.buttons.map((button, i) => {
+								return (
+									<button
+										key={i}
+										className="wordButton"
+										onClick={() => {
+											this.handleClick(button.answer);
+										}}
+									>
+										{(button.word, button.word)}
+									</button>
+								);
+						  })
+						: null}
 				</div>
 			</div>
 		);
@@ -162,8 +187,6 @@ class Question extends Component {
 }
 
 export default Question;
-
-
 
 //----------pesudo code-------------//
 

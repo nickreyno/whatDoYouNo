@@ -12,6 +12,17 @@ h2 {
     font-size: 4rem;
 }
 
+.scoreCounter {
+    position: absolute;
+    align-self: flex-end;
+    font-size: 2.5rem;
+}
+
+.timer {
+    position: absolute;
+    align-self: flex-start;
+    font-size: 2.5rem;
+}
 .buttonParent {
     display: flex;
     justify-content: space-evenly;
