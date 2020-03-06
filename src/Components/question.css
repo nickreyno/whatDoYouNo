@@ -1,11 +1,14 @@
 .questionBox {
+    position: relative;
     background: #e3f4f3;
     margin-top: 5rem;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     border-radius: 2rem;
+    min-height: 420px;
 }
 
 h2 {
@@ -13,6 +16,7 @@ h2 {
 }
 
 .scoreCounter {
+    top:2.5rem;
     position: absolute;
     align-self: flex-end;
     font-size: 2.5rem;
@@ -20,6 +24,7 @@ h2 {
 
 .timer {
     position: absolute;
+    top:2.5rem;
     align-self: flex-start;
     font-size: 2.5rem;
 }
@@ -43,7 +48,7 @@ span {
     left: 0.5rem;
     top: 0.5rem;
     bottom: 0.5rem;
-    max-width: calc(100% - 1.5rem);
+    max-width: calc(100% - 1rem);
     background: #cfff31;
     border-radius: 2rem;
     padding: 1rem;

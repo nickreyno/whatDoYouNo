@@ -24,9 +24,6 @@ class Question extends Component {
 	componentDidMount() {
 		this.getComparison(this.props.words[0]);
 		this.startTimer();
-		this.setState({
-			gameOver: false
-		});
 	}
 
 	//////////////////////////////////////////
@@ -76,27 +73,27 @@ class Question extends Component {
 
 	startTimer = () => {
 		const gameTime = setInterval(() => {
-			this.setState(
-				{
+			if (this.state.gameOver === true) {
+				clearInterval(gameTime);
+			} else {
+				this.setState({
 					timer: this.state.timer + 1
-				},
-				() => {
-					console.log("working");
-				}
-			);
+				});
+			}
 		}, 1000);
-
-		if (this.state.gameOver === true) {
-			clearInterval(gameTime);
-		}
 	};
 
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
 	handleClick = theWord => {
-		if (this.state.questionNumber >= 10) {
-			this.setState({
-				gameOver: true
-			});
+		if (this.state.questionNumber > 9) {
+			this.setState(
+				{
+					gameOver: true
+				},
+				() => {
+					console.log(this.state.gameOver);
+				}
+			);
 			console.log("its OVER");
 		} else if (theWord === true) {
 			this.setState(
