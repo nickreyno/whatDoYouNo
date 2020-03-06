@@ -10,7 +10,7 @@ class Question extends Component {
 			correctWord: "",
 			definition: "",
 			score: 0,
-			questionNumber: 0,
+			questionNumber: 1,
 			wrongAnswers: []
 		};
 	}
@@ -85,7 +85,7 @@ class Question extends Component {
 	render() {
 		return (
 			<div>
-				<h2>Question 1</h2>
+				<h2>Question {this.state.questionNumber}</h2>
 				<p>{this.state.definition}</p>
 				<button
 					onClick={() => {
