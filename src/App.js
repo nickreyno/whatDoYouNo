@@ -19,12 +19,12 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.findRandomWord(easyWords);
+		this.randomizer(easyWords);
 	}
 
 	// populate our call with a word from our local array
 
-	findRandomWord = arrayToRandom => {
+	randomizer = arrayToRandom => {
 		const gameArray = [];
 		// let randomNumber = 0;
 		for (let i = 0; i < 10; i++) {

@@ -11,7 +11,8 @@ class Question extends Component {
 			definition: "",
 			score: 0,
 			questionNumber: 1,
-			wrongAnswers: []
+			wrongAnswers: [],
+			buttons: []
 		};
 	}
 	componentDidMount() {
@@ -38,6 +39,8 @@ class Question extends Component {
 					},
 					() => {
 						this.formatDefinition();
+						this.buttonRandomizer();
+
 					}
 				);
 			})
@@ -81,6 +84,22 @@ class Question extends Component {
 			);
 		}
 	};
+
+	buttonRandomizer = () =>{
+			const buttons =  [{
+				word: this.props.words[this.state.questionNumber],
+				answer: false,
+
+			},
+				{
+				word: this.state.correctWord,
+				answer: true
+			}] 
+			const randomQs = Math.round(Math.random() *1);
+			if (randomQs === 1) {
+				buttons.reverse();
+			}
+	}
 
 	render() {
 		return (
