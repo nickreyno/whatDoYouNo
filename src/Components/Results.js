@@ -6,7 +6,7 @@ class Results extends Component {
 		super();
 
 		this.state = {
-			leaderBInfo: {},
+			leaderBInfo: [],
 			userInput: "",
 			userScore: 0,
 		}
@@ -36,8 +36,7 @@ class Results extends Component {
 			}
 
 			this.setState({
-				userNames: stateToBeSet,
-				userInput: "",
+				leaderBInfo: stateToBeSet,
 			})
 		})
 	}
@@ -90,6 +89,20 @@ class Results extends Component {
 					onChange={this.handleNameChange} />
 					<button type="submit">Submit</button>
 				</form>
+
+				<div>
+					<h2>Leaderboard:</h2>
+					<ul>
+						{this.state.leaderBInfo.map((info,index) => {
+							return (
+								<li key={index.key}>
+									<p>Name: {info.name} Score: {info.score} </p>
+								</li>
+							)
+						})}
+
+					</ul>
+				</div>
 			</div>
 			);
 	}
