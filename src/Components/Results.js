@@ -6,16 +6,22 @@ class Results extends Component {
 		super();
 
 		this.state = {
-			userName: [],
-			userInput: '',
-			score: 0,
+			leaderBInfo: {},
+			userInput: "",
+			userScore: 0,
 		}
 	}
+
+	// sort function
+		// from highest to lowest 
+	// push object w user name and score 
+	// map that shit 
+
 
 	componentDidMount() {
 		const dbRef = firebase.database().ref();
 
-		dbRef.on('value', (response) => {
+		dbRef.on("value", (response) => {
 			const nameFromDb = response.val();
 
 			const stateToBeSet = [];
@@ -23,16 +29,21 @@ class Results extends Component {
 			for (let key in nameFromDb) {
 				const nameInfo = {
 					key:key,
-					name: nameFromDb[key],
+					name: nameFromDb[key].name,
+					score: nameFromDb[key].score,
 				}
 				stateToBeSet.push(nameInfo);
 			}
 
 			this.setState({
-				userName: stateToBeSet,
-				userInput: '',
+				userNames: stateToBeSet,
+				userInput: "",
 			})
 		})
+	}
+
+	showResultsButton = () => {
+
 	}
 
 	handleNameChange = (event) => {
@@ -46,11 +57,18 @@ class Results extends Component {
 
 		const dbRef = firebase.database().ref();
 
-		dbRef.push(this.state.userInput)
+		const leaderObject = {
+			name: this.state.userInput,
+			score: this.state.userScore,
+		}
+
+		dbRef.push(leaderObject)
 
 		this.setState ({
-			userInput:'',
+			userInput: "",
 		})
+
+		console.log(this.userInput)
 	}
 
 	render() {
@@ -68,6 +86,7 @@ class Results extends Component {
 					<input 
 					type="text" 
 					id="enterName"
+					value={this.state.userInput}
 					onChange={this.handleNameChange} />
 					<button type="submit">Submit</button>
 				</form>
