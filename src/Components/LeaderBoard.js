@@ -5,7 +5,14 @@ class LeaderBoard extends Component {
 		super();
 	}
 	render() {
-		return <div></div>;
+		return (
+		<div>
+			<h2>Leaderboard</h2>
+			<ul>
+				
+			</ul>
+		</div>
+		);
 	}
 }
 

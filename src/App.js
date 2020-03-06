@@ -8,6 +8,7 @@ import StartScreen from "./Components/StartScreen.js";
 import "./App.css";
 import axios from "axios";
 import library from "./Components/library";
+import firebase from "./Components/firebase.js"
 import { easyWords, mediumWords, hardWords } from "./Components/library";
 
 class App extends Component {
@@ -19,12 +20,12 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.findRandomWord(easyWords);
+		this.randomizer(easyWords);
 	}
 
 	// populate our call with a word from our local array
 
-	findRandomWord = arrayToRandom => {
+	randomizer = arrayToRandom => {
 		const gameArray = [];
 		// let randomNumber = 0;
 		for (let i = 0; i < 10; i++) {
@@ -56,8 +57,14 @@ class App extends Component {
 						</Route>
 					</header>
 					<main>
-						<Route path="/questions">
-							<Question words={this.state.words} />
+						<Route path="/questions" >
+							<Question words={this.state.words} getScore={this.getScore}/>
+							<Link className="toResults" to="/results">
+							Show Results
+							</Link>
+						</Route>
+						<Route path="/results">
+							<Results  />
 						</Route>
 					</main>
 					<footer></footer>
