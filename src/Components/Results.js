@@ -77,6 +77,7 @@ class Results extends Component {
 				<h3>Great work!</h3>
 				<h4>Your Score:</h4>
 				<p>SCORE GOES HERE FROM QUESTIONS</p>
+				<p>result</p>
 
 				<form 
 				action="submit" 

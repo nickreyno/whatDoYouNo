@@ -1,0 +1,40 @@
+.questionBox {
+    background: #e3f4f3;
+    margin-top: 5rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+.buttonParent {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
+}
+
+.progressBar {
+    width: 80%;
+    margin: 0 auto 2.5rem;
+    position: relative;
+    background: #6056f9;
+    height: 3rem;
+    border-radius: 30px;
+}
+
+span {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    max-width: calc(100% - 1.5rem);
+    background: #cfff31;
+    border-radius: 2rem;
+    padding: 1rem;
+    transition: width 0.5s ease;
+}
