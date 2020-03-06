@@ -57,15 +57,14 @@ class App extends Component {
 						</Route>
 					</header>
 					<main>
-						<Route path="/questions">
-							<Question words={this.state.words} />
+						<Route path="/questions" >
+							<Question words={this.state.words} getScore={this.getScore}/>
 							<Link className="toResults" to="/results">
 							Show Results
 							</Link>
 						</Route>
 						<Route path="/results">
 							<Results  />
-
 						</Route>
 					</main>
 					<footer></footer>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { easyWords, mediumWords, hardWords } from "./library.js";
+import question from './question.css'
 import axios from "axios";
 
 class Question extends Component {
@@ -128,27 +129,33 @@ class Question extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="questionBox">
 				<h2>Question {this.state.questionNumber}</h2>
+
+				<div className='progressBar'>
+					<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
+				</div>
+
 				<p className='definition'>{this.state.definition}</p>
 
-				<p>if you see this p, bug fixed</p>
-				
-				{this.state.buttons.length > 0 ? 
-					this.state.buttons.map((button,i) => {
-						return(
-						<button
-							key={i}
-							className='wordButton'
-							onClick={() => {
-								this.handleClick(button.answer);
-							}}
-						>
-							{button.word, button.word}
-						</button>
-						)
-					})
-				: null}
+				{this.state.questionNumber > 1 ? <p>Your current score is : {this.state.score}</p> : null}
+				<div className='buttonParent'>
+					{this.state.buttons.length > 0 ? 
+						this.state.buttons.map((button,i) => {
+							return(
+							<button
+								key={i}
+								className='wordButton'
+								onClick={() => {
+									this.handleClick(button.answer);
+								}}
+							>
+								{button.word, button.word}
+							</button>
+							)
+						})
+					: null}
+				</div>
 			</div>
 		);
 	}
