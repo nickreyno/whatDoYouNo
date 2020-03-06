@@ -22,33 +22,15 @@ class App extends Component {
 		this.findRandomWord(easyWords);
 	}
 
-	getComparison = chosenWord => {
-		axios({
-			url: `http://api.datamuse.com/words?`,
-			method: "GET",
-			params: {
-				rel_hom: chosenWord,
-				md: "d"
-			}
-		}).then(response => {
-			response = response.data;
-			const wordsWithDefs = response.filter(word => {
-				return word.defs;
-			});
-		});
-	};
-
 	// populate our call with a word from our local array
 
 	findRandomWord = arrayToRandom => {
 		const gameArray = [];
-
-		for (let i = 1; i < 10; i++) {
+		// let randomNumber = 0;
+		for (let i = 0; i < 10; i++) {
 			const randomNumber = Math.floor(Math.random() * arrayToRandom.length);
-
-			const randomWord = arrayToRandom[randomNumber][0];
-
-			gameArray.push(randomWord);
+			gameArray.push(arrayToRandom[randomNumber][0]);
+			arrayToRandom.splice(randomNumber, 1);
 		}
 
 		this.setState({
@@ -74,11 +56,11 @@ class App extends Component {
 						</Route>
 					</header>
 					<main>
-						<Route path="/questions" component={Question} />
+						<Route path="/questions">
+							<Question words={this.state.words} />
+						</Route>
 					</main>
-					<footer>
-						<p> this is a change </p>
-					</footer>
+					<footer></footer>
 				</div>
 			</Router>
 		);
