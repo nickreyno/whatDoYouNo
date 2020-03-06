@@ -130,13 +130,16 @@ class Question extends Component {
 		return (
 			<div>
 				<h2>Question {this.state.questionNumber}</h2>
-				<p>{this.state.definition}</p>
+				<p className='definition'>{this.state.definition}</p>
+
+				<p>if you see this p, bug fixed</p>
 				
 				{this.state.buttons.length > 0 ? 
 					this.state.buttons.map((button,i) => {
 						return(
 						<button
 							key={i}
+							className='wordButton'
 							onClick={() => {
 								this.handleClick(button.answer);
 							}}
