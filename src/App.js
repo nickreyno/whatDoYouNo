@@ -76,7 +76,9 @@ class App extends Component {
 					<main>
 						<Route path="/questions" component={Question} />
 					</main>
-					<footer></footer>
+					<footer>
+						<p> this is a change </p>
+					</footer>
 				</div>
 			</Router>
 		);
