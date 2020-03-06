@@ -75,10 +75,11 @@ h2{
 
 }
 
-button{
+.mainButton {
   font-size: 3rem;
   font-family: 'Lato', sans-serif;
   border: 2px solid black;
   background: none;
   letter-spacing: .5rem;
+  color: black;
 }

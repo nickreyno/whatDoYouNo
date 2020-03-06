@@ -6,8 +6,11 @@ class Question extends Component {
 		super();
 	}
 	render() {
-		// console.log(easyWords, mediumWords, hardWords)
-		return <div></div>;
+		return (
+			<div>
+				dsfsdffds
+			</div>
+		)
 	}
 }
 

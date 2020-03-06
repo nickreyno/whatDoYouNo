@@ -42,8 +42,6 @@ getComparison = (chosenWord) => {
 		const wordsWithDefs = response.filter(word => {
 			return word.defs
 		})
-		
-		console.log(response)
 	})
 }
 
@@ -51,7 +49,7 @@ getComparison = (chosenWord) => {
 
 findRandomWord = (arrayToRandom) =>{
 	const gameArray = [];
-	
+
 	for(let i = 1; i < 10; i++) {
 		const randomNumber = Math.floor(Math.random() * arrayToRandom.length);
 		
@@ -59,7 +57,7 @@ findRandomWord = (arrayToRandom) =>{
 
 		gameArray.push(randomWord)
 	}
-	
+
 	this.setState({
 		words: gameArray
 	})
@@ -74,22 +72,24 @@ findRandomWord = (arrayToRandom) =>{
 	render() {
 		
 		return (
-
-			<Fragment>
-				<div className ="wrapper">
-					<header>
-						<h1>What Do You No</h1>
-						<h2>expand your vocabulary with homophones</h2>
-						<button onClick={() => this.findRandomWord(easyWords)}>start game</button>
-					</header>
-				<main>
-					<Question/>
-				</main>
-				<footer></footer>
-				
-				</div>
-			</Fragment>
-		);
+      <Router>
+        <div className="wrapper">
+          <header>
+            <h1>What Do You No</h1>
+			<Route path='/' exact>
+				<h2>expand your vocabulary with homophones</h2>
+				<Link className="mainButton" to="/questions">
+				start game
+				</Link>
+			</Route>
+          </header>
+          <main>
+            <Route path="/questions" component={Question} />
+          </main>
+          <footer></footer>
+        </div>
+      </Router>
+    );
 	}
 }
 
