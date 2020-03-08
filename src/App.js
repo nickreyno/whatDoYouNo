@@ -17,7 +17,8 @@ class App extends Component {
 		this.state = {
 			words: [],
 			playserScore: '',
-			dictionary: ''
+			dictionary: [],
+			timer: ''
 		};
 	}
 
@@ -42,13 +43,15 @@ class App extends Component {
 	};
 
 // sets state in App to check what question 
-displayResults = (score, words) =>{
+displayResults = (score, timer, words) =>{
 	this.setState({
 		playserScore: score,
 		gameOver: true,
-		dictionary: words
-	})
-	window.location.replace('/results')
+		dictionary: words,
+		timer: timer,
+	}, () =>{window.location.replace('/results')}
+	)  
+	
 }
 
 	render() {
@@ -73,7 +76,7 @@ displayResults = (score, words) =>{
 
 						</Route>
 						<Route path="/results">
-							<Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} />
+							<Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} playerTime={this.state.timer} />
 						</Route>
 							
 					</main>
