@@ -4,7 +4,7 @@ import question from "./question.css";
 import axios from "axios";
 
 class Question extends Component {
-	constructor() {
+	constructor(props) {
 		super();
 
 		this.state = {
@@ -84,14 +84,14 @@ class Question extends Component {
 	};
 
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
-	handleClick = theWord => {
+	handleClick = (theWord, props) => {
 		if (this.state.questionNumber > 9) {
 			this.setState(
 				{
 					gameOver: true
 				},
 				() => {
-					console.log(this.state.gameOver);
+					this.props.triggerResults();
 				}
 			);
 			console.log("its OVER");

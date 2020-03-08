@@ -15,7 +15,9 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			words: []
+			words: [],
+			playserScore: '',
+			dictionary: ''
 		};
 	}
 
@@ -39,9 +41,15 @@ class App extends Component {
 		});
 	};
 
-	// return homophones that inclue definitions
-
-	// make a number randomiser (that takes an entry from our local array) take first [0] entry
+// sets state in App to check what question 
+displayResults = (score, words) =>{
+	this.setState({
+		playserScore: score,
+		gameOver: true,
+		dictionary: words
+	})
+	window.location.replace('/results')
+}
 
 	render() {
 		return (
@@ -59,15 +67,15 @@ class App extends Component {
 						</Route>
 					</header>
 					<main>
+							
 						<Route path="/questions">
-							<Question words={this.state.words} getScore={this.getScore} />
-							<Link className="toResults" to="/results">
-								Show Results
-							</Link>
+							<Question words={this.state.words} triggerResults={this.displayResults} />
+
 						</Route>
 						<Route path="/results">
-							<Results />
+							<Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} />
 						</Route>
+							
 					</main>
 					<footer></footer>
 				</div>
