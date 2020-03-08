@@ -8,7 +8,6 @@ class Results extends Component {
 		this.state = {
 			leaderBInfo: [],
 			userInput: "",
-			userScore: 0,
 		}
 	}
 
@@ -31,8 +30,10 @@ class Results extends Component {
 					key:key,
 					name: nameFromDb[key].name,
 					score: nameFromDb[key].score,
+					time: nameFromDb[key].time,
 				}
 				stateToBeSet.push(nameInfo);
+				stateToBeSet.sort((a, b)=>b.score - a.score);
 			}
 
 			this.setState({
@@ -41,13 +42,10 @@ class Results extends Component {
 		})
 	}
 
-	showResultsButton = () => {
-
-	}
-
 	handleNameChange = (event) => {
 		this.setState ({
 			userInput: event.target.value,
+			userScore: event.target.value,
 		})
 	}
 
@@ -58,16 +56,16 @@ class Results extends Component {
 
 		const leaderObject = {
 			name: this.state.userInput,
-			score: this.state.userScore,
+			score: this.props.score,
+			time: this.props.playerTime,
 		}
 
 		dbRef.push(leaderObject)
 
 		this.setState ({
 			userInput: "",
-		})
-
-		console.log(this.userInput)
+		}
+		)
 	}
 
 	render() {
@@ -75,6 +73,7 @@ class Results extends Component {
 			<div className="leaderDiv">
 				<h3 className="leaderHeader">Great work!</h3>
 					<h4 className="leaderScore">Your Score:{this.props.score}</h4>
+          <h4>Time (in secs): {this.props.playerTime}</h4>
 				<form 
 				action="submit" 
 				onSubmit = {this.handleSubmit}
@@ -82,7 +81,7 @@ class Results extends Component {
 					<label 
 					htmlFor="enterName"
 					className="leaderLabelName">
-					Add your name to the leaderboard:</label>
+					Add your name and score to the leaderboard:</label>
 					<input 
 					type="text" 
 					id="enterName"
@@ -114,6 +113,8 @@ class Results extends Component {
 								className="leaderboardItem">
 									<p className="leaderboardName">Name: {info.name}</p>
 									<p className="leaderboardScore">Score: {info.score}</p>
+                  <p className="leaderbordTime">Time: {info.time}</p>
+                  
 								</li>
 							)
 						})}
