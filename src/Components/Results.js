@@ -72,8 +72,11 @@ class Results extends Component {
 		return (
 			<div className="leaderDiv">
 				<h3 className="leaderHeader">Great work!</h3>
-					<h4 className="leaderScore">Your Score:{this.props.score}</h4>
-          <h4>Time (in secs): {this.props.playerTime}</h4>
+					<div className="leaderScore">
+						<h4 className="score">Your Score:{this.props.score}</h4>
+						<h4>Time (in secs): {this.props.playerTime}</h4>
+
+					</div>
 				<form 
 				action="submit" 
 				onSubmit = {this.handleSubmit}
