@@ -16,8 +16,10 @@ class Question extends Component {
 			answers: [],
 			buttons: [],
 			timer: 0,
-			gameOver: false
+			gameOver: false,
 		};
+
+		this.background = React.createRef();
 	}
 	//////////////////////////////////////////////////////////
 	// -----------------make axios call---------------------//
@@ -85,7 +87,7 @@ class Question extends Component {
 	};
 
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
-	handleClick = theWord => {
+	handleClick = (theWord) => {
 		if (this.state.questionNumber > 9) {
 			this.setState(
 				{
@@ -98,42 +100,55 @@ class Question extends Component {
 				}
 			);
 		} else if (theWord === true) {
-			const dictionary = [...this.state.answers];
-			dictionary.push({
-				word1: this.props.words[this.state.questionNumber - 1],
-				correct: true,
-				word2: this.state.correctWord
-			});
-			this.setState(
-				{
-					score: this.state.score + 1,
-					questionNumber: this.state.questionNumber + 1,
-					answers: dictionary
-				},
-				() => {
-					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
-					this.getComparison(this.props.words[this.state.questionNumber - 1]);
-				}
-			);
+			this.background.current.classList.toggle('correct');
+
+			setTimeout(() => {
+				this.background.current.classList.toggle('correct');
+
+				const dictionary = [...this.state.answers];
+				dictionary.push({
+					word1: this.props.words[this.state.questionNumber - 1],
+					correct: true,
+					word2: this.state.correctWord
+				});
+				this.setState(
+					{
+						score: this.state.score + 1,
+						questionNumber: this.state.questionNumber + 1,
+						answers: dictionary
+					},
+					() => {
+						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
+						this.getComparison(this.props.words[this.state.questionNumber - 1]);
+					}
+				);
+			},1000) 
+
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
-			const dictionary = [...this.state.answers];
-			dictionary.push({
-				word1: this.props.words[this.state.questionNumber - 1],
-				correct: false,
-				word2: this.state.correctWord
-			});
-			this.setState(
-				{
-					questionNumber: this.state.questionNumber + 1,
-					answers: dictionary
-				},
-				() => {
-					console.log(dictionary);
-					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
-					this.getComparison(this.props.words[this.state.questionNumber - 1]);
-				}
-			);
+			
+			this.background.current.classList.toggle('incorrect')
+			setTimeout(() => {
+				this.background.current.classList.toggle('incorrect')
+
+				const dictionary = [...this.state.answers];
+				dictionary.push({
+					word1: this.props.words[this.state.questionNumber - 1],
+					correct: false,
+					word2: this.state.correctWord
+				});
+				this.setState(
+					{
+						questionNumber: this.state.questionNumber + 1,
+						answers: dictionary
+					},
+					() => {
+						console.log(dictionary);
+						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
+						this.getComparison(this.props.words[this.state.questionNumber - 1]);
+					}
+				);
+			},1000)
 		}
 	};
 
@@ -142,11 +157,11 @@ class Question extends Component {
 		const buttonsReadyForStates = [
 			{
 				word: this.props.words[this.state.questionNumber - 1],
-				answer: false
+				answer: false,
 			},
 			{
 				word: this.state.correctWord,
-				answer: true
+				answer: true,
 			}
 		];
 
@@ -160,22 +175,26 @@ class Question extends Component {
 		});
 	};
 
-	componentDidU
-
 	render() {
 		return (
 			<Fragment>
 				{this.state.questionNumber < 11 ? (
-					<div className="questionBox">
+					<div className="questionBox" ref={this.background}>
 						<h2>Question {this.state.questionNumber}</h2>
+
 						<div className="timer">
 							<p>{this.state.timer} seconds</p>
 						</div>
-						{this.state.questionNumber > 1 ? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
+
+						{this.state.questionNumber > 1 
+						? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
+
 						<div className="progressBar">
 							<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
 						</div>
+
 						<p className="definition">{this.state.definition}</p>
+
 						<div className="buttonParent">
 							{this.state.buttons.length > 0
 								? this.state.buttons.map((button, i) => {
@@ -196,9 +215,11 @@ class Question extends Component {
 					</div>
 				) : (
 					<div className="questionBox">
+
 						<h2>congratulations!</h2>
+
 						<div className="buttonParent">
-							<Link to="./results" key={11} className="wordButton">
+							<Link to="/results" key={11} className="wordButton">
 								Show Results
 							</Link>
 						</div>
