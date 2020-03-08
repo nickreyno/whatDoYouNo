@@ -18,7 +18,8 @@ class App extends Component {
 			words: [],
 			playerScore: "",
 			dictionary: [],
-			timer: ""
+			timer: "",
+			entries: ["fir", "fur", "dear", "deer"]
 		};
 	}
 
@@ -45,18 +46,12 @@ class App extends Component {
 	// sets state in App to check what question
 	displayResults = (score, timer, words) => {
 		// console.log(words);
-		this.setState(
-			{
-				playerScore: score,
-				gameOver: true,
-				dictionary: words,
-				timer: timer
-			},
-			() => {
-
-console.log(this.state)
-			}
-		);
+		this.setState({
+			playerScore: score,
+			gameOver: true,
+			dictionary: words,
+			timer: timer
+		});
 	};
 
 	render() {
@@ -84,6 +79,10 @@ console.log(this.state)
 								dictionaryWords={this.state.dictionary}
 								playerTime={this.state.timer}
 							/>
+						</Route>
+						<Link to="/dictionary">dictionary please</Link>
+						<Route path="/dictionary">
+							<Dictionary entries={this.state.entries} />
 						</Route>
 					</main>
 					<footer></footer>

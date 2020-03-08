@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { easyWords, mediumWords, hardWords } from "./library.js";
 import question from "./question.css";
 import axios from "axios";
+import Preloader from "./Preloader.js";
 import { Link } from "react-router-dom";
 
 class Question extends Component {
@@ -17,6 +18,7 @@ class Question extends Component {
 			buttons: [],
 			timer: 0,
 			gameOver: false,
+			isLoading: true,
 		};
 
 		this.background = React.createRef();
@@ -52,7 +54,8 @@ class Question extends Component {
 				this.setState(
 					{
 						definition: wordsWithDefs[0].defs[0],
-						correctWord: wordsWithDefs[0].word
+						correctWord: wordsWithDefs[0].word,
+						isLoading: false,
 					},
 					() => {
 						// ---randomize which button holds the correct answer---//
@@ -193,6 +196,7 @@ class Question extends Component {
 							<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
 						</div>
 
+						{this.state.isLoading ? <Preloader/> : null}
 						<p className="definition">{this.state.definition}</p>
 
 						<div className="buttonParent">
