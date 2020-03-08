@@ -12,7 +12,7 @@ class Question extends Component {
 			definition: "",
 			score: 0,
 			questionNumber: 1,
-			wrongAnswers: [],
+			answers: [],
 			buttons: [],
 			timer: 0,
 			gameOver: false
@@ -84,22 +84,30 @@ class Question extends Component {
 	};
 
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
-	handleClick = (theWord, props) => {
+	handleClick = (theWord) => {
 		if (this.state.questionNumber > 9) {
 			this.setState(
 				{
 					gameOver: true
 				},
 				() => {
-					this.props.triggerResults();
+					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers);
 				}
 			);
-			console.log("its OVER");
 		} else if (theWord === true) {
+			const dictionary = [...this.state.answers];
+			dictionary.push( {
+				word1: this.props.words[this.state.questionNumber -1],
+				correct: true,
+				word2: this.state.correctWord,
+
+			}
+				) 	
 			this.setState(
 				{
 					score: this.state.score + 1,
-					questionNumber: this.state.questionNumber + 1
+					questionNumber: this.state.questionNumber + 1,
+					answers: dictionary
 				},
 				() => {
 					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
@@ -108,20 +116,27 @@ class Question extends Component {
 			);
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
-			const dictionary = [...this.state.wrongAnswers];
-			dictionary.push(this.props.words[this.state.questionNumber]);
+			const dictionary = [...this.state.answers];
+			dictionary.push( {
+				word1: this.props.words[this.state.questionNumber -1],
+				correct: false,
+				word2: this.state.correctWord,
+
+			}
+				) 			
 			this.setState(
 				{
-					wrongAnswers: dictionary,
-					questionNumber: this.state.questionNumber + 1
-				},
-				() => {
+					questionNumber: this.state.questionNumber + 1,
+					answers: dictionary
+				}, 
+				() => { 
+					console.log(dictionary);
 					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
 					this.getComparison(this.props.words[this.state.questionNumber - 1]);
 				}
 			);
 		}
-	};
+	}
 
 	//----randomize the buttons so users don't know where the right answer button is----//
 	buttonRandomizer = () => {

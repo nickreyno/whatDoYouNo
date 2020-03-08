@@ -74,10 +74,7 @@ class Results extends Component {
 		return (
 			<div>
 				<h3>Great work!</h3>
-				<h4>Your Score:</h4>
-				<p>SCORE GOES HERE FROM QUESTIONS</p>
-				<p>result</p>
-
+					<h4>Your Score:{this.props.score}</h4>
 				<form 
 				action="submit" 
 				onSubmit = {this.handleSubmit}>
@@ -89,6 +86,14 @@ class Results extends Component {
 					onChange={this.handleNameChange} />
 					<button type="submit">Submit</button>
 				</form>
+
+				<ul>
+					{this.props.dictionaryWords.map((resultWords, i) =>{
+						return(
+						<li key={i}>{resultWords.word1} {resultWords.word2}</li>
+						)
+					})}
+				</ul>
 
 				<div>
 					<h2>Leaderboard:</h2>
