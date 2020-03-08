@@ -136,6 +136,10 @@ h2{
   text-shadow: #cfff31 5px 3px;
 }
 
+.score {
+  font-size: 3rem;
+}
+
 /* General Form */
 .leaderForm {
   padding: 10px;
