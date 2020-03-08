@@ -24,10 +24,16 @@ ul {
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 li {
 	position: relative;
+	margin: 15px 0;
+	width: calc(40%);
 }
 
 p {
@@ -40,7 +46,7 @@ p::first-letter {
 	font-weight: bold;
 }
 
-P::first-letter:after {
+p::first-letter:after {
 	content: ":";
 	font-size: 1.6rem;
 	position: relative;
