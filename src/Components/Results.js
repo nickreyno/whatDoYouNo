@@ -70,39 +70,51 @@ class Results extends Component {
 
 	render() {
 		return (
-			<div>
-				<h3>Great work!</h3>
-					<h4>Score: {this.props.score}</h4>
-					<h4>Time (in secs): {this.props.playerTime}</h4>
+			<div className="leaderDiv">
+				<h3 className="leaderHeader">Great work!</h3>
+					<h4 className="leaderScore">Your Score:{this.props.score}</h4>
+          <h4>Time (in secs): {this.props.playerTime}</h4>
 				<form 
 				action="submit" 
-				onSubmit = {this.handleSubmit}>
-					<label htmlFor="enterName">Add your name and score to the leaderboard:</label>
+				onSubmit = {this.handleSubmit}
+				className="leaderForm">
+					<label 
+					htmlFor="enterName"
+					className="leaderLabelName">
+					Add your name and score to the leaderboard:</label>
 					<input 
 					type="text" 
 					id="enterName"
+					className="leaderInputName"
 					value={this.state.userInput}
 					onChange={this.handleNameChange} />
-					<button type="submit">Submit</button>
+					<button 
+					type="submit"
+					className="leaderButton">Submit</button>
 				</form>
 
-				<ul>
+				<ul className="leaderDictionList">
 					{this.props.dictionaryWords.map((resultWords, i) =>{
 						return(
-						<li key={i}>{resultWords.word1} {resultWords.word2}</li>
+						<li 
+						className="leaderDictionItem"
+						key={i}>{resultWords.word1} {resultWords.word2}</li>
 						)
 					})}
 				</ul>
 
-				<div >
-					<h2>Leaderboard:</h2>
-					<ul>
+				<div className="leaderboard">
+					<h2 className="leaderboardHeader">Leaderboard:</h2>
+					<ul className="leaderboardList">
 						{this.state.leaderBInfo.map((info,index) => {
 							return (
-								<li key={index.key}>
-									<p>Name: {info.name}</p> 
-									<p>Score: {info.score}</p>
-									<p>Time: {info.time}</p>
+								<li 
+								key={index.key}
+								className="leaderboardItem">
+									<p className="leaderboardName">Name: {info.name}</p>
+									<p className="leaderboardScore">Score: {info.score}</p>
+                  <p className="leaderbordTime">Time: {info.time}</p>
+                  
 								</li>
 							)
 						})}

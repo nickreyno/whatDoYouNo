@@ -9,6 +9,15 @@
     text-align: center;
     border-radius: 2rem;
     min-height: 60vh;
+    transition: all 0.2s;
+}
+
+.questionBox.correct {
+    background-color: #cfff31;
+}
+
+.questionBox.incorrect {
+    background-color: #ff5964;
 }
 
 h2 {
