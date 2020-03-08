@@ -104,16 +104,16 @@ class Results extends Component {
 				</ul>
 
 				<div className="leaderboard">
-					<h2 className="leaderboardHeader">Leaderboard:</h2>
+					<h2 className="leaderboardHeader">leaderboard:</h2>
 					<ul className="leaderboardList">
 						{this.state.leaderBInfo.map((info,index) => {
 							return (
 								<li 
 								key={index.key}
 								className="leaderboardItem">
-									<p className="leaderboardName">Name: {info.name}</p>
-									<p className="leaderboardScore">Score: {info.score}</p>
-                  <p className="leaderbordTime">Time: {info.time}</p>
+									<p className="leaderboardName">name: {info.name}</p>
+									<p className="leaderboardScore">score: {info.score}/10</p>
+                  					<p className="leaderbordTime">time: {info.time} secs</p>
                   
 								</li>
 							)
