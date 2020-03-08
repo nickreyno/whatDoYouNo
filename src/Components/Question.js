@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { easyWords, mediumWords, hardWords } from "./library.js";
 import question from "./question.css";
 import axios from "axios";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 class Question extends Component {
 	constructor(props) {
@@ -161,6 +163,8 @@ class Question extends Component {
 		});
 	};
 
+	componentDidU
+
 	render() {
 		return (
 			<div className="questionBox">
@@ -177,7 +181,7 @@ class Question extends Component {
 				<p className="definition">{this.state.definition}</p>
 
 				<div className="buttonParent">
-					{this.state.buttons.length > 0
+					{/* {this.state.buttons.length > 0
 						? this.state.buttons.map((button, i) => {
 								return (
 									<button
@@ -191,7 +195,41 @@ class Question extends Component {
 									</button>
 								);
 						  })
-						: null}
+						: null} */}
+
+					<Route path="/results">
+						{this.state.gameOver ? <Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} playerTime={this.state.timer} /> : null}
+					</Route>
+
+					{this.state.questionNumber === 10 
+					? this.state.buttons.map((button, i) => {
+						return (
+							<Link
+								
+								key={i}
+								className="wordButton"
+								onClick={() => {
+									this.handleClick(button.answer);
+								}}
+							>
+								{(button.word, button.word)}
+							</Link>
+						);
+					})
+
+					: this.state.buttons.map((button, i) => {
+						return (
+							<button
+								key={i}
+								className="wordButton"
+								onClick={() => {
+									this.handleClick(button.answer);
+								}}
+							>
+								{(button.word, button.word)}
+							</button>
+						);
+					}) }
 				</div>
 			</div>
 		);

@@ -49,8 +49,7 @@ displayResults = (score, timer, words) =>{
 		gameOver: true,
 		dictionary: words,
 		timer: timer,
-	}, () =>{window.location.replace('/results')}
-	)  
+	})  
 	
 }
 
@@ -72,13 +71,17 @@ displayResults = (score, timer, words) =>{
 					<main>
 							
 						<Route path="/questions">
-							<Question words={this.state.words} triggerResults={this.displayResults} />
+							{this.state.gameOver ? null : <Question words={this.state.words} triggerResults={this.displayResults} />}
+						</Route>
 
-						</Route>
-						<Route path="/results">
-							<Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} playerTime={this.state.timer} />
-						</Route>
-							
+						
+
+						{/* <Route path="/results">
+							{this.state.gameOver ? <Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} playerTime={this.state.timer} /> : null}
+						</Route> */}
+
+
+						{/* <Results score={this.state.playserScore} dictionaryWords={this.state.dictionary} playerTime={this.state.timer} /> */}
 					</main>
 					<footer></footer>
 				</div>
