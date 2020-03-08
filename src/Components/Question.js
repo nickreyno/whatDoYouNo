@@ -178,6 +178,7 @@ class Question extends Component {
 						<div className="progressBar">
 							<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
 						</div>
+						{this.state.isLoading ? <Preloader/> : null}
 						<p className="definition">{this.state.definition}</p>
 						<div className="buttonParent">
 							{this.state.buttons.length > 0

@@ -9,8 +9,6 @@ import "./App.css";
 import axios from "axios";
 import library from "./Components/library";
 import firebase from "./Components/firebase.js";
-// Not sure if the preloader has to go in here
-import Preloader from "./Components/Preloader.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
 
 class App extends Component {
