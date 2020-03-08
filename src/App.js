@@ -19,19 +19,16 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
-			entries: ["fir", "fur", "dear", "deer"]
+			entries: ["fir", "fur", "dear", "deer", "medal", "flee", "weather", "large", "drink"],
+			levelSelected: false,
 		};
-	}
-
-	componentDidMount() {
-		this.randomizer(easyWords);
 	}
 
 	// populate our call with a word from our local array
 
 	randomizer = arrayToRandom => {
 		const gameArray = [];
-		// let randomNumber = 0;
+
 		for (let i = 0; i < 10; i++) {
 			const randomNumber = Math.floor(Math.random() * arrayToRandom.length);
 			gameArray.push(arrayToRandom[randomNumber][0]);
@@ -39,7 +36,8 @@ class App extends Component {
 		}
 
 		this.setState({
-			words: gameArray
+			words: gameArray,
+			levelSelected: true,
 		});
 	};
 
@@ -64,9 +62,16 @@ class App extends Component {
 						</Link>
 						<Route path="/" exact>
 							<h2>expand your vocabulary with homophones</h2>
-							<Link className="mainButton" to="/questions">
+
+							<div className='buttonContainer'>
+								<button onClick={() => this.randomizer(easyWords)}>easy</button>
+								<button onClick={() => this.randomizer(mediumWords)}>medium</button>
+								<button onClick={() => this.randomizer(hardWords)}>hard</button>
+							</div>
+
+							{this.state.levelSelected ? <Link className="mainButton" to="/questions">
 								start game
-							</Link>
+							</Link> : null }
 						</Route>
 					</header>
 					<main>
