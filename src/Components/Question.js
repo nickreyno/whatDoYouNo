@@ -112,8 +112,8 @@ class Question extends Component {
 			dictionary.push(this.props.words[this.state.questionNumber]);
 			this.setState(
 				{
-					questionNumber: this.state.questionNumber + 1,
-					wrongAnswers: dictionary
+					wrongAnswers: dictionary,
+					questionNumber: this.state.questionNumber + 1
 				},
 				() => {
 					// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
