@@ -29,10 +29,14 @@ class App extends Component {
 	randomizer = arrayToRandom => {
 		const gameArray = [];
 
+		const game = [...arrayToRandom];
+
 		for (let i = 0; i < 10; i++) {
-			const randomNumber = Math.floor(Math.random() * arrayToRandom.length);
-			gameArray.push(arrayToRandom[randomNumber][0]);
-			arrayToRandom.splice(randomNumber, 1);
+			const randomNumber = Math.floor(Math.random() * game.length);
+
+			gameArray.push(game[randomNumber][0]);
+
+			game.splice(randomNumber, 1);
 		}
 
 		this.setState({
