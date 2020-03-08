@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { easyWords, mediumWords, hardWords } from "./library.js";
 import question from "./question.css";
 import axios from "axios";
+import Preloader from "./Preloader.js";
 import { Link } from "react-router-dom";
 
 class Question extends Component {
@@ -16,7 +17,8 @@ class Question extends Component {
 			answers: [],
 			buttons: [],
 			timer: 0,
-			gameOver: false
+			gameOver: false,
+			isLoading: true,
 		};
 	}
 	//////////////////////////////////////////////////////////
@@ -50,7 +52,8 @@ class Question extends Component {
 				this.setState(
 					{
 						definition: wordsWithDefs[0].defs[0],
-						correctWord: wordsWithDefs[0].word
+						correctWord: wordsWithDefs[0].word,
+						isLoading: false,
 					},
 					() => {
 						// ---randomize which button holds the correct answer---//
