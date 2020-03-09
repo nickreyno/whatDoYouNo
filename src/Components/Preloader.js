@@ -4,8 +4,8 @@ import React, { Component } from "react";
 class Preloader extends Component {
     render() {
         return (
-            <div>
-                
+            <div className="preloader">
+                <p className="animated infinite bounceIn">Loading...</p>
             </div>
         );
     }
