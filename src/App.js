@@ -10,6 +10,7 @@ import axios from "axios";
 import library from "./Components/library";
 import firebase from "./Components/firebase.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
+import ToggleBttn from "./ToggleBttn.js";
 
 class App extends Component {
 	constructor() {
@@ -23,7 +24,10 @@ class App extends Component {
 			levelSelected: false,
 			leaderBInfo: [],
 			visible: false,
+			levelButton: '',
 		};
+
+		this.levelButton = React.createRef();
 	}
 
 	// populate leaderboard with data from FB
@@ -54,13 +58,13 @@ class App extends Component {
 
 	// toggle leaderboard
 
-	handleMouseDown(e){
+	handleMouseDown = (e) =>{
 		this.toggleLeaderB();
 		console.log("clicked");
 		e.stopPropagation();
 	}
 
-	toggleLeaderB(){
+	toggleLeaderB =() => {
 		this.setState({
 			visible: !this.state.visible
 		});
@@ -68,7 +72,17 @@ class App extends Component {
 
 	// populate our call with a word from our local array
 
-	randomizer = arrayToRandom => {
+	randomizer = (arrayToRandom, clickedButton) => {
+		if (this.state.levelButton) {
+			this.state.levelButton.classList.remove('levelSelected');
+		}
+		
+		this.setState({
+			levelButton: this.levelButton.current.childNodes[clickedButton],
+		}, () => {
+			this.state.levelButton.classList.add('levelSelected');
+		})
+
 		const gameArray = [];
 
 		const game = [...arrayToRandom];
@@ -124,15 +138,16 @@ class App extends Component {
 
 							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
 
+
 							<h2 className="instructions">Instructions</h2>
-
-							<p className="homophoneDef">Select your level of difficulty below and click start. Click on the word that matches the definition shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!</p>
 							
+							<p className="homophoneDef">Select your level of difficulty below and click start. Click on the word that matches the definition shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!</p>
 
-							<div className="buttonContainer">
-								<button onClick={() => this.randomizer(easyWords)}>easy</button>
-								<button onClick={() => this.randomizer(mediumWords)}>medium</button>
-								<button onClick={() => this.randomizer(hardWords)}>hard</button>
+      <div ref={this.levelButton} className="buttonContainer">
+								<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
+								<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
+								<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
+
 							</div>
 
 							{this.state.levelSelected ? (
@@ -144,6 +159,8 @@ class App extends Component {
 					</header>
 
 					<main>
+
+						<ToggleBttn handleMouseDown={this.handleMouseDown} />
 
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
@@ -166,7 +183,7 @@ class App extends Component {
 					</main>
 
 					<aside>
-						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
+						<LeaderBoard leaderBInfo={this.state.leaderBInfo} handleMouseDown={this.handleMouseDown} leaderBVisibility={this.state.visible} />
 					</aside>
 					
 					<footer></footer>
