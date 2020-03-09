@@ -48,18 +48,24 @@ class Question extends Component {
 			////////////////////////////////////////////////////////////////////
 			.then(response => {
 				response = response.data;
+
 				const wordsWithDefs = response.filter(word => {
 					return word.defs
 				});
 
+				let randomNumberForDefs = 0
+
+				if(wordsWithDefs[0].defs.length > 1) {
+					randomNumberForDefs = Math.round(Math.random() * 1);
+				}
+
 				this.setState(
 					{
-						definition: wordsWithDefs[0].defs[0],
+						definition: wordsWithDefs[0].defs[randomNumberForDefs],
 						correctWord: wordsWithDefs[0].word,
 						isLoading: false,
 					},
 					() => {
-						console.log(this.state.definition)
 						// ---randomize which button holds the correct answer---//
 						this.formatDefinition();
 						this.buttonRandomizer();
@@ -224,7 +230,11 @@ class Question extends Component {
 						<h2>congratulations!</h2>
 
 						<div className="buttonParent">
-							<Link to="/results" key={11} className="wordButton">
+							<Link to='/' className='wordButton'>
+								play again
+							</Link>
+
+							<Link to="/results" className="wordButton">
 								Show Results
 							</Link>
 						</div>

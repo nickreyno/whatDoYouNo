@@ -37,9 +37,6 @@ const mediumWords = [
 	["gait", "gate"],
 ];
 const hardWords = [
-	["advice", "advise"],
-	["ale", "ail"],
-	["aisle", "isle"],
 	["holy", "wholly"],
 	["stationary", "stationery"],
 	["council", "counsel"],
@@ -50,7 +47,6 @@ const hardWords = [
 	["medal", "metal"],
 	["course", "coarse"],
 	["scent", "cent"],
-	["braze", "braise"],
 	["raze", "raise"]
 ];
 
