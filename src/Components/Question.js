@@ -48,11 +48,9 @@ class Question extends Component {
 			////////////////////////////////////////////////////////////////////
 			.then(response => {
 				response = response.data;
-				console.log(response)
 				const wordsWithDefs = response.filter(word => {
 					return word.defs
 				});
-				console.log(wordsWithDefs)
 
 				this.setState(
 					{

@@ -6,12 +6,25 @@ class LeaderBoard extends Component {
 	}
 	render() {
 		return (
-		<div>
-			<h2>Leaderboard</h2>
-			<ul>
-				
+			<div className="leaderboard">
+			<h2 className="leaderboardHeader">leaderboard:</h2>
+			<ul className="leaderboardList">
+			{this.props.leaderBInfo.map((fbInfo, index) =>{
+							return (
+						<li 
+						key={index.key}
+						className="leaderboardItem">
+							<p className="leaderboardName">name: {fbInfo.name}</p>
+							<p className="leaderboardScore">score: {fbInfo.score}/10</p>
+							  <p className="leaderbordTime">time: {fbInfo.time} secs</p>
+							})}
+						</li>
+					)
+				})}
+
 			</ul>
 		</div>
+
 		);
 	}
 }

@@ -37,11 +37,9 @@ const mediumWords = [
 	["gait", "gate"],
 ];
 const hardWords = [
-	["compliment", "complement"],
 	["advice", "advise"],
 	["ale", "ail"],
 	["aisle", "isle"],
-	["allusion", "illusion"],
 	["holy", "wholly"],
 	["stationary", "stationery"],
 	["council", "counsel"],
@@ -49,11 +47,8 @@ const hardWords = [
 	["leased", "least"],
 	["desert", "dessert"],
 	["overdue", "overdo"],
-	["patience", "patients"],
-	["vary", "very"],
 	["medal", "metal"],
 	["course", "coarse"],
-	["presence", "presents"],
 	["scent", "cent"],
 	["braze", "braise"],
 	["raze", "raise"]

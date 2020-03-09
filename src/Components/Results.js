@@ -5,11 +5,14 @@ class Results extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			leaderBInfo: [],
-			userInput: ""
-		};
+		this.state = {			
+			userInput: "",
+		}
 	}
+
+	handleNameChange = (event) => {
+		this.setState ({
+
 
 	// sort function
 	// from highest to lowest
@@ -70,26 +73,35 @@ class Results extends Component {
 		return (
 			<div className="leaderDiv">
 				<h3 className="leaderHeader">Great work!</h3>
-				<div className="leaderScore">
-					<h4 className="score">Your Score:{this.props.score}</h4>
-					<h4>Time (in secs): {this.props.playerTime}</h4>
-				</div>
-				<form action="submit" onSubmit={this.handleSubmit} className="leaderForm">
-					<label htmlFor="enterName" className="leaderLabelName">
-						Add your name and score to the leaderboard:
-					</label>
-					<input
-						type="text"
-						id="enterName"
-						className="leaderInputName"
-						value={this.state.userInput}
-						onChange={this.handleNameChange}
-					/>
-					<button type="submit" className="leaderButton">
-						Submit
-					</button>
-				</form>
+					<div className="leaderScore">
+						<h4 className="score">Your Score:{this.props.score}</h4>
+						<h4>Time (in secs): {this.props.playerTime}</h4>
 
+					</div>
+
+				{/* start of form */}
+				<form 
+				action="submit" 
+				onSubmit = {this.handleSubmit}
+				className="leaderForm">
+					<label 
+					htmlFor="enterName"
+					className="leaderLabelName">
+					Add your name and score to the leaderboard:</label>
+					<input 
+					type="text" 
+					id="enterName"
+					className="leaderInputName"
+					value={this.state.userInput}
+					onChange={this.handleNameChange} />
+					<button 
+					type="submit"
+					className="leaderButton">Submit</button>
+
+				</form>
+				{/* end of form */}
+
+				{/* start of dictionary */}
 				<ul className="leaderDictionList">
 					{this.props.dictionaryWords.map((resultWords, i) => {
 						return (
@@ -105,23 +117,10 @@ class Results extends Component {
 						);
 					})}
 				</ul>
+				{/* end of dictionary */}
+</div>
+			);
 
-				<div className="leaderboard">
-					<h2 className="leaderboardHeader">Leaderboard:</h2>
-					<ul className="leaderboardList">
-						{this.state.leaderBInfo.map((info, index) => {
-							return (
-								<li key={index.key} className="leaderboardItem">
-									<p className="leaderboardName">Name: {info.name}</p>
-									<p className="leaderboardScore">Score: {info.score}</p>
-									<p className="leaderbordTime">Time: {info.time}</p>
-								</li>
-							);
-						})}
-					</ul>
-				</div>
-			</div>
-		);
 	}
 }
 
