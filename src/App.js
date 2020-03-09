@@ -20,7 +20,8 @@ class App extends Component {
 			dictionary: [],
 			timer: "",
 			entries: ["apples", "bleak"],
-			levelSelected: false
+			levelSelected: false,
+			leaderBInfo: []
 		};
 	}
 
