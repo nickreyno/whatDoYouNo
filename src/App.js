@@ -19,7 +19,7 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
-			entries: ["fir", "fur", "dear", "deer", "medal", "flee", "weather", "large"],
+			entries: [],
 			levelSelected: false
 		};
 	}
@@ -57,7 +57,11 @@ class App extends Component {
 	};
 
 	addToDictionary = (word1, word2) => {
-		
+		const entriesToMod = [...this.state.entries]
+		entriesToMod.push(word1, word2);
+		this.setState({
+			entries: entriesToMod
+		})
 	};
 
 	render() {
