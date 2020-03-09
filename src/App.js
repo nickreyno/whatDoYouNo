@@ -33,7 +33,7 @@ class App extends Component {
 
 		for (let i = 0; i < 10; i++) {
 			const randomNumber = Math.floor(Math.random() * game.length);
-
+			
 			gameArray.push(game[randomNumber][0]);
 
 			game.splice(randomNumber, 1);
@@ -41,13 +41,12 @@ class App extends Component {
 
 		this.setState({
 			words: gameArray,
-			levelSelected: true
+			levelSelected: true,
 		});
 	};
 
 	// sets state in App to check what question
 	displayResults = (score, timer, words) => {
-		// console.log(words);
 		this.setState({
 			playerScore: score,
 			gameOver: true,
