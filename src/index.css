@@ -137,9 +137,9 @@ h2{
   text-align: center;
   background: #e3f4f3;
   border-radius: 2rem;
-  margin: 5rem 0 5%;
-
-  font-family: "Lato", sans-serif;
+  margin: 5rem 0;
+  padding-bottom: 5rem;
+  font-family: 'Josefin Slab', serif;
 }
 
 .leaderHeader {
@@ -152,11 +152,24 @@ h2{
 .leaderScore {
   font-size: 2.5rem;
   margin: 3% auto;
-  border: 3px dashed #6056f9;
-  padding: 20px;
+  padding: 2rem;
   width: 50%;
-  /* Not sure what people think of the text shadow */
-  text-shadow: #cfff31 5px 3px;
+  background: white;
+  border-radius: 2rem;
+}
+
+.leaderDictionList {
+  background: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 2rem;
+}
+
+.leaderDictionItem {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
 }
 
 .score {

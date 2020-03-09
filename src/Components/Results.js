@@ -79,7 +79,7 @@ class Results extends Component {
 								className="leaderDictionItem"
 								key={i}
 							>
-								{resultWords.word1} {resultWords.word2}
+								<span>{resultWords.word1}</span> <span>{resultWords.word2}</span>
 							</li>
 						);
 					})}
