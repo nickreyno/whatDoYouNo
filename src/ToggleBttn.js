@@ -6,7 +6,7 @@ class ToggleBttn extends Component {
     render(){
     return(
         <button className="toggleBttn"
-        onMouseDown={this.props.handleMouseDown}>TEST
+        onMouseDown={this.props.handleMouseDown}> Leaderboard
         </button>
         )
     }
