@@ -161,7 +161,10 @@ h2{
 
 /* Leaderboard/Dictionary */
 .leaderboard {
-  padding-bottom: 5%;
+  padding: 0 5% 5%;
+  border: 2px dashed #6056f9;
+  width: 80%;
+  margin: 0 auto;
 }
 .leaderboardHeader {
   font-size: 3rem;
@@ -177,7 +180,6 @@ h2{
   padding: 10px;
   margin: 10px auto;
   border: 2px dashed #6056f9;
-  width: 50%;
 }
 
 .leaderDictionItem:nth-child(even),
