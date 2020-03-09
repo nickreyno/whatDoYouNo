@@ -124,8 +124,9 @@ class App extends Component {
 
 							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
 
-							<h4>Instructions</h4>
+							<h2 className="instructions">Instructions</h2>
 
+							<p className="homophoneDef">Select your level of difficulty below and click start. Click on the word that matches the definition shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!</p>
 							
 
 							<div className="buttonContainer">
