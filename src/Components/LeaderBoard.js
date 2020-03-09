@@ -14,11 +14,10 @@ class LeaderBoard extends Component {
 								return (
 							<li 
 							key={index.key}
-							className="leaderboardItem">
-								<p className="leaderboardName"><span className='leaderboardSpan'>name:</span> {fbInfo.name}</p>
-										<p className="leaderboardScore"><span className='leaderboardSpan'>score:</span> {fbInfo.score}/10</p>
-										<p className="leaderboardTime"><span className='leaderboardSpan'>time:</span> {fbInfo.time} secs</p>
-								})}
+							className="leaderboardItems">
+								<p className="leaderboardItem"><span className='leaderboardSpan'>name:</span> {fbInfo.name}</p>
+									<p className="leaderboardItem"><span className='leaderboardSpan'>score:</span> {fbInfo.score}/10</p>
+									<p className="leaderboardItem"><span className='leaderboardSpan'>time:</span> {fbInfo.time} secs</p>
 							</li>
 						)
 					})}
