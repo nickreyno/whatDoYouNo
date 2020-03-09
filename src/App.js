@@ -115,7 +115,7 @@ class App extends Component {
 			timer: timer
 		});
 	};
-
+	
 	addToDictionary = (word1, word2) => {
 		const entriesToMod = [...this.state.entries];
 		entriesToMod.push(word1, word2);
@@ -185,7 +185,7 @@ class App extends Component {
 							/>
 						</Route>
 
-						<Link to="/dictionary">dictionary please</Link>
+						<Link to="/dictionary" className='dictionaryPlease'>dictionary please</Link>
 
 						<Route path="/dictionary">
 							<Dictionary entries={this.state.entries} />

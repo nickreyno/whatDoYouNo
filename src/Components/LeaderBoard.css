@@ -45,3 +45,8 @@
     transform-origin: left bottom;
     transform: scaleX(1.1) rotate(90deg);
 }
+
+
+.buttonContainer button:hover {
+    transform: scale(1.1)
+}
