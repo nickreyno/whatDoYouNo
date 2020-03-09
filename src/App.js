@@ -57,7 +57,7 @@ class App extends Component {
 	};
 
 	addToDictionary = (word1, word2) => {
-		console.log(word1, word2);
+		
 	};
 
 	render() {
