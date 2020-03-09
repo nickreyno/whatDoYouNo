@@ -22,10 +22,6 @@
     pointer-events: none;
 }
 
-h2 {
-    font-size: 4rem;
-}
-
 .scoreCounter {
     top:2.5rem;
     position: absolute;
