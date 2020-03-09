@@ -108,6 +108,7 @@ class App extends Component {
 
 	// sets state in App to check what question
 	displayResults = (score, timer, words) => {
+		console.log(words)
 		this.setState({
 			playerScore: score,
 			gameOver: true,
