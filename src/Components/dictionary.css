@@ -5,8 +5,50 @@
 	padding: 2.5rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	text-align: center;
+	justify-content: flex-start;
+	text-align: left;
 	border-radius: 2rem;
 	min-height: 60vh;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+h2 {
+	padding: 0;
+}
+
+ul {
+	background: #fafafa;
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+li {
+	position: relative;
+	margin: 15px 0;
+	width: calc(40%);
+}
+
+p {
+	font-size: 1.6rem;
+	position: relative;
+}
+
+p::first-letter {
+	font-style: italic;
+	font-weight: bold;
+}
+
+p::first-letter:after {
+	content: ":";
+	font-size: 1.6rem;
+	position: relative;
+	color: black;
 }
