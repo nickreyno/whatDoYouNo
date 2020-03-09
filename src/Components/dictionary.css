@@ -51,7 +51,8 @@ margin: 15px 10% 15px 15px;
 	position: relative;
 }
 
-.dictionarySection p::first-letter {
+.dictionarySection .wordType {
+	position: relative;
 	font-style: italic;
 	font-weight: bold;
 }

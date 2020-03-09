@@ -35,9 +35,10 @@ class Dictionary extends Component {
 					def: response[0].defs[0]
 				};
 
-				currentEntry.def.split(" ")
-				console.log(currentEntry)
+				currentEntry.def = currentEntry.def.split("\t");
+				currentEntry.def[0] = (currentEntry.def[0] + " ");
 				entriesForModding.push(currentEntry);
+				console.log(entriesForModding);
 				this.setState(
 					{
 						entriesFormatted: entriesForModding,
@@ -67,7 +68,7 @@ class Dictionary extends Component {
 					{this.state.entriesFormatted.map((item, i) => {
 						return (
 							<li key={i}>
-								<h3>{item.word}</h3> <p>{item.def}</p>
+								<h3>{item.word}</h3> <p><span className="wordType">{item.def[0]} </span>{item.def[1]}</p>
 							</li>
 						);
 					})}
