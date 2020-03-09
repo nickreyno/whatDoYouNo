@@ -20,7 +20,7 @@ class App extends Component {
 			dictionary: [],
 			timer: "",
 			entries: ["fir", "fur", "dear", "deer", "medal", "flee", "weather", "large"],
-			levelSelected: false,
+			levelSelected: false
 		};
 	}
 
@@ -41,7 +41,7 @@ class App extends Component {
 
 		this.setState({
 			words: gameArray,
-			levelSelected: true,
+			levelSelected: true
 		});
 	};
 
@@ -56,6 +56,10 @@ class App extends Component {
 		});
 	};
 
+	addToDictionary = (word1, word2) => {
+		console.log(word1, word2);
+	};
+
 	render() {
 		return (
 			<Router>
@@ -67,15 +71,17 @@ class App extends Component {
 						<Route path="/" exact>
 							<h2>expand your vocabulary with homophones</h2>
 
-							<div className='buttonContainer'>
+							<div className="buttonContainer">
 								<button onClick={() => this.randomizer(easyWords)}>easy</button>
 								<button onClick={() => this.randomizer(mediumWords)}>medium</button>
 								<button onClick={() => this.randomizer(hardWords)}>hard</button>
 							</div>
 
-							{this.state.levelSelected ? <Link className="mainButton" to="/questions">
-								start game
-							</Link> : null }
+							{this.state.levelSelected ? (
+								<Link className="mainButton" to="/questions">
+									start game
+								</Link>
+							) : null}
 						</Route>
 					</header>
 					<main>
@@ -87,6 +93,7 @@ class App extends Component {
 								score={this.state.playerScore}
 								dictionaryWords={this.state.dictionary}
 								playerTime={this.state.timer}
+								addToDictionary={this.addToDictionary}
 							/>
 						</Route>
 						<Link to="/dictionary">dictionary please</Link>
