@@ -11,15 +11,17 @@
 	min-height: 60vh;
 }
 
-h3 {
+.dictionarySection h3 {
+	text-transform: capitalize;
 	font-size: 3rem;
+	margin: 5px 0;
 }
 
-h2 {
+.dictionarySection h2 {
 	padding: 0;
 }
 
-ul {
+.dictionarySection ul {
 	background: #fafafa;
 	margin-top: 20px;
 	padding: 10px;
@@ -27,27 +29,33 @@ ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 }
 
-li {
+.dictionarySection li {
 	position: relative;
-	margin: 15px 0;
-	width: calc(40%);
+	width: calc(40% - 15px);
+}
+.dictionarySection li:nth-of-type(odd){
+	margin: 15px 15px 15px 10%;
 }
 
-p {
+.dictionarySection li:nth-of-type(even){
+margin: 15px 10% 15px 15px;
+}
+
+.dictionarySection p {
 	font-size: 1.6rem;
 	
 	position: relative;
 }
 
-p::first-letter {
+.dictionarySection p::first-letter {
 	font-style: italic;
 	font-weight: bold;
 }
 
-p::first-letter:after {
+.dictionarySection p::first-letter:after {
 	content: ":";
 	font-size: 1.6rem;
 	position: relative;

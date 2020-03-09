@@ -19,10 +19,9 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
-			entries: ["fir", "fur", "dear", "deer", "medal", "flee", "weather", "large"],
+			entries: ["apples", "bleak"],
 			levelSelected: false,
-			leaderBInfo: [],
-
+			leaderBInfo: []
 		};
 	}
 
@@ -84,7 +83,14 @@ class App extends Component {
 	};
 
 	addToDictionary = (word1, word2) => {
-		console.log(word1, word2);
+		const entriesToMod = [...this.state.entries]
+		entriesToMod.push(word1, word2);
+		const uniqueEntries = entriesToMod.filter((item, index, originalArray) => {
+			return originalArray.indexOf(item) === index;})
+			console.log(uniqueEntries)
+		this.setState({
+			entries: uniqueEntries
+		})
 	};
 
 	render() {
@@ -114,7 +120,7 @@ class App extends Component {
 					<main>
 						
 						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
-						})}
+						
 
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
