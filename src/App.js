@@ -60,8 +60,10 @@ class App extends Component {
 
 		for (let i = 0; i < 10; i++) {
 			const randomNumber = Math.floor(Math.random() * game.length);
+
+			const randomNumberForWord = Math.round(Math.random() * 1);
 			
-			gameArray.push(game[randomNumber][0]);
+			gameArray.push(game[randomNumber][randomNumberForWord]);
 
 			game.splice(randomNumber, 1);
 		}
@@ -101,6 +103,7 @@ class App extends Component {
 						<Link to="/">
 							<h1>What Do You No</h1>
 						</Link>
+
 						<Route path="/" exact>
 							<h2>expand your vocabulary with homophones</h2>
 
@@ -117,6 +120,7 @@ class App extends Component {
 							) : null}
 						</Route>
 					</header>
+
 					<main>
 						
 						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
@@ -125,6 +129,7 @@ class App extends Component {
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
 						</Route>
+
 						<Route path="/results">
 							<Results
 								score={this.state.playerScore}
@@ -133,11 +138,14 @@ class App extends Component {
 								addToDictionary={this.addToDictionary}
 							/>
 						</Route>
+
 						<Link to="/dictionary">dictionary please</Link>
+
 						<Route path="/dictionary">
 							<Dictionary entries={this.state.entries} />
 						</Route>
 					</main>
+					
 					<footer></footer>
 				</div>
 			</Router>
