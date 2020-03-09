@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { easyWords, mediumWords, hardWords } from "./library.js";
 import question from "./question.css";
 import axios from "axios";
+import knowledge from "./assets/knowledge.webp"
 import Preloader from "./Preloader.js";
 import { Link } from "react-router-dom";
 
@@ -221,7 +222,8 @@ class Question extends Component {
 				) : (
 					<div className="questionBox">
 
-						<h2>congratulations!</h2>
+						<h2 className="questionTitle">Congratulations!</h2>
+						<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage"/>
 
 						<div className="buttonParent">
 							<Link to="/results" key={11} className="wordButton">
