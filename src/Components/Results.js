@@ -10,39 +10,6 @@ class Results extends Component {
 		}
 	}
 
-	handleNameChange = (event) => {
-		this.setState ({
-
-
-	// sort function
-	// from highest to lowest
-	// push object w user name and score
-	// map that shit
-
-	componentDidMount() {
-		const dbRef = firebase.database().ref();
-
-		dbRef.on("value", response => {
-			const nameFromDb = response.val();
-
-			const stateToBeSet = [];
-
-			for (let key in nameFromDb) {
-				const nameInfo = {
-					key: key,
-					name: nameFromDb[key].name,
-					score: nameFromDb[key].score,
-					time: nameFromDb[key].time
-				};
-				stateToBeSet.push(nameInfo);
-				stateToBeSet.sort((a, b) => b.score - a.score);
-			}
-
-			this.setState({
-				leaderBInfo: stateToBeSet
-			});
-		});
-	}
 
 	handleNameChange = event => {
 		this.setState({
@@ -123,5 +90,6 @@ class Results extends Component {
 
 	}
 }
+	
 
 export default Results;
