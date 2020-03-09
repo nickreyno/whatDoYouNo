@@ -19,15 +19,8 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
-<<<<<<< HEAD
 			entries: ["apples", "bleak"],
 			levelSelected: false
-=======
-			entries: ["fir", "fur", "dear", "deer", "medal", "flee", "weather", "large"],
-			levelSelected: false,
-			leaderBInfo: [],
-
->>>>>>> master
 		};
 	}
 
@@ -126,7 +119,7 @@ class App extends Component {
 					<main>
 						
 						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
-						})}
+						
 
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
