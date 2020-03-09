@@ -45,6 +45,10 @@
 margin: 15px 10% 15px 15px;
 }
 
+.dictionarySection ul:last-child {
+	align-self: flex-start;
+}
+
 .dictionarySection p {
 	font-size: 1.6rem;
 	
@@ -55,11 +59,4 @@ margin: 15px 10% 15px 15px;
 	position: relative;
 	font-style: italic;
 	font-weight: bold;
-}
-
-.dictionarySection p::first-letter:after {
-	content: ":";
-	font-size: 1.6rem;
-	position: relative;
-	color: black;
 }

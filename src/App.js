@@ -123,7 +123,13 @@ class App extends Component {
 							<h2>Expand Your Vocabulary with Homophones</h2>
 
 							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
+<form action="">
+	<fieldset name="bill"> 
 
+	<input for="bill" type="radio"/>
+	<input for="bill" type="radio"/>
+	</fieldset>
+</form>
 							<div className="buttonContainer">
 								<button onClick={() => this.randomizer(easyWords)}>easy</button>
 								<button onClick={() => this.randomizer(mediumWords)}>medium</button>
