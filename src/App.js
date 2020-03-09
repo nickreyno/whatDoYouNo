@@ -19,8 +19,15 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
+<<<<<<< HEAD
 			entries: ["apples", "bleak"],
 			levelSelected: false
+=======
+			entries: ["fir", "fur", "dear", "deer", "medal", "flee", "weather", "large"],
+			levelSelected: false,
+			leaderBInfo: [],
+
+>>>>>>> master
 		};
 	}
 
