@@ -24,6 +24,32 @@ class App extends Component {
 		};
 	}
 
+	// populate leaderboard with data from FB
+	componentDidMount() {
+		const dbRef = firebase.database().ref();
+
+		dbRef.on("value", (response) => {
+			const nameFromDb = response.val();
+
+			const stateToBeSet = [];
+
+			for (let key in nameFromDb) {
+				const nameInfo = {
+					key:key,
+					name: nameFromDb[key].name,
+					score: nameFromDb[key].score,
+					time: nameFromDb[key].time,
+				}
+				stateToBeSet.push(nameInfo);
+				stateToBeSet.sort((a, b)=>b.score - a.score);
+			}
+
+			this.setState({
+				leaderBInfo: stateToBeSet,
+			})
+		})
+	}
+
 	// populate our call with a word from our local array
 
 	randomizer = arrayToRandom => {
@@ -91,6 +117,10 @@ class App extends Component {
 						</Route>
 					</header>
 					<main>
+						
+						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
+						})}
+
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
 						</Route>
