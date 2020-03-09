@@ -189,3 +189,13 @@ h2{
   word-spacing: 10px;
   text-transform: capitalize;
 }
+
+/* Preloader */
+.preloader {
+  text-align: center;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  padding: 20px;
+  letter-spacing: .5rem;
+}
