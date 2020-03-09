@@ -67,7 +67,7 @@ h1{
 }
 
 h2{
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   font-family: 'Josefin Slab', serif;
   padding: 20px;
@@ -128,7 +128,7 @@ h2{
 
 /* Instructions */
 .instructions {
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin-top: 3%;
 }
 
