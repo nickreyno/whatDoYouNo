@@ -88,12 +88,22 @@ h2{
   color: black;
 }
 
+.mainButton,
+.wordButton {
+  transition: all 0.2s;
+  border-radius: 2rem;
+  width: 27%;
+  padding: 0.5rem;
+}
+
+
 .wordButton:hover,
 .wordButton:focus,
 .mainButton:hover,
 .mainButton:focus {
   background: #6056f9;
   color: #e3f4f3;
+  transform: scale(1.1, 1.1)
 }
 
 .leaderButton:hover,
