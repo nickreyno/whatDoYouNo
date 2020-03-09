@@ -49,8 +49,9 @@ class Question extends Component {
 			.then(response => {
 				response = response.data;
 				const wordsWithDefs = response.filter(word => {
-					return word;
+					return word.defs
 				});
+
 				this.setState(
 					{
 						definition: wordsWithDefs[0].defs[0],
@@ -58,6 +59,7 @@ class Question extends Component {
 						isLoading: false,
 					},
 					() => {
+						console.log(this.state.definition)
 						// ---randomize which button holds the correct answer---//
 						this.formatDefinition();
 						this.buttonRandomizer();
@@ -146,7 +148,6 @@ class Question extends Component {
 						answers: dictionary
 					},
 					() => {
-						console.log(dictionary);
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}

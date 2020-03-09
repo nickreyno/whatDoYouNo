@@ -1,24 +1,57 @@
 import React, { Component } from "react";
-import firebase from './firebase.js';
+import firebase from "./firebase.js";
 
 class Results extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			
+		this.state = {			
 			userInput: "",
 		}
 	}
 
 	handleNameChange = (event) => {
 		this.setState ({
-			userInput: event.target.value,
-			userScore: event.target.value,
-		})
+
+
+	// sort function
+	// from highest to lowest
+	// push object w user name and score
+	// map that shit
+
+	componentDidMount() {
+		const dbRef = firebase.database().ref();
+
+		dbRef.on("value", response => {
+			const nameFromDb = response.val();
+
+			const stateToBeSet = [];
+
+			for (let key in nameFromDb) {
+				const nameInfo = {
+					key: key,
+					name: nameFromDb[key].name,
+					score: nameFromDb[key].score,
+					time: nameFromDb[key].time
+				};
+				stateToBeSet.push(nameInfo);
+				stateToBeSet.sort((a, b) => b.score - a.score);
+			}
+
+			this.setState({
+				leaderBInfo: stateToBeSet
+			});
+		});
 	}
 
-	handleSubmit = (event) => {
+	handleNameChange = event => {
+		this.setState({
+			userInput: event.target.value,
+			userScore: event.target.value
+		});
+	};
+
+	handleSubmit = event => {
 		event.preventDefault();
 
 		const dbRef = firebase.database().ref();
@@ -26,16 +59,15 @@ class Results extends Component {
 		const leaderObject = {
 			name: this.state.userInput,
 			score: this.props.score,
-			time: this.props.playerTime,
-		}
+			time: this.props.playerTime
+		};
 
-		dbRef.push(leaderObject)
+		dbRef.push(leaderObject);
 
-		this.setState ({
-			userInput: "",
-		}
-		)
-	}
+		this.setState({
+			userInput: ""
+		});
+	};
 
 	render() {
 		return (
@@ -65,22 +97,30 @@ class Results extends Component {
 					<button 
 					type="submit"
 					className="leaderButton">Submit</button>
+
 				</form>
 				{/* end of form */}
 
 				{/* start of dictionary */}
 				<ul className="leaderDictionList">
-					{this.props.dictionaryWords.map((resultWords, i) =>{
-						return(
-						<li 
-						className="leaderDictionItem"
-						key={i}>{resultWords.word1} {resultWords.word2}</li>
-						)
+					{this.props.dictionaryWords.map((resultWords, i) => {
+						return (
+							<li
+								onClick={() => {
+									this.props.addToDictionary(resultWords.word1, resultWords.word2);
+								}}
+								className="leaderDictionItem"
+								key={i}
+							>
+								{resultWords.word1} {resultWords.word2}
+							</li>
+						);
 					})}
 				</ul>
 				{/* end of dictionary */}
 </div>
 			);
+
 	}
 }
 
