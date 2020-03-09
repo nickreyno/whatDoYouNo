@@ -1,0 +1,18 @@
+
+
+.toggleBttn{
+    transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    border: 2px solid black;
+    background: none;
+    letter-spacing: .5rem;
+    color: black;
+    width: 50px;
+    height: 50px;
+}
+
+.toggleBttn:hover{
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+}

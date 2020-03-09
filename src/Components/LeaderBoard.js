@@ -1,12 +1,21 @@
 import React, { Component } from "react";
+import "./LeaderBoard.css";
+
 
 class LeaderBoard extends Component {
 	constructor() {
 		super();
 	}
 	render() {
+		let visibility = 'hide';
+
+		if (this.props.leaderBVisibility){
+			visibility = 'show';
+		}
+
 		return (
-			<div className="leaderboard">
+			<div  
+				onMouseDown={this.props.handleMouseDown} className={`${visibility} leaderBoard`}>
 			<h2 className="leaderboardHeader">leaderboard:</h2>
 			<ul className="leaderboardList">
 			{this.props.leaderBInfo.map((fbInfo, index) =>{
