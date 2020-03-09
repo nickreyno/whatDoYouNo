@@ -6,40 +6,9 @@ class Results extends Component {
 		super();
 
 		this.state = {
-			leaderBInfo: [],
+			
 			userInput: "",
 		}
-	}
-
-	// sort function
-		// from highest to lowest 
-	// push object w user name and score 
-	// map that shit 
-
-
-	componentDidMount() {
-		const dbRef = firebase.database().ref();
-
-		dbRef.on("value", (response) => {
-			const nameFromDb = response.val();
-
-			const stateToBeSet = [];
-
-			for (let key in nameFromDb) {
-				const nameInfo = {
-					key:key,
-					name: nameFromDb[key].name,
-					score: nameFromDb[key].score,
-					time: nameFromDb[key].time,
-				}
-				stateToBeSet.push(nameInfo);
-				stateToBeSet.sort((a, b)=>b.score - a.score);
-			}
-
-			this.setState({
-				leaderBInfo: stateToBeSet,
-			})
-		})
 	}
 
 	handleNameChange = (event) => {
@@ -77,6 +46,8 @@ class Results extends Component {
 						<h4>Time (in secs): {this.props.playerTime}</h4>
 
 					</div>
+
+				{/* start of form */}
 				<form 
 				action="submit" 
 				onSubmit = {this.handleSubmit}
@@ -95,7 +66,9 @@ class Results extends Component {
 					type="submit"
 					className="leaderButton">Submit</button>
 				</form>
+				{/* end of form */}
 
+				{/* start of dictionary */}
 				<ul className="leaderDictionList">
 					{this.props.dictionaryWords.map((resultWords, i) =>{
 						return(
@@ -105,26 +78,8 @@ class Results extends Component {
 						)
 					})}
 				</ul>
-
-				<div className="leaderboard">
-					<h2 className="leaderboardHeader">leaderboard:</h2>
-					<ul className="leaderboardList">
-						{this.state.leaderBInfo.map((info,index) => {
-							return (
-								<li 
-								key={index.key}
-								className="leaderboardItem">
-									<p className="leaderboardName">name: {info.name}</p>
-									<p className="leaderboardScore">score: {info.score}/10</p>
-                  					<p className="leaderbordTime">time: {info.time} secs</p>
-                  
-								</li>
-							)
-						})}
-
-					</ul>
-				</div>
-			</div>
+				{/* end of dictionary */}
+</div>
 			);
 	}
 }
