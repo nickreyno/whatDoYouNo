@@ -21,7 +21,8 @@ class App extends Component {
 			timer: "",
 			entries: ["blue", "very", "large"],
 			levelSelected: false,
-			leaderBInfo: []
+			leaderBInfo: [],
+			visible: false,
 		};
 	}
 
@@ -49,6 +50,20 @@ class App extends Component {
 				leaderBInfo: stateToBeSet,
 			})
 		})
+	}
+
+	// toggle leaderboard
+
+	handleMouseDown(e){
+		this.toggleLeaderB();
+		console.log("clicked");
+		e.stopPropagation();
+	}
+
+	toggleLeaderB(){
+		this.setState({
+			visible: !this.state.visible
+		});
 	}
 
 	// populate our call with a word from our local array
@@ -105,7 +120,9 @@ class App extends Component {
 						</Link>
 
 						<Route path="/" exact>
-							<h2>expand your vocabulary with homophones</h2>
+							<h2>Expand Your Vocabulary with Homophones</h2>
+
+							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
 
 							<div className="buttonContainer">
 								<button onClick={() => this.randomizer(easyWords)}>easy</button>
@@ -122,9 +139,6 @@ class App extends Component {
 					</header>
 
 					<main>
-						
-						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
-						
 
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
@@ -145,6 +159,10 @@ class App extends Component {
 							<Dictionary entries={this.state.entries} />
 						</Route>
 					</main>
+
+					<aside>
+						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
+					</aside>
 					
 					<footer></footer>
 				</div>

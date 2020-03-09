@@ -20,10 +20,13 @@ class Question extends Component {
 			timer: 0,
 			gameOver: false,
 			isLoading: true,
+			error: false,
 		};
 
 		this.background = React.createRef();
+		this.questionButtons = React.createRef();
 	}
+
 	//////////////////////////////////////////////////////////
 	// -----------------make axios call---------------------//
 	//////////////////////////////////////////////////////////
@@ -56,7 +59,7 @@ class Question extends Component {
 
 				let randomNumberForDefs = 0
 
-				if(wordsWithDefs[0].defs.length > 1) {
+				if (wordsWithDefs[0].defs.length > 1) {
 					randomNumberForDefs = Math.round(Math.random() * 1);
 				}
 
@@ -74,7 +77,9 @@ class Question extends Component {
 				);
 			})
 			.catch(error => {
-				console.log(error, "you gooft it");
+				this.setState({
+					error: true,
+				})
 			});
 
 		///////////////////////////////////////////////////////
@@ -134,11 +139,11 @@ class Question extends Component {
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}
 				);
-			}, 500) 
+			}, 500)
 
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
-			
+
 			this.background.current.classList.toggle('incorrect')
 			setTimeout(() => {
 				this.background.current.classList.toggle('incorrect')
@@ -159,7 +164,7 @@ class Question extends Component {
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}
 				);
-			},500)
+			}, 500)
 		}
 	};
 
@@ -197,51 +202,59 @@ class Question extends Component {
 							<p>{this.state.timer} seconds</p>
 						</div>
 
-						{this.state.questionNumber > 1 
-						? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
+						{this.state.questionNumber > 1
+							? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
 
 						<div className="progressBar">
-							<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
+							<span 
+							style={{ width: `${this.state.questionNumber * 10}%` }}
+							className="questionSpan"></span>
 						</div>
 
-						{this.state.isLoading ? <Preloader/> : null}
+						{this.state.isLoading ? <Preloader /> : null}
+
 						<p className="definition">{this.state.definition}</p>
 
 						<div className="buttonParent">
 							{this.state.buttons.length > 0
 								? this.state.buttons.map((button, i) => {
-										return (
-											<button
-												key={i}
-												className="wordButton"
-												onClick={() => {
-													this.handleClick(button.answer);
-												}}
-											>
-												{(button.word, button.word)}
-											</button>
-										);
-								  })
+									return (
+										<button
+											key={i}
+											ref={this.questionButtons}
+											className="wordButton"
+											onClick={() => {
+												this.handleClick(button.answer);
+											}}
+										>
+											{(button.word, button.word)}
+										</button>
+									);
+								})
 								: null}
+							{this.state.error ? <div>
+								<p className='errorText'>error retrieving. please play again</p>
+								<Link to='/' className='wordButton'>go back home</Link>
+							</div> : null}
 						</div>
 					</div>
 				) : (
-					<div className="questionBox">
+						<div className="questionBox">
 
-						<h2 className="questionTitle">Congratulations!</h2>
-						<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage"/>
+							<h2 className="questionTitle">Congratulations!</h2>
+							<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage" />
 
-						<div className="buttonParent">
-							<Link to='/' className='wordButton'>
-								play again
-							</Link>
+							<div className="buttonParent">
+								<Link to='/' className='wordButton'>
+									play again
+								</Link>
 
-							<Link to="/results" className="wordButton">
-								Show Results
-							</Link>
+								<Link to="/results" className="wordButton">
+									Show Results
+								</Link>
+							</div>
 						</div>
-					</div>
-				)}
+					)}
 			</Fragment>
 		);
 	}
