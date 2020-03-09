@@ -24,7 +24,10 @@ class App extends Component {
 			levelSelected: false,
 			leaderBInfo: [],
 			visible: false,
+			levelButton: '',
 		};
+
+		this.levelButton = React.createRef();
 	}
 
 	// populate leaderboard with data from FB
@@ -69,7 +72,17 @@ class App extends Component {
 
 	// populate our call with a word from our local array
 
-	randomizer = arrayToRandom => {
+	randomizer = (arrayToRandom, clickedButton) => {
+		if (this.state.levelButton) {
+			this.state.levelButton.classList.remove('levelSelected');
+		}
+		
+		this.setState({
+			levelButton: this.levelButton.current.childNodes[clickedButton],
+		}, () => {
+			this.state.levelButton.classList.add('levelSelected');
+		})
+
 		const gameArray = [];
 
 		const game = [...arrayToRandom];
@@ -125,15 +138,10 @@ class App extends Component {
 
 							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
 
-							<h2 className="instructions">Instructions</h2>
-
-							<p className="homophoneDef">Select your level of difficulty below and click start. Click on the word that matches the definition shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!</p>
-							
-
-							<div className="buttonContainer">
-								<button onClick={() => this.randomizer(easyWords)}>easy</button>
-								<button onClick={() => this.randomizer(mediumWords)}>medium</button>
-								<button onClick={() => this.randomizer(hardWords)}>hard</button>
+							<div ref={this.levelButton} className="buttonContainer">
+								<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
+								<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
+								<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
 							</div>
 
 							{this.state.levelSelected ? (

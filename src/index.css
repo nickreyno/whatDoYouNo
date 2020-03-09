@@ -88,15 +88,15 @@ h2{
 }
 
 .wordButton:hover,
-.wordButton:focus {
+.wordButton:focus,
+.mainButton:hover,
+.mainButton:focus {
   background: #6056f9;
   color: #e3f4f3;
 }
 
 .leaderButton:hover,
-.leaderButton:focus,
-.mainButton:hover,
-.mainButton:focus
+.leaderButton:focus
 {
   background: #cfff31;
 }
