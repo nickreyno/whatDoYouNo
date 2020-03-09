@@ -138,10 +138,16 @@ class App extends Component {
 
 							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
 
-							<div ref={this.levelButton} className="buttonContainer">
+
+							<h2 className="instructions">Instructions</h2>
+							
+							<p className="homophoneDef">Select your level of difficulty below and click start. Click on the word that matches the definition shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!</p>
+
+      <div ref={this.levelButton} className="buttonContainer">
 								<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
 								<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
 								<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
+
 							</div>
 
 							{this.state.levelSelected ? (
