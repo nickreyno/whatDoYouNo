@@ -69,9 +69,10 @@ h1{
 h2{
   font-size: 3rem;
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Josefin Slab', serif;
   padding: 20px;
   letter-spacing: .5rem;
+  text-transform: capitalize;
 
 }
 
