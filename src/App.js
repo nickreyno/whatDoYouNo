@@ -24,7 +24,7 @@ class App extends Component {
 			levelSelected: false,
 			leaderBInfo: [],
 			visible: false,
-			levelButton: '',
+			levelButton: ""
 		};
 
 		this.levelButton = React.createRef();
@@ -34,54 +34,57 @@ class App extends Component {
 	componentDidMount() {
 		const dbRef = firebase.database().ref();
 
-		dbRef.on("value", (response) => {
+		dbRef.on("value", response => {
 			const nameFromDb = response.val();
 
 			const stateToBeSet = [];
 
 			for (let key in nameFromDb) {
 				const nameInfo = {
-					key:key,
+					key: key,
 					name: nameFromDb[key].name,
 					score: nameFromDb[key].score,
-					time: nameFromDb[key].time,
-				}
+					time: nameFromDb[key].time
+				};
 				stateToBeSet.push(nameInfo);
-				stateToBeSet.sort((a, b)=>b.score - a.score);
+				stateToBeSet.sort((a, b) => b.score - a.score);
 			}
 
 			this.setState({
-				leaderBInfo: stateToBeSet,
-			})
-		})
+				leaderBInfo: stateToBeSet
+			});
+		});
 	}
 
 	// toggle leaderboard
 
-	handleMouseDown = (e) =>{
+	handleMouseDown = e => {
 		this.toggleLeaderB();
 		console.log("clicked");
 		e.stopPropagation();
-	}
+	};
 
-	toggleLeaderB =() => {
+	toggleLeaderB = () => {
 		this.setState({
 			visible: !this.state.visible
 		});
-	}
+	};
 
 	// populate our call with a word from our local array
 
 	randomizer = (arrayToRandom, clickedButton) => {
 		if (this.state.levelButton) {
-			this.state.levelButton.classList.remove('levelSelected');
+			this.state.levelButton.classList.remove("levelSelected");
 		}
-		
-		this.setState({
-			levelButton: this.levelButton.current.childNodes[clickedButton],
-		}, () => {
-			this.state.levelButton.classList.add('levelSelected');
-		})
+
+		this.setState(
+			{
+				levelButton: this.levelButton.current.childNodes[clickedButton]
+			},
+			() => {
+				this.state.levelButton.classList.add("levelSelected");
+			}
+		);
 
 		const gameArray = [];
 
@@ -91,7 +94,7 @@ class App extends Component {
 			const randomNumber = Math.floor(Math.random() * game.length);
 
 			const randomNumberForWord = Math.round(Math.random() * 1);
-			
+
 			gameArray.push(game[randomNumber][randomNumberForWord]);
 
 			game.splice(randomNumber, 1);
@@ -99,7 +102,7 @@ class App extends Component {
 
 		this.setState({
 			words: gameArray,
-			levelSelected: true,
+			levelSelected: true
 		});
 	};
 
@@ -114,14 +117,15 @@ class App extends Component {
 	};
 
 	addToDictionary = (word1, word2) => {
-		const entriesToMod = [...this.state.entries]
+		const entriesToMod = [...this.state.entries];
 		entriesToMod.push(word1, word2);
 		const uniqueEntries = entriesToMod.filter((item, index, originalArray) => {
-			return originalArray.indexOf(item) === index;})
-			console.log(uniqueEntries)
+			return originalArray.indexOf(item) === index;
+		});
+		console.log(uniqueEntries);
 		this.setState({
 			entries: uniqueEntries
-		})
+		});
 	};
 
 	render() {
@@ -132,22 +136,30 @@ class App extends Component {
 						<Link to="/">
 							<h1>What Do You No</h1>
 						</Link>
+					</header>
 
+					<main>
 						<Route path="/" exact>
 							<h2>Expand Your Vocabulary with Homophones</h2>
 
-							<p className="homophoneDef">A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and <span className="homophoneItalic">too</span> are homophones, along with <span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.</p>
-
+							<p className="homophoneDef">
+								A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the
+								same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and{" "}
+								<span className="homophoneItalic">too</span> are homophones, along with{" "}
+								<span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.
+							</p>
 
 							<h2 className="instructions">Instructions</h2>
-							
-							<p className="homophoneDef">Select your level of difficulty below and click start. Click on the word that matches the definition shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!</p>
 
-      <div ref={this.levelButton} className="buttonContainer">
+							<p className="homophoneDef">
+								Select your level of difficulty below and click start. Click on the word that matches the definition
+								shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!
+							</p>
+
+							<div ref={this.levelButton} className="buttonContainer">
 								<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
 								<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
 								<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
-
 							</div>
 
 							{this.state.levelSelected ? (
@@ -156,11 +168,9 @@ class App extends Component {
 								</Link>
 							) : null}
 						</Route>
-					</header>
-
-					<main>
 
 						<ToggleBttn handleMouseDown={this.handleMouseDown} />
+
 
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
@@ -183,9 +193,13 @@ class App extends Component {
 					</main>
 
 					<aside>
-						<LeaderBoard leaderBInfo={this.state.leaderBInfo} handleMouseDown={this.handleMouseDown} leaderBVisibility={this.state.visible} />
+						<LeaderBoard
+							leaderBInfo={this.state.leaderBInfo}
+							handleMouseDown={this.handleMouseDown}
+							leaderBVisibility={this.state.visible}
+						/>
 					</aside>
-					
+
 					<footer></footer>
 				</div>
 			</Router>
