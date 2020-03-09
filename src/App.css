@@ -14,3 +14,8 @@
     color: black;
     text-transform: uppercase;
 }
+
+.buttonContainer .levelSelected {
+    background: #6056f9;
+    color: white;
+}
