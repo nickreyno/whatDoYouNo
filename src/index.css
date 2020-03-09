@@ -113,6 +113,17 @@ h2{
   letter-spacing: .5rem;
 }
 
+/* Main Page */
+.homophoneItalic {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.homophoneDef {
+  font-size: 2rem;
+  letter-spacing: .5rem;
+}
+
 /* Leaderboard/Results Page Stylings */
 /* General */
 .leaderDiv {
