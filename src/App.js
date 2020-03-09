@@ -10,6 +10,7 @@ import axios from "axios";
 import library from "./Components/library";
 import firebase from "./Components/firebase.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
+import ToggleBttn from "./ToggleBttn.js";
 
 class App extends Component {
 	constructor() {
@@ -54,13 +55,13 @@ class App extends Component {
 
 	// toggle leaderboard
 
-	handleMouseDown(e){
+	handleMouseDown = (e) =>{
 		this.toggleLeaderB();
 		console.log("clicked");
 		e.stopPropagation();
 	}
 
-	toggleLeaderB(){
+	toggleLeaderB =() => {
 		this.setState({
 			visible: !this.state.visible
 		});
@@ -145,6 +146,8 @@ class App extends Component {
 
 					<main>
 
+						<ToggleBttn handleMouseDown={this.handleMouseDown} />
+
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
 						</Route>
@@ -166,7 +169,7 @@ class App extends Component {
 					</main>
 
 					<aside>
-						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
+						<LeaderBoard leaderBInfo={this.state.leaderBInfo} handleMouseDown={this.handleMouseDown} leaderBVisibility={this.state.visible} />
 					</aside>
 					
 					<footer></footer>
