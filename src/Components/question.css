@@ -63,3 +63,10 @@ span {
     padding: 1rem;
     transition: width 0.5s ease;
 }
+
+/* Gif */
+
+.questionImage {
+    width: 65%;
+    margin: 0 auto; 
+}
