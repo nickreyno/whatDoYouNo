@@ -14,10 +14,12 @@
 
 .questionBox.correct {
     background-color: #cfff31;
+    pointer-events: none;
 }
 
 .questionBox.incorrect {
     background-color: #ff5964;
+    pointer-events: none;
 }
 
 h2 {
@@ -52,7 +54,7 @@ h2 {
     border-radius: 30px;
 }
 
-span {
+.questionSpan {
     position: absolute;
     left: 0.5rem;
     top: 0.5rem;
@@ -62,4 +64,17 @@ span {
     border-radius: 2rem;
     padding: 1rem;
     transition: width 0.5s ease;
+}
+
+.errorText {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+/* Gif */
+
+.questionImage {
+    width: 65%;
+    margin: 0 auto; 
 }
