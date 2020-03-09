@@ -140,7 +140,7 @@ class App extends Component {
 
 					<main>
 						<Route path="/" exact>
-							<h2>Expand Your Vocabulary with Homophones</h2>
+							<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
 
 							<p className="homophoneDef">
 								A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the

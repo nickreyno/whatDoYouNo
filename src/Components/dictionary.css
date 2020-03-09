@@ -12,6 +12,15 @@
 	min-height: 60vh;
 }
 
+.dictionarySection h2{
+	font-family: 'Josefin Slab', serif;
+	font-size: 4rem;
+	text-transform: capitalize;
+	text-align: center;
+	padding-top: 2%;;
+
+}
+
 .dictionarySection h3 {
 	text-transform: capitalize;
 	font-size: 3rem;
