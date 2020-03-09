@@ -19,7 +19,7 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
-			entries: [],
+			entries: ["apples", "bleak"],
 			levelSelected: false
 		};
 	}
@@ -58,8 +58,11 @@ class App extends Component {
 	addToDictionary = (word1, word2) => {
 		const entriesToMod = [...this.state.entries]
 		entriesToMod.push(word1, word2);
+		const uniqueEntries = entriesToMod.filter((item, index, originalArray) => {
+			return originalArray.indexOf(item) === index;})
+			console.log(uniqueEntries)
 		this.setState({
-			entries: entriesToMod
+			entries: uniqueEntries
 		})
 	};
 

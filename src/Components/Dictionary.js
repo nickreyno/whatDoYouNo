@@ -34,6 +34,9 @@ class Dictionary extends Component {
 					word: entries[iteration],
 					def: response[0].defs[0]
 				};
+
+				currentEntry.def.split(" ")
+				console.log(currentEntry)
 				entriesForModding.push(currentEntry);
 				this.setState(
 					{
