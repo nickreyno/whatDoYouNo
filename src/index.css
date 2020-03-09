@@ -132,6 +132,52 @@ h2.headerText{
   margin-top: 3%;
 }
 
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5rem 0;
+}
+
+.buttonContainer button {
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    border: 2px solid black;
+    background: none;
+    letter-spacing: .5rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+.buttonContainer .levelSelected {
+    background: #6056f9;
+    color: white;
+}
+
+/* ============ */
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 5rem 0;
+}
+
+.buttonContainer button {
+  font-size: 3rem;
+  font-family: 'Lato', sans-serif;
+  border: 2px solid black;
+  background: none;
+  letter-spacing: .5rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+.buttonContainer .levelSelected {
+  background: #6056f9;
+  color: white;
+}
+/* ======================= */
+
 /* Leaderboard/Results Page Stylings */
 /* General */
 .leaderDiv {

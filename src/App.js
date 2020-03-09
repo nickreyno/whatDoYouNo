@@ -10,7 +10,7 @@ import axios from "axios";
 import library from "./Components/library";
 import firebase from "./Components/firebase.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
-import ToggleBttn from "./ToggleBttn.js";
+import ToggleBttn from "./Components/ToggleBttn.js";
 
 class App extends Component {
 	constructor() {

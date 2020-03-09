@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
-import "./ToggleBttn.css";
+import "./LeaderBoard.css";
 
 class ToggleBttn extends Component {
     render(){

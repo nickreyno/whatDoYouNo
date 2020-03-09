@@ -18,3 +18,30 @@
     transform: translate3d(0vw, 0, 0);
     overflow: hidden;
 }
+
+/* Toggle button */
+.toggleBttn{
+    position: fixed;
+    top: 99.5px;
+    left:0;
+    transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+    font-size: 3rem;
+    font-family: 'Josefin Slab', serif;
+    border: none;
+    background: #e3f4f3;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: .5rem;
+    color: black;
+    transform: rotate(90deg);
+    transform-origin: left bottom;
+    padding-top: 5px;
+    letter-spacing: 1px;
+    height: auto;
+    box-shadow: 2px -2px 4px 1px #d7d7d7;
+}
+
+.toggleBttn:hover{
+    cursor: pointer;
+    transform-origin: left bottom;
+    transform: scaleX(1.1) rotate(90deg);
+}
