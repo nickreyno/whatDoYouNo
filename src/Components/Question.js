@@ -206,7 +206,9 @@ class Question extends Component {
 							? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
 
 						<div className="progressBar">
-							<span style={{ width: `${this.state.questionNumber * 10}%` }}></span>
+							<span 
+							style={{ width: `${this.state.questionNumber * 10}%` }}
+							className="questionSpan"></span>
 						</div>
 
 						{this.state.isLoading ? <Preloader /> : null}

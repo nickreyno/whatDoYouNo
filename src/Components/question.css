@@ -54,7 +54,7 @@ h2 {
     border-radius: 30px;
 }
 
-span {
+.questionSpan {
     position: absolute;
     left: 0.5rem;
     top: 0.5rem;
