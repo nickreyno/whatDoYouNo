@@ -172,39 +172,48 @@ h2{
 
 /* Leaderboard/Dictionary */
 .leaderboard {
-  padding-bottom: 5%;
+  padding: 0 3.5% 2%;
+  background: #e3f4f3;
+  border-radius: 2rem;
+  width: 80%;
+  margin: 0 auto;
 }
 .leaderboardHeader {
-  font-size: 3rem;
+  font-size: 2.7rem;
   padding: 20px;
   letter-spacing: .5rem;
 }
 
-.leaderboardItem,
-.leaderDictionItem {
+.leaderboardList {
+  background: white;
+  padding: 3%;
+  border-radius: 2rem;
+}
+
+.leaderboardItems{
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   font-size: 1.75rem;
   padding: 10px;
-  margin: 10px auto;
-  border: 2px dashed #6056f9;
-  width: 50%;
+  margin: 30px auto;
 }
 
-.leaderDictionItem:nth-child(even),
-.leaderboardItem:nth-child(even) {
-  border: 2px dashed #cfff31;
+.leaderboardItem {
+  width: 100%;
 }
 
-.leaderboardName,
-.leaderboardScore {
-  padding-right: 15px;
+.leaderboardItem:nth-child(2) {
+  text-align: center;
 }
 
-.leaderDictionItem {
-  word-spacing: 10px;
-  text-transform: capitalize;
+.leaderboardItem:nth-child(3) {
+  text-align: right;
 }
+
+.leaderboardSpan {
+  font-weight: bold;
+}
+
 
 /* Preloader */
 .preloader {
