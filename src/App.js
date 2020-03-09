@@ -21,7 +21,8 @@ class App extends Component {
 			timer: "",
 			entries: ["apples", "bleak"],
 			levelSelected: false,
-			leaderBInfo: []
+			leaderBInfo: [],
+			visible: false,
 		};
 	}
 
@@ -49,6 +50,20 @@ class App extends Component {
 				leaderBInfo: stateToBeSet,
 			})
 		})
+	}
+
+	// toggle leaderboard
+
+	handleMouseDown(e){
+		this.toggleLeaderB();
+		console.log("clicked");
+		e.stopPropagation();
+	}
+
+	toggleLeaderB(){
+		this.setState({
+			visible: !this.state.visible
+		});
 	}
 
 	// populate our call with a word from our local array
@@ -122,9 +137,6 @@ class App extends Component {
 					</header>
 
 					<main>
-						
-						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
-						
 
 						<Route path="/questions">
 							<Question words={this.state.words} triggerResults={this.displayResults} />
@@ -145,6 +157,10 @@ class App extends Component {
 							<Dictionary entries={this.state.entries} />
 						</Route>
 					</main>
+
+					<aside>
+						<LeaderBoard leaderBInfo={this.state.leaderBInfo} />
+					</aside>
 					
 					<footer></footer>
 				</div>
