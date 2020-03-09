@@ -6,16 +6,42 @@
 }
 
 .buttonContainer button {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: 'Lato', sans-serif;
     border: 2px solid black;
     background: none;
     letter-spacing: .5rem;
     color: black;
     text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2rem;
+    width: 27%;
+    padding: 0.5rem;
 }
 
 .buttonContainer .levelSelected {
+    background: #6056f9;
+    color: white;
+}
+
+.dictionaryPlease {
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
+    border: 2px solid black;
+    background: none;
+    letter-spacing: .5rem;
+    color: black;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2rem;
+    text-align: center;
+    width: 70%;
+    padding: 0.5rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.dictionaryPlease:hover {
     background: #6056f9;
     color: white;
 }
