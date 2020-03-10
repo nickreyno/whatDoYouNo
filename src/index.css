@@ -103,17 +103,13 @@ h2.headerText {
 /* Buttons */
 .mainButton,
 .wordButton,
-.leaderButton {
+ .resultsButton{
   font-size: 3rem;
   font-family: 'Lato', sans-serif;
   border: 2px solid black;
-  background: none;
+  background: white;
   letter-spacing: .5rem;
   color: black;
-}
-
-.mainButton,
-.wordButton {
   transition: all 0.2s;
   border-radius: 2rem;
   width: 27%;
@@ -138,13 +134,7 @@ h2.headerText {
   transform: scale(1.1, 1.1)
 }
 
-.leaderButton:hover,
-.leaderButton:focus
-{
-  background: #cfff31;
-}
-
-.leaderButton:active,
+.resultsButton:active,
 .mainButton:active,
 .wordButton:active {
   background: #6056f9;
@@ -209,7 +199,7 @@ h2.headerText {
     font-size: 3rem;
     font-family: 'Lato', sans-serif;
     border: 2px solid black;
-    background: none;
+    background: white;
     letter-spacing: .5rem;
     color: black;
     text-transform: uppercase;
@@ -236,7 +226,7 @@ h2.headerText {
   font-size: 3rem;
   font-family: 'Lato', sans-serif;
   border: 2px solid black;
-  background: none;
+  background: white;
   letter-spacing: .5rem;
   color: black;
   text-transform: uppercase;

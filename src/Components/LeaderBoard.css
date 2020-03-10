@@ -51,25 +51,6 @@
     transform: translateX(0vw)
 }
 
-/* General Form */
-.leaderForm {
-	padding: 10px;
-	margin-bottom: 3%;
-	font-size: 2rem;
-}
-
-/* Submit Button */
-.leaderButton {
-	font-size: 2.3rem;
-	border-radius: 2rem;
-	transition: all 0.2s;
-}
-
-.leaderButton:hover {
-	color: white;
-	background: #6056f9;
-	transform: scale(1.1, 1.1);
-}
 
 /* Leaderboard/Dictionary */
 .leaderboard {

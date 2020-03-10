@@ -156,8 +156,11 @@ class App extends Component {
 
 					<main>
 
-						<div className="innerWrapper mainBackground">
+						<div className="innerWrapper">
+							
 							<Route path="/" exact>
+							{/* start of mainBackground */}
+							<div className="mainBackground">
 								<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
 
 								<p className="homophoneDef">
@@ -180,12 +183,18 @@ class App extends Component {
 									<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
 								</div>
 
+								
+
 								{this.state.levelSelected ? (
 									<Link className="mainButton" to="/questions">
 										start game
 									</Link>
 								) : null}
+								{/* end of mainBackground */}
+							</div>
 							</Route>
+
+							
 
 							<ToggleBttn handleMouseDown={this.handleMouseDown} />
 

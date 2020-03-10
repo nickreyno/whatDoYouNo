@@ -50,20 +50,23 @@ class Results extends Component {
 				<form 
 				action="submit" 
 				onSubmit = {this.handleSubmit}
-				className="leaderForm">
+				className="resultsForm">
 					<label 
 					htmlFor="enterName"
-					className="leaderLabelName">
-					Add your name and score to the leaderboard: </label>
+					className="resultsInput">
+					Add your name and score to the leaderboard: 
+					</label>
 					<input 
 					type="text" 
 					id="enterName"
-					className="ResultsInputName"
+					className="resultsInput"
 					value={this.state.userInput}
 					onChange={this.handleNameChange} />
 					<button 
-					type="submit"
-					className="resultsButton">Submit</button>
+					className="resultsButton resultsInput"
+					type="submit">
+					Submit
+					</button>
 
 				</form>
 				{/* end of form */}
