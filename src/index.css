@@ -66,12 +66,13 @@ h1{
   text-transform: uppercase;
 }
 
-h2{
-  font-size: 2rem;
+h2.headerText{
+  font-size: 2.5rem;
   text-align: center;
   font-family: 'Lato', sans-serif;
   padding: 20px;
   letter-spacing: .5rem;
+  text-transform: capitalize;
 
 }
 
@@ -87,12 +88,30 @@ h2{
   color: black;
 }
 
+.mainButton,
+.wordButton {
+  transition: all 0.2s;
+  border-radius: 2rem;
+  width: 27%;
+  padding: 0.5rem;
+}
+
+.mainButton {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+
 .wordButton:hover,
 .wordButton:focus,
 .mainButton:hover,
 .mainButton:focus {
   background: #6056f9;
   color: #e3f4f3;
+  transform: scale(1.1, 1.1)
 }
 
 .leaderButton:hover,
@@ -105,6 +124,29 @@ h2{
 .mainButton:active,
 .wordButton:active {
   background: #6056f9;
+}
+
+.dictionaryPlease {
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
+    border: 2px solid black;
+    background: none;
+    letter-spacing: .5rem;
+    color: black;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2rem;
+    text-align: center;
+    width: 70%;
+    padding: 0.5rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.dictionaryPlease:hover {
+    background: #6056f9;
+    color: white;
+    transform: scale(1.1, 1.1);
 }
 
 .definition {
@@ -120,16 +162,63 @@ h2{
 }
 
 .homophoneDef {
-  font-size: 2rem;
-  letter-spacing: .5rem;
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
   text-align: center;
 }
 
 /* Instructions */
 .instructions {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 3%;
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5rem 0;
+}
+
+.buttonContainer button {
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    border: 2px solid black;
+    background: none;
+    letter-spacing: .5rem;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 2rem;
+}
+
+.buttonContainer .levelSelected {
+    background: #6056f9;
+    color: white;
+}
+
+/* ============ */
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 5rem 0;
+}
+
+.buttonContainer button {
+  font-size: 3rem;
+  font-family: 'Lato', sans-serif;
+  border: 2px solid black;
+  background: none;
+  letter-spacing: .5rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+.buttonContainer .levelSelected {
+  background: #6056f9;
+  color: white;
+}
+/* ======================= */
 
 /* Leaderboard/Results Page Stylings */
 /* General */
@@ -137,9 +226,9 @@ h2{
   text-align: center;
   background: #e3f4f3;
   border-radius: 2rem;
-  margin: 5rem 0 5%;
-
-  font-family: "Lato", sans-serif;
+  margin: 5rem 0;
+  padding-bottom: 5rem;
+  font-family: 'Josefin Slab', serif;
 }
 
 .leaderHeader {
@@ -152,11 +241,33 @@ h2{
 .leaderScore {
   font-size: 2.5rem;
   margin: 3% auto;
-  border: 3px dashed #6056f9;
-  padding: 20px;
+  padding: 2rem;
   width: 50%;
-  /* Not sure what people think of the text shadow */
-  text-shadow: #cfff31 5px 3px;
+  background: white;
+  border-radius: 2rem;
+}
+
+.leaderDictionList {
+  background: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 2rem;
+}
+
+.leaderDictionItem {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  font-weight: bold;
+}
+
+.rightWords {
+  color: #cfff31;
+}
+
+.wrongWords {
+  color: #ff5964;
 }
 
 .score {
@@ -198,7 +309,6 @@ h2{
 
 .leaderboardItems{
   display: flex;
-  /* justify-content: space-between; */
   font-size: 1.75rem;
   padding: 10px;
   margin: 30px auto;

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
-import "./ToggleBttn.css";
+import "./LeaderBoard.css";
 
 class ToggleBttn extends Component {
     render(){
     return(
         <button className="toggleBttn"
-        onMouseDown={this.props.handleMouseDown}>TEST
+        onMouseDown={this.props.handleMouseDown}> Leaderboard
         </button>
         )
     }
