@@ -185,7 +185,7 @@ class Question extends Component {
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}
 				);
-			}, 500);
+			}, 1000);
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
 			wrongWords.push(this.props.words[this.state.questionNumber - 1]);
@@ -207,7 +207,7 @@ class Question extends Component {
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}
 				);
-			}, 500);
+			}, 1000);
 		}
 	};
 
