@@ -96,6 +96,14 @@ h2.headerText{
   padding: 0.5rem;
 }
 
+.mainButton {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
 
 .wordButton:hover,
 .wordButton:focus,
@@ -180,6 +188,7 @@ h2.headerText{
     letter-spacing: .5rem;
     color: black;
     text-transform: uppercase;
+    border-radius: 2rem;
 }
 
 .buttonContainer .levelSelected {
@@ -250,6 +259,15 @@ h2.headerText{
   display: flex;
   justify-content: space-around;
   padding: 1rem 0;
+  font-weight: bold;
+}
+
+.rightWords {
+  color: #cfff31;
+}
+
+.wrongWords {
+  color: #ff5964;
 }
 
 .score {
