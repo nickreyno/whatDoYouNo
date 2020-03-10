@@ -144,12 +144,71 @@ class App extends Component {
 			<Router>
 				<div className="wrapper">
 					<header>
-						<Link to="/">
-							<h1>What Do You No</h1>
-						</Link>
+						<div className="innerWrapper">
+							<Link to="/">
+								<h1>What Do You No</h1>
+							</Link>
+						</div>
 					</header>
 
 					<main>
+<<<<<<< HEAD
+						<div className="innerWrapper">
+							<Route path="/" exact>
+								<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
+
+								<p className="homophoneDef">
+									A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the
+									same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and{" "}
+									<span className="homophoneItalic">too</span> are homophones, along with{" "}
+									<span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.
+								</p>
+
+								<h2 className="instructions">Instructions</h2>
+
+								<p className="homophoneDef">
+									Select your level of difficulty below and click start. Click on the word that matches the definition
+									shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!
+								</p>
+
+								<div ref={this.levelButton} className="buttonContainer">
+									<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
+									<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
+									<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
+								</div>
+
+								{this.state.levelSelected ? (
+									<Link className="mainButton" to="/questions">
+										start game
+									</Link>
+								) : null}
+							</Route>
+
+							<ToggleBttn handleMouseDown={this.handleMouseDown} />
+
+
+							<Route path="/questions">
+								<Question words={this.state.words} triggerResults={this.displayResults} />
+							</Route>
+
+							<Route path="/results">
+								<Results
+									score={this.state.playerScore}
+									dictionaryWords={this.state.dictionary}
+									playerTime={this.state.timer}
+									addToDictionary={this.addToDictionary}
+									rightWords={this.state.rightWords}
+									wrongWords={this.state.wrongWords}
+								/>
+							</Route>
+
+							<Link to="/dictionary" className='dictionaryPlease'>dictionary please</Link>
+
+							<Route path="/dictionary">
+								<Dictionary entries={this.state.entries} />
+							</Route>
+						</div>
+=======
 						<Route path="/" exact>
 							<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
 
@@ -205,17 +264,25 @@ class App extends Component {
 						<Route path="/dictionary">
 							<Dictionary entries={this.state.entries} />
 						</Route>
+>>>>>>> 4332e785525adc089084a17046959f7610445a0a
 					</main>
 
 					<aside>
-						<LeaderBoard
-							leaderBInfo={this.state.leaderBInfo}
-							handleMouseDown={this.handleMouseDown}
-							leaderBVisibility={this.state.visible}
-						/>
+						<div className="innerWrapper">
+							<LeaderBoard
+								leaderBInfo={this.state.leaderBInfo}
+								handleMouseDown={this.handleMouseDown}
+								leaderBVisibility={this.state.visible}
+							/>
+						</div>
 					</aside>
 
-					<footer></footer>
+					<footer>
+						
+						<p>a team GRRR8t game</p>
+
+					</footer>
+					
 				</div>
 			</Router>
 		);
