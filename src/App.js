@@ -18,7 +18,7 @@ class App extends Component {
 		this.state = {
 			words: [],
 			playerScore: "",
-			dictionary: [],
+			// dictionary: [],
 			timer: "",
 			entries: ["blue", "very", "large"],
 			levelSelected: false,
@@ -26,9 +26,11 @@ class App extends Component {
 			visible: false,
 			levelButton: "",
 			rightWords: [],
-			wrongAnswer: [],
+			wrongAnswers: [],
 			wrongWords: [],
-			rightAnswer: [],
+			rightAnswers: [],
+			rightWordsWrongAnswers: [],
+			wrongWordsRightAnswers: [],
 		};
 
 		this.levelButton = React.createRef();
@@ -111,28 +113,41 @@ class App extends Component {
 	};
 
 	// sets state in App to check what question
-	displayResults = (score, timer, words, rightWords, wrongAnswer, wrongWords, rightAnswer) => {
+	displayResults = (score, timer, rightWords, wrongAnswers, wrongWords, rightAnswers) => {
+		console.log(score, timer)
+		console.log(rightWords)
+		console.log(wrongAnswers)
+		console.log(wrongWords)
+		console.log(rightAnswers)
+
+		const rightWordsWrongAnswers = rightWords.concat(wrongAnswers);
+		const wrongWordsRightAnswers = wrongWords.concat(rightAnswers);
+
 		this.setState({
 			playerScore: score,
 			gameOver: true,
-			dictionary: words,
+			// dictionary: words,
 			timer: timer,
 			rightWords,
-			wrongAnswer,
+			wrongAnswers,
 			wrongWords,
-			rightAnswer,
+			rightAnswers,
+			rightWordsWrongAnswers,
+			wrongWordsRightAnswers,
 		});
 	};
 	
 	addToDictionary = (word1, word2) => {
+		console.log(word1)
+		console.log(word2)
 		const entriesToMod = [...this.state.entries];
 
 		entriesToMod.push(word1, word2);
-		
+
 		const uniqueEntries = entriesToMod.filter((item, index, originalArray) => {
 			return originalArray.indexOf(item) === index;
 		});
-		console.log(uniqueEntries);
+		// console.log(uniqueEntries);
 
 		this.setState({
 			entries: uniqueEntries
@@ -190,13 +205,15 @@ class App extends Component {
 						<Route path="/results">
 							<Results
 								score={this.state.playerScore}
-								dictionaryWords={this.state.dictionary}
+								// dictionaryWords={this.state.dictionary}
 								playerTime={this.state.timer}
 								addToDictionary={this.addToDictionary}
 								rightWords={this.state.rightWords}
-								wrongAnswer={this.state.wrongAnswer}
+								wrongAnswers={this.state.wrongAnswers}
 								wrongWords={this.state.wrongWords}
-								rightAnswer={this.state.rightAnswer}
+								rightAnswers={this.state.rightAnswers}
+								rightWordsWrongAnswers={this.state.rightWordsWrongAnswers}
+								wrongWordsRightAnswers={this.state.wrongWordsRightAnswers}
 							/>
 						</Route>
 
