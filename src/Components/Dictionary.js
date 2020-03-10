@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import dictionary from "./dictionary.css";
+import "./dictionary.css";
 
 class Dictionary extends Component {
 	constructor() {
@@ -13,6 +13,7 @@ class Dictionary extends Component {
 		};
 	}
 
+	// on mount make axios call to get definitions
 	componentDidMount() {
 		this.getDefinition(this.props.entries, this.state.iteration);
 	}
@@ -26,7 +27,6 @@ class Dictionary extends Component {
 				md: "dp"
 			}
 		})
-			//------------to make sure if the word has definition-------------//
 			.then(response => {
 				response = response.data;
 				const entriesForModding = [...this.state.entriesFormatted];
@@ -35,6 +35,7 @@ class Dictionary extends Component {
 					def: response[0].defs[0]
 				};
 
+				// logic to separate the 'n / v / adj ' portion from the definition to style it differently
 				currentEntry.def = currentEntry.def.split("\t");
 				currentEntry.def[0] = (currentEntry.def[0] + " ");
 				entriesForModding.push(currentEntry);
