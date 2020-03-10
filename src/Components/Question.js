@@ -107,22 +107,39 @@ class Question extends Component {
 
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
 	handleClick = (theWord) => {
+		const rightWords = [...this.state.rightWords];
+		console.log(rightWords)
+
+		const wrongWords = [...this.state.wrongWords];
+		console.log(wrongWords)
+
 		if (this.state.questionNumber > 9) {
-			this.setState(
-				{
+			if(theWord) {
+				rightWords.push(this.state.correctWord);
+				
+				this.setState({
+					rightWords,
 					gameOver: true,
-					questionNumber: this.state.questionNumber + 1
-				},
-				() => {
+					questionNumber: this.state.questionNumber + 1,
+					rightWords
+				}, () => {
 					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongWords);
-					console.log("string pulled");
-				}
-			);
+				})
+			} else if(!theWord) {
+				wrongWords.push(this.props.words[this.state.questionNumber - 1]);
+
+				this.setState({
+					wrongWords,
+					gameOver: true,
+					questionNumber: this.state.questionNumber + 1,
+					wrongWords
+				}, () => {
+					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongWords);
+				})
+			}
 		} else if (theWord === true) {
-			const rightWords = [...this.state.rightWords];
 
 			rightWords.push(this.state.correctWord);
-			console.log(rightWords)
 
 			this.background.current.classList.toggle('correct');
 
@@ -151,11 +168,8 @@ class Question extends Component {
 
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
-			const wrongWords = [...this.state.wrongWords];
-
 			wrongWords.push(this.props.words[this.state.questionNumber - 1]);
 
-			console.log(wrongWords)
 			this.background.current.classList.toggle('incorrect')
 			setTimeout(() => {
 				this.background.current.classList.toggle('incorrect')
