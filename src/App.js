@@ -18,7 +18,6 @@ class App extends Component {
 		this.state = {
 			words: [],
 			playerScore: "",
-			// dictionary: [],
 			timer: "",
 			entries: [],
 			levelSelected: false,
@@ -30,7 +29,6 @@ class App extends Component {
 			wrongWords: [],
 			rightAnswers: [],
 			rightWordsWrongAnswers: [],
-			wrongWordsRightAnswers: [],
 		};
 
 		this.levelButton = React.createRef();
@@ -114,32 +112,23 @@ class App extends Component {
 
 	// sets state in App to check what question
 	displayResults = (score, timer, rightWords, wrongAnswers, wrongWords, rightAnswers) => {
-		console.log(score, timer)
-		console.log(rightWords)
-		console.log(wrongAnswers)
-		console.log(wrongWords)
-		console.log(rightAnswers)
-
 		const rightWordsWrongAnswers = rightWords.concat(wrongAnswers);
-		const wrongWordsRightAnswers = wrongWords.concat(rightAnswers);
 
 		this.setState({
 			playerScore: score,
 			gameOver: true,
-			// dictionary: words,
 			timer: timer,
 			rightWords,
 			wrongAnswers,
 			wrongWords,
 			rightAnswers,
 			rightWordsWrongAnswers,
-			wrongWordsRightAnswers,
 		});
 	};
 	
 	addToDictionary = (word1, word2) => {
-		console.log(word1)
-		console.log(word2)
+		console.log(word1, word2)
+
 		const entriesToMod = [...this.state.entries];
 
 		entriesToMod.push(word1, word2);
@@ -147,7 +136,6 @@ class App extends Component {
 		const uniqueEntries = entriesToMod.filter((item, index, originalArray) => {
 			return originalArray.indexOf(item) === index;
 		});
-		// console.log(uniqueEntries);
 
 		this.setState({
 			entries: uniqueEntries
@@ -168,7 +156,7 @@ class App extends Component {
 
 					<main>
 
-						<div className="innerWrapper">
+						<div className="innerWrapper mainBackground">
 							<Route path="/" exact>
 								<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
 
@@ -216,8 +204,7 @@ class App extends Component {
 									wrongAnswers={this.state.wrongAnswers}
 									wrongWords={this.state.wrongWords}
 									rightAnswers={this.state.rightAnswers}
-                  rightWordsWrongAnswers={this.state.rightWordsWrongAnswers}
-                  wrongWordsRightAnswers={this.state.wrongWordsRightAnswers}
+									rightWordsWrongAnswers={this.state.rightWordsWrongAnswers}
 								/>
 							</Route>
 
