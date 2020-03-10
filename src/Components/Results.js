@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./firebase.js";
+import "./Results.css";
 
 class Results extends Component {
 	constructor() {
@@ -37,19 +38,12 @@ class Results extends Component {
 	};
 
 	render() {
-		console.log(this.props.dictionaryWords)
-		console.log(this.props.rightWords)
-		console.log(this.props.wrongAnswers)
-		console.log(this.props.wrongWords)
-		console.log(this.props.rightAnswers)
-		console.log(this.props.wrongWordsRightAnswers)
 		return (
-			<div className="leaderDiv">
-				<h3 className="leaderHeader">Great work!</h3>
-					<div className="leaderScore">
-						<h4 className="score">Your Score:{this.props.score}</h4>
+			<div className="resultsCont">
+				<h3 className="resultsHeader">great work!</h3>
+					<div className="resultsScore">
+						<h4>Your Score: {this.props.score}</h4>
 						<h4>Time (in secs): {this.props.playerTime}</h4>
-
 					</div>
 
 				{/* start of form */}
@@ -60,7 +54,7 @@ class Results extends Component {
 					<label 
 					htmlFor="enterName"
 					className="leaderLabelName">
-					Add your name and score to the leaderboard:</label>
+					Add your name and score to the leaderboard: </label>
 					<input 
 					type="text" 
 					id="enterName"
