@@ -37,12 +37,6 @@ class Results extends Component {
 	};
 
 	render() {
-		console.log(this.props.dictionaryWords)
-		console.log(this.props.rightWords)
-		console.log(this.props.wrongAnswers)
-		console.log(this.props.wrongWords)
-		console.log(this.props.rightAnswers)
-		console.log(this.props.wrongWordsRightAnswers)
 		return (
 			<div className="leaderDiv">
 				<h3 className="leaderHeader">Great work!</h3>
@@ -76,15 +70,15 @@ class Results extends Component {
 
 				{/* start of dictionary */}
 				<ul className="leaderDictionList">
-					{this.props.wrongWordsRightAnswers.map((word, i) => {
+					{this.props.rightWordsWrongAnswers.map((word, i) => {
 						return (
 							<li
 								className="leaderDictionItem"
 								key={i}
 								>
 								<span onClick={() => this.props.addToDictionary(this.props.rightWords[i], this.props.wrongAnswers[i])} className='rightWords'>{this.props.rightWords[i]} {this.props.wrongAnswers[i]}</span>
-								
-								<span onClick={() => this.props.addToDictionary(this.props.wrongWords[i], this.props.rightAnswer[i])} className='wrongWords'>{this.props.wrongWords[i]} {this.props.rightAnswers[i]}</span>
+
+								<span onClick={() => this.props.addToDictionary(this.props.wrongWords[i], this.props.rightAnswers[i])} className='wrongWords'>{this.props.wrongWords[i]} {this.props.rightAnswers[i]}</span>
 							</li>
 						)
 					})}
