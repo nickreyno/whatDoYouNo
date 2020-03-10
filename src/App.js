@@ -131,7 +131,7 @@ class App extends Component {
 
 		const entriesToMod = [...this.state.entries];
 
-		entriesToMod.push(word1, word2);
+		entriesToMod.unshift(word1, word2);
 
 		const uniqueEntries = entriesToMod.filter((item, index, originalArray) => {
 			return originalArray.indexOf(item) === index;

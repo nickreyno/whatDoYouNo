@@ -23,7 +23,7 @@ class LeaderBoard extends Component {
 			{this.props.leaderBInfo.map((fbInfo, index) =>{
 					return (
 						<li 
-						key={index.key}
+						key={index}
 						className="leaderboardItems">
 							<p className="leaderboardItem"><span className='leaderboardSpan'>name:</span> {fbInfo.name}</p>
 								<p className="leaderboardItem"><span className='leaderboardSpan'>score:</span> {fbInfo.score}/10</p>
