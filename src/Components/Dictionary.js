@@ -61,6 +61,7 @@ class Dictionary extends Component {
 	};
 
 	render() {
+		console.log(this.props.entries)
 		return (
 			<section className="dictionarySection">
 				<h2>my dictionary</h2>
