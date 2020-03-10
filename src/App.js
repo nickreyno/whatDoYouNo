@@ -248,3 +248,5 @@ class App extends Component {
 }
 
 export default App;
+
+// make the timeout longer (1sec?)----------------//
