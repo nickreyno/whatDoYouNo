@@ -25,7 +25,6 @@ class Question extends Component {
 			wrongWords: [],
 			rightAnswers: [],
 		};
-
 		this.background = React.createRef();
 		this.questionButtons = React.createRef();
 	}
