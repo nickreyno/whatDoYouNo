@@ -37,6 +37,9 @@ class Results extends Component {
 	};
 
 	render() {
+		console.log(this.props.dictionaryWords)
+		console.log(this.props.rightWords)
+		console.log(this.props.wrongWords)
 		return (
 			<div className="leaderDiv">
 				<h3 className="leaderHeader">Great work!</h3>
@@ -79,7 +82,7 @@ class Results extends Component {
 								className="leaderDictionItem"
 								key={i}
 							>
-								<span>{resultWords.word1}</span> <span>{resultWords.word2}</span>
+								<span>{this.props.rightWords[i]}</span> <span>{this.props.wrongWords[i]}</span>
 							</li>
 						);
 					})}

@@ -21,6 +21,8 @@ class Question extends Component {
 			gameOver: false,
 			isLoading: true,
 			error: false,
+			rightWords: [],
+			wrongWords: [],
 		};
 
 		this.background = React.createRef();
@@ -112,11 +114,16 @@ class Question extends Component {
 					questionNumber: this.state.questionNumber + 1
 				},
 				() => {
-					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers);
+					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongWords);
 					console.log("string pulled");
 				}
 			);
 		} else if (theWord === true) {
+			const rightWords = [...this.state.rightWords];
+
+			rightWords.push(this.state.correctWord);
+			console.log(rightWords)
+
 			this.background.current.classList.toggle('correct');
 
 			setTimeout(() => {
@@ -132,7 +139,8 @@ class Question extends Component {
 					{
 						score: this.state.score + 1,
 						questionNumber: this.state.questionNumber + 1,
-						answers: dictionary
+						answers: dictionary,
+						rightWords
 					},
 					() => {
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
@@ -143,7 +151,11 @@ class Question extends Component {
 
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
+			const wrongWords = [...this.state.wrongWords];
 
+			wrongWords.push(this.props.words[this.state.questionNumber - 1]);
+
+			console.log(wrongWords)
 			this.background.current.classList.toggle('incorrect')
 			setTimeout(() => {
 				this.background.current.classList.toggle('incorrect')
@@ -152,12 +164,13 @@ class Question extends Component {
 				dictionary.push({
 					word1: this.props.words[this.state.questionNumber - 1],
 					correct: false,
-					word2: this.state.correctWord
+					word2: this.state.correctWord,
 				});
 				this.setState(
 					{
 						questionNumber: this.state.questionNumber + 1,
-						answers: dictionary
+						answers: dictionary,
+						wrongWords
 					},
 					() => {
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
