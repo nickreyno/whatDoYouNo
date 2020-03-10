@@ -139,6 +139,7 @@ class Question extends Component {
 					wrongWords,
 					rightAnswers
 				}, () => {
+
 					this.props.triggerResults(this.state.score, this.state.timer, this.state.rightWords, this.state.wrongAnswers, this.state.wrongWords, this.state.rightAnswers);
 				})
 			}

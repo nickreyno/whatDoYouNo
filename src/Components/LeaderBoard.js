@@ -16,7 +16,7 @@ class LeaderBoard extends Component {
 		return (
 			<div  
 				onMouseDown={this.props.handleMouseDown} className={`${visibility} leaderBoard`}>
-			<h2 className="leaderboardHeader">leaderboard:</h2>
+			<h2 className="leaderboardHeader">highscores</h2>
 			
 			<ul className="leaderboardList">
 
