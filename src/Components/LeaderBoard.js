@@ -18,7 +18,7 @@ class LeaderBoard extends Component {
 				onMouseDown={this.props.handleMouseDown} className={`${visibility} leaderBoard`}>
 			<h2 className="leaderboardHeader">highscores</h2>
 			
-			<ul className="leaderboardList">
+			<ol className="leaderboardList">
 
 			{this.props.leaderBInfo.map((fbInfo, index) =>{
 					return (
@@ -32,7 +32,7 @@ class LeaderBoard extends Component {
 					)
 				})}
 
-			</ul>
+			</ol>
 		</div>
 		)
 	}
