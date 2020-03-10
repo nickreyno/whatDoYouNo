@@ -1,0 +1,62 @@
+@media(max-width: 850px) {
+    div.resultsScore {
+        width: 60%;
+    }
+
+    .wordButton {
+        width: 40%;
+    }
+}
+
+@media(max-width: 650px) {
+    .buttonContainer button {
+        font-size: 2.2rem;
+    }
+
+    div.resultsScore {
+        width: 70%;
+    }
+
+    .wordButton {
+        font-size: 2.5rem;
+        width: 40%;
+    }
+}
+
+@media(max-width: 500px) {
+    .buttonContainer {
+        flex-direction: column;
+    }
+    .buttonContainer button {
+        font-size: 1.8rem;
+        width: 50%;
+        margin: 0 auto 2rem;
+    }
+
+    div.resultsScore {
+        width: 80%;
+    }
+
+    .questionTitle {
+        padding: 0;
+        font-size: 2.5rem;
+    }
+
+    .wordButton {
+        width: 45%;
+    }
+}
+
+@media(max-width: 400px) {
+    .buttonContainer button {
+        width: 70%;
+    }
+
+    .questionTitle {
+        font-size: 2rem;
+    }
+
+    .wordButton {
+        font-size: 2rem;
+    }
+}
