@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./question.css";
 import axios from "axios";
-import knowledge from "./assets/knowledge.webp"
+import knowledge from "./assets/knowledge.webp";
 import Preloader from "./Preloader.js";
 import { Link } from "react-router-dom";
 
@@ -23,7 +23,7 @@ class Question extends Component {
 			rightWords: [],
 			wrongAnswers: [],
 			wrongWords: [],
-			rightAnswers: [],
+			rightAnswers: []
 		};
 		this.background = React.createRef();
 		this.questionButtons = React.createRef();
@@ -56,10 +56,10 @@ class Question extends Component {
 				response = response.data;
 
 				const wordsWithDefs = response.filter(word => {
-					return word.defs
+					return word.defs;
 				});
 
-				let randomNumberForDefs = 0
+				let randomNumberForDefs = 0;
 
 				if (wordsWithDefs[0].defs.length > 1) {
 					randomNumberForDefs = Math.round(Math.random() * 1);
@@ -69,7 +69,7 @@ class Question extends Component {
 					{
 						definition: wordsWithDefs[0].defs[randomNumberForDefs],
 						correctWord: wordsWithDefs[0].word,
-						isLoading: false,
+						isLoading: false
 					},
 					() => {
 						// ---randomize which button holds the correct answer---//
@@ -80,19 +80,20 @@ class Question extends Component {
 			})
 			.catch(error => {
 				this.setState({
-					error: true,
-				})
+					error: true
+				});
 			});
 
 		///////////////////////////////////////////////////////
 		//------------ still need to work on it--------------///
 		////////////////////////////////////////////////////////
 		this.formatDefinition = () => {
-			// const defToBeFormatted = this.state.definition;
-			// defToBeFormatted = defToBeFormatted.split("\t");
-			// defToBeFormatted[0] = (defToBeFormatted[0] + " ");
-			// 	entriesForModding.push(currentEntry);
-			// 	console.log(entriesForModding);
+			let defToBeFormatted = this.state.definition;
+			defToBeFormatted = defToBeFormatted.split("\t");
+			defToBeFormatted[0] = defToBeFormatted[0] + " ";
+			this.setState({
+				definition: defToBeFormatted
+			});
 		};
 	};
 
@@ -109,7 +110,7 @@ class Question extends Component {
 	};
 
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
-	handleClick = (theWord) => {
+	handleClick = theWord => {
 		const rightWords = [...this.state.rightWords];
 		const wrongAnswers = [...this.state.wrongAnswers];
 
@@ -117,41 +118,60 @@ class Question extends Component {
 		const rightAnswers = [...this.state.rightAnswers];
 
 		if (this.state.questionNumber > 9) {
-			if(theWord) {
+			if (theWord) {
 				rightWords.push(this.state.correctWord);
 				wrongAnswers.push(this.props.words[this.state.questionNumber - 1]);
-				
-				this.setState({
-					gameOver: true,
-					questionNumber: this.state.questionNumber + 1,
-					score: this.state.score + 1,
-					rightWords,
-					wrongAnswers,
-				}, () => {
-					this.props.triggerResults(this.state.score, this.state.timer, this.state.rightWords, this.state.wrongAnswers, this.state.wrongWords, this.state.rightAnswers);
-				})
-			} else if(!theWord) {
+
+				this.setState(
+					{
+						gameOver: true,
+						questionNumber: this.state.questionNumber + 1,
+						score: this.state.score + 1,
+						rightWords,
+						wrongAnswers
+					},
+					() => {
+						this.props.triggerResults(
+							this.state.score,
+							this.state.timer,
+							this.state.rightWords,
+							this.state.wrongAnswers,
+							this.state.wrongWords,
+							this.state.rightAnswers
+						);
+					}
+				);
+			} else if (!theWord) {
 				wrongWords.push(this.props.words[this.state.questionNumber - 1]);
 				rightAnswers.push(this.state.correctWord);
 
-				this.setState({
-					gameOver: true,
-					questionNumber: this.state.questionNumber + 1,
-					wrongWords,
-					rightAnswers
-				}, () => {
-
-					this.props.triggerResults(this.state.score, this.state.timer, this.state.rightWords, this.state.wrongAnswers, this.state.wrongWords, this.state.rightAnswers);
-				})
+				this.setState(
+					{
+						gameOver: true,
+						questionNumber: this.state.questionNumber + 1,
+						wrongWords,
+						rightAnswers
+					},
+					() => {
+						this.props.triggerResults(
+							this.state.score,
+							this.state.timer,
+							this.state.rightWords,
+							this.state.wrongAnswers,
+							this.state.wrongWords,
+							this.state.rightAnswers
+						);
+					}
+				);
 			}
 		} else if (theWord === true) {
 			rightWords.push(this.state.correctWord);
 			wrongAnswers.push(this.props.words[this.state.questionNumber - 1]);
 
-			this.background.current.classList.toggle('correct');
+			this.background.current.classList.toggle("correct");
 
 			setTimeout(() => {
-				this.background.current.classList.toggle('correct');
+				this.background.current.classList.toggle("correct");
 
 				const dictionary = [...this.state.answers];
 				dictionary.push({
@@ -165,44 +185,43 @@ class Question extends Component {
 						questionNumber: this.state.questionNumber + 1,
 						// answers: dictionary,
 						rightWords,
-						wrongAnswers,
+						wrongAnswers
 					},
 					() => {
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}
 				);
-			}, 500)
-
+			}, 500);
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
 			wrongWords.push(this.props.words[this.state.questionNumber - 1]);
 			rightAnswers.push(this.state.correctWord);
 
-			this.background.current.classList.toggle('incorrect')
+			this.background.current.classList.toggle("incorrect");
 
 			setTimeout(() => {
-				this.background.current.classList.toggle('incorrect')
+				this.background.current.classList.toggle("incorrect");
 
 				const dictionary = [...this.state.answers];
 				dictionary.push({
 					word1: this.props.words[this.state.questionNumber - 1],
 					correct: false,
-					word2: this.state.correctWord,
+					word2: this.state.correctWord
 				});
 				this.setState(
 					{
 						questionNumber: this.state.questionNumber + 1,
 						// answers: dictionary,
 						wrongWords,
-						rightAnswers,
+						rightAnswers
 					},
 					() => {
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
 						this.getComparison(this.props.words[this.state.questionNumber - 1]);
 					}
 				);
-			}, 500)
+			}, 500);
 		}
 	};
 
@@ -211,11 +230,11 @@ class Question extends Component {
 		const buttonsReadyForStates = [
 			{
 				word: this.props.words[this.state.questionNumber - 1],
-				answer: false,
+				answer: false
 			},
 			{
 				word: this.state.correctWord,
-				answer: true,
+				answer: true
 			}
 		];
 
@@ -240,59 +259,59 @@ class Question extends Component {
 							<p>{this.state.timer} seconds</p>
 						</div>
 
-						{this.state.questionNumber > 1
-							? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
+						{this.state.questionNumber > 1 ? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
 
 						<div className="progressBar">
-							<span 
-							style={{ width: `${this.state.questionNumber * 10}%` }}
-							className="questionSpan"></span>
+							<span style={{ width: `${this.state.questionNumber * 10}%` }} className="questionSpan"></span>
 						</div>
 
 						{this.state.isLoading ? <Preloader /> : null}
 
-						<p className="definition">{this.state.definition}</p>
+						<p className="definition"><span className="wordType">{this.state.definition[0]} </span>{this.state.definition[1]}</p>
 
 						<div className="buttonParent">
 							{this.state.buttons.length > 0
 								? this.state.buttons.map((button, i) => {
-									return (
-										<button
-											key={i}
-											ref={this.questionButtons}
-											className="wordButton"
-											onClick={() => {
-												this.handleClick(button.answer);
-											}}
-										>
-											{(button.word, button.word)}
-										</button>
-									);
-								})
+										return (
+											<button
+												key={i}
+												ref={this.questionButtons}
+												className="wordButton"
+												onClick={() => {
+													this.handleClick(button.answer);
+												}}
+											>
+												{(button.word, button.word)}
+											</button>
+										);
+								  })
 								: null}
-							{this.state.error ? <div>
-								<p className='errorText'>error retrieving. please play again</p>
-								<Link to='/' className='wordButton'>go back home</Link>
-							</div> : null}
+							{this.state.error ? (
+								<div>
+									<p className="errorText">error retrieving. please play again</p>
+									<Link to="/" className="wordButton">
+										go back home
+									</Link>
+								</div>
+							) : null}
 						</div>
 					</div>
 				) : (
-						<div className="questionBox">
+					<div className="questionBox">
+						<h2 className="questionTitle">Congratulations!</h2>
+						<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage" />
 
-							<h2 className="questionTitle">Congratulations!</h2>
-							<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage" />
+						<div className="buttonParent">
+							<Link to="/" className="wordButton">
+								play again
+							</Link>
 
-							<div className="buttonParent">
-								<Link to='/' className='wordButton'>
-									play again
-								</Link>
-
-								<Link to="/results" className="wordButton">
-									Show Results
-								</Link>
-							</div>
+							<Link to="/results" className="wordButton">
+								Show Results
+							</Link>
 						</div>
-					)}
+					</div>
+				)}
 			</Fragment>
 		);
 	}
