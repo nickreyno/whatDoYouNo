@@ -22,7 +22,9 @@ class Question extends Component {
 			isLoading: true,
 			error: false,
 			rightWords: [],
+			wrongAnswer: [],
 			wrongWords: [],
+			rightAnswer: [],
 		};
 
 		this.background = React.createRef();
@@ -108,38 +110,43 @@ class Question extends Component {
 	//---When button is clicked, check if the answer is true or false and increase the score based on the answer and the question number goes up by 1 on every click---//
 	handleClick = (theWord) => {
 		const rightWords = [...this.state.rightWords];
-		console.log(rightWords)
+		const wrongAnswer = [...this.state.wrongAnswer];
 
 		const wrongWords = [...this.state.wrongWords];
-		console.log(wrongWords)
+		const rightAnswer = [...this.state.rightAnswer];
 
 		if (this.state.questionNumber > 9) {
 			if(theWord) {
 				rightWords.push(this.state.correctWord);
+				wrongAnswer.push(this.props.words[this.state.questionNumber - 1]);
 				
 				this.setState({
 					rightWords,
 					gameOver: true,
 					questionNumber: this.state.questionNumber + 1,
-					rightWords
+					score: this.state.score + 1,
+					rightWords,
+					wrongAnswer
 				}, () => {
-					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongWords);
+					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongAnswer, this.state.wrongWords, this.state.rightAnswer);
 				})
 			} else if(!theWord) {
 				wrongWords.push(this.props.words[this.state.questionNumber - 1]);
+				rightAnswer.push(this.state.correctWord);
 
 				this.setState({
 					wrongWords,
 					gameOver: true,
 					questionNumber: this.state.questionNumber + 1,
-					wrongWords
+					wrongWords,
+					rightAnswer
 				}, () => {
-					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongWords);
+					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongAnswer, this.state.wrongWords, this.state.rightAnswer);
 				})
 			}
 		} else if (theWord === true) {
-
 			rightWords.push(this.state.correctWord);
+			wrongAnswer.push(this.props.words[this.state.questionNumber - 1]);
 
 			this.background.current.classList.toggle('correct');
 
@@ -157,7 +164,8 @@ class Question extends Component {
 						score: this.state.score + 1,
 						questionNumber: this.state.questionNumber + 1,
 						answers: dictionary,
-						rightWords
+						rightWords,
+						wrongAnswer,
 					},
 					() => {
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//
@@ -169,6 +177,7 @@ class Question extends Component {
 		} else {
 			// -----the dictionary variable is to store wrong answers and show them to users at the end of the game-----//
 			wrongWords.push(this.props.words[this.state.questionNumber - 1]);
+			rightAnswer.push(this.state.correctWord);
 
 			this.background.current.classList.toggle('incorrect')
 			setTimeout(() => {
@@ -184,7 +193,8 @@ class Question extends Component {
 					{
 						questionNumber: this.state.questionNumber + 1,
 						answers: dictionary,
-						wrongWords
+						wrongWords,
+						rightAnswer,
 					},
 					() => {
 						// -- once the score and question number are set to the state, compare the value (the question number has to be the number minus 1 because array order starts from 0) --//

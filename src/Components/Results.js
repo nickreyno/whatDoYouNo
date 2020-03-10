@@ -39,7 +39,9 @@ class Results extends Component {
 	render() {
 		console.log(this.props.dictionaryWords)
 		console.log(this.props.rightWords)
+		console.log(this.props.wrongAnswer)
 		console.log(this.props.wrongWords)
+		console.log(this.props.rightAnswer)
 		return (
 			<div className="leaderDiv">
 				<h3 className="leaderHeader">Great work!</h3>
@@ -76,13 +78,12 @@ class Results extends Component {
 					{this.props.dictionaryWords.map((resultWords, i) => {
 						return (
 							<li
-								onClick={() => {
-									this.props.addToDictionary(resultWords.word1, resultWords.word2);
-								}}
 								className="leaderDictionItem"
 								key={i}
 							>
-								<span className='rightWords'>{this.props.rightWords[i]}</span> <span className='wrongWords'>{this.props.wrongWords[i]}</span>
+								<span className='rightWords'>{this.props.rightWords[i]} { this.props.wrongAnswer[i]}</span> 
+
+								<span className='wrongWords'>{this.props.wrongWords[i]} {this.props.rightAnswer[i]}</span>
 							</li>
 						);
 					})}
@@ -96,3 +97,9 @@ class Results extends Component {
 	
 
 export default Results;
+
+
+
+// onClick = {() => {
+// 	this.props.addToDictionary(resultWords.word1, resultWords.word2);
+// }}
