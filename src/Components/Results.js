@@ -58,12 +58,12 @@ class Results extends Component {
 					<input 
 					type="text" 
 					id="enterName"
-					className="leaderInputName"
+					className="ResultsInputName"
 					value={this.state.userInput}
 					onChange={this.handleNameChange} />
 					<button 
 					type="submit"
-					className="leaderButton">Submit</button>
+					className="resultsButton">Submit</button>
 
 				</form>
 				{/* end of form */}
