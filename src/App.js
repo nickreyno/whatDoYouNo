@@ -20,7 +20,7 @@ class App extends Component {
 			playerScore: "",
 			dictionary: [],
 			timer: "",
-			entries: ["blue", "very", "large"],
+			entries: [],
 			levelSelected: false,
 			leaderBInfo: [],
 			visible: false,
