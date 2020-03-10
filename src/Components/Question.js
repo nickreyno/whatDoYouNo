@@ -151,17 +151,10 @@ class Question extends Component {
 			setTimeout(() => {
 				this.background.current.classList.toggle('correct');
 
-				const dictionary = [...this.state.answers];
-				dictionary.push({
-					word1: this.props.words[this.state.questionNumber - 1],
-					correct: true,
-					word2: this.state.correctWord
-				});
 				this.setState(
 					{
 						score: this.state.score + 1,
 						questionNumber: this.state.questionNumber + 1,
-						// answers: dictionary,
 						rightWords,
 						wrongAnswers,
 					},
@@ -182,16 +175,9 @@ class Question extends Component {
 			setTimeout(() => {
 				this.background.current.classList.toggle('incorrect')
 
-				const dictionary = [...this.state.answers];
-				dictionary.push({
-					word1: this.props.words[this.state.questionNumber - 1],
-					correct: false,
-					word2: this.state.correctWord,
-				});
 				this.setState(
 					{
 						questionNumber: this.state.questionNumber + 1,
-						// answers: dictionary,
 						wrongWords,
 						rightAnswers,
 					},
