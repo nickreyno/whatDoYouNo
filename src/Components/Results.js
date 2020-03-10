@@ -78,9 +78,6 @@ class Results extends Component {
 					{this.props.dictionaryWords.map((resultWords, i) => {
 						return (
 							<li
-								onClick={() => {
-									this.props.addToDictionary(resultWords.word1, resultWords.word2);
-								}}
 								className="leaderDictionItem"
 								key={i}
 							>
@@ -100,3 +97,9 @@ class Results extends Component {
 	
 
 export default Results;
+
+
+
+// onClick = {() => {
+// 	this.props.addToDictionary(resultWords.word1, resultWords.word2);
+// }}
