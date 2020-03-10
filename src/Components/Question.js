@@ -88,8 +88,11 @@ class Question extends Component {
 		//------------ still need to work on it--------------///
 		////////////////////////////////////////////////////////
 		this.formatDefinition = () => {
-			const defToBeFormatted = this.state.definition;
-			const endSplice = defToBeFormatted.indexOf("/");
+			// const defToBeFormatted = this.state.definition;
+			// defToBeFormatted = defToBeFormatted.split("\t");
+			// defToBeFormatted[0] = (defToBeFormatted[0] + " ");
+			// 	entriesForModding.push(currentEntry);
+			// 	console.log(entriesForModding);
 		};
 	};
 
