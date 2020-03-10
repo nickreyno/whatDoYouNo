@@ -15,7 +15,14 @@ class Dictionary extends Component {
 
 	// on mount make axios call to get definitions
 	componentDidMount() {
-		this.getDefinition(this.props.entries, this.state.iteration);
+		this.setState(
+			{
+				entries: this.props.entries
+			},
+			() => {
+				this.getDefinition(this.state.entries, this.state.iteration);
+			}
+		);
 	}
 
 	getDefinition = (entries, iteration) => {
@@ -37,7 +44,7 @@ class Dictionary extends Component {
 
 				// logic to separate the 'n / v / adj ' portion from the definition to style it differently
 				currentEntry.def = currentEntry.def.split("\t");
-				currentEntry.def[0] = (currentEntry.def[0] + " ");
+				currentEntry.def[0] = currentEntry.def[0] + " ";
 				entriesForModding.push(currentEntry);
 				console.log(entriesForModding);
 				this.setState(
@@ -46,8 +53,8 @@ class Dictionary extends Component {
 						iteration: this.state.iteration + 1
 					},
 					() => {
-						if (this.state.iteration < this.props.entries.length) {
-							this.getDefinition(this.props.entries, this.state.iteration);
+						if (this.state.iteration < this.state.entries.length) {
+							this.getDefinition(this.state.entries, this.state.iteration);
 						} else {
 							return;
 						}
@@ -57,12 +64,9 @@ class Dictionary extends Component {
 			.catch(error => {
 				console.log(error, "you gooft it");
 			});
-
-		//------------ still need to work on it--------------///
 	};
 
 	render() {
-		console.log(this.props.entries)
 		return (
 			<section className="dictionarySection">
 				<h2>my dictionary</h2>
@@ -70,7 +74,12 @@ class Dictionary extends Component {
 					{this.state.entriesFormatted.map((item, i) => {
 						return (
 							<li key={i}>
-								<h3>{item.word}</h3> <p><span className="wordType">{item.def[0]} </span>{item.def[1]}</p>
+								{" "}
+								<h3>{item.word}</h3>{" "}
+								<p>
+									<span className="wordType">{item.def[0]} </span>
+									{item.def[1]}
+								</p>
 							</li>
 						);
 					})}
