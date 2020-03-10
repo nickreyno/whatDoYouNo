@@ -147,7 +147,8 @@ h2.headerText {
     display: block;
 }
 
-.dictionaryPlease:hover {
+.dictionaryPlease:hover,
+.buttonContainer button:hover {
     background: #6056f9;
     color: white;
     transform: scale(1.1, 1.1);
@@ -192,7 +193,10 @@ h2.headerText {
     letter-spacing: .5rem;
     color: black;
     text-transform: uppercase;
+    transition: all 0.2s;
     border-radius: 2rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
 }
 
 .buttonContainer .levelSelected {
