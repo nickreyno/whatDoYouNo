@@ -4,14 +4,12 @@
     text-align: center;
     background: #e3f4f3;
     border-radius: 2rem;
-    margin: 5rem 0;
-    padding-bottom: 5rem;
     
   }
   
   .resultsHeader {
-    font-size: 3.5rem;
-    padding: 20px;
+    font-size: 5rem;
+    padding: 15px;
     letter-spacing: .3rem;
     font-family: 'Josefin Slab', serif;
     text-transform: capitalize;
@@ -22,11 +20,28 @@
     font-family: 'Lato', sans-serif;
     font-size: 2.5rem;
     margin: 3% auto;
-    padding: 2rem;
-    width: 50%;
+    padding: 5px;
+    width: 40%;
     background: white;
     border-radius: 2rem;
   }
+
+  /* General Form */
+.resultsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	padding: 10px;
+	margin-bottom: 3%;
+  font-size: 2rem;
+  background: white;
+  border-radius: 2rem;
+}
+
+.resultsInput{
+  margin: 10px;
+}
   
   .leaderDictionList {
     background: white;
@@ -54,3 +69,16 @@
   .score {
     font-size: 3rem;
   }
+
+  /* Submit Button */
+.resultsButton {
+	font-size: 2.3rem;
+	border-radius: 2rem;
+	transition: all 0.2s;
+} 
+
+.resultsButton:hover {
+	color: white;
+	background: #6056f9;
+	transform: scale(1.1, 1.1);
+} 
