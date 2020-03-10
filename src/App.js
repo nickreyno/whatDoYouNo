@@ -156,7 +156,7 @@ class App extends Component {
 
 					<main>
 
-						<div className="innerWrapper">
+						<div className="innerWrapper mainBackground">
 							<Route path="/" exact>
 								<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
 
