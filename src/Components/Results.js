@@ -82,7 +82,7 @@ class Results extends Component {
 								className="leaderDictionItem"
 								key={i}
 							>
-								<span>{this.props.rightWords[i]}</span> <span>{this.props.wrongWords[i]}</span>
+								<span className='rightWords'>{this.props.rightWords[i]}</span> <span className='wrongWords'>{this.props.wrongWords[i]}</span>
 							</li>
 						);
 					})}
