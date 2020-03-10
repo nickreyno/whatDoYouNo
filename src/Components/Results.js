@@ -39,12 +39,13 @@ class Results extends Component {
 
 	render() {
 		return (
+			// start of resultsCont
 			<div className="resultsCont">
 				<h3 className="resultsHeader">great work!</h3>
-					<div className="resultsScore">
-						<h4>Your Score: {this.props.score}</h4>
-						<h4>Time (in secs): {this.props.playerTime}</h4>
-					</div>
+				<div className="resultsScore">
+					<h4>Your Score: {this.props.score}</h4>
+					<h4>Time (in secs): {this.props.playerTime}</h4>
+				</div>
 
 				{/* start of form */}
 				<form 
@@ -72,11 +73,12 @@ class Results extends Component {
 				{/* end of form */}
 
 				{/* start of dictionary */}
-				<ul className="leaderDictionList">
+				<ul className="addToDictionList">
+					<h4>add words to your dictionary list</h4>
 					{this.props.rightWordsWrongAnswers.map((word, i) => {
 						return (
 							<li
-								className="leaderDictionItem"
+								className="addToDictionItem"
 								key={i}
 								>
 								<span onClick={() => this.props.addToDictionary(this.props.rightWords[i], this.props.wrongAnswers[i])} className='rightWords'>{this.props.rightWords[i]} {this.props.wrongAnswers[i]}</span>
@@ -87,7 +89,9 @@ class Results extends Component {
 					})}
 				</ul>
 				{/* end of dictionary */}
-</div>
+
+			{/* end of resultsCont */}
+			</div>
 			);
 
 	}

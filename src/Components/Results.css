@@ -4,6 +4,10 @@
     text-align: center;
     background: #e3f4f3;
     border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
     
   }
   
@@ -16,12 +20,13 @@
   }
   
   /* Score Display */
-  .resultsScore {
+  .resultsScore,
+  .addToDictionList {
     font-family: 'Lato', sans-serif;
     font-size: 2.5rem;
     margin: 3% auto;
     padding: 5px;
-    width: 40%;
+    width: 50%;
     background: white;
     border-radius: 2rem;
   }
@@ -37,33 +42,41 @@
   font-size: 2rem;
   background: white;
   border-radius: 2rem;
+  width: 50%;
+  margin: 3% auto;
+  padding: 5px;
 }
 
 .resultsInput{
   margin: 10px;
 }
   
-  .leaderDictionList {
-    background: white;
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 2rem;
-  }
-  
-  .leaderDictionItem {
+  .addToDictionItem {
     font-size: 2rem;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
     padding: 1rem 0;
     font-weight: bold;
+    text-align: center;
+
   }
   
   .rightWords {
-    color: #cfff31;
+    background: #cfff31;
+    padding: 5px 10px;
+    border-radius: 2rem;
   }
   
   .wrongWords {
-    color: #ff5964;
+    background:#ff5964;
+    padding: 5px 10px;
+    border-radius: 2rem;
+  }
+
+  .rightWords:hover,
+  .wrongWords:hover{
+    cursor: pointer;
   }
   
   .score {
