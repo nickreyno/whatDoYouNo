@@ -68,7 +68,11 @@
     text-transform: uppercase;
 }
 
-/* Gif */
+/* Congrats Page */
+
+.questionTitle {
+    font-size: 3rem;
+}
 
 .questionImage {
     width: 65%;

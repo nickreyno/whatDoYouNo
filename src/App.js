@@ -26,7 +26,9 @@ class App extends Component {
 			visible: false,
 			levelButton: "",
 			rightWords: [],
+			wrongAnswer: [],
 			wrongWords: [],
+			rightAnswer: [],
 		};
 
 		this.levelButton = React.createRef();
@@ -109,14 +111,16 @@ class App extends Component {
 	};
 
 	// sets state in App to check what question
-	displayResults = (score, timer, words, rightWords, wrongWords) => {
+	displayResults = (score, timer, words, rightWords, wrongAnswer, wrongWords, rightAnswer) => {
 		this.setState({
 			playerScore: score,
 			gameOver: true,
 			dictionary: words,
 			timer: timer,
 			rightWords,
+			wrongAnswer,
 			wrongWords,
+			rightAnswer,
 		});
 	};
 	
@@ -187,7 +191,9 @@ class App extends Component {
 								playerTime={this.state.timer}
 								addToDictionary={this.addToDictionary}
 								rightWords={this.state.rightWords}
+								wrongAnswer={this.state.wrongAnswer}
 								wrongWords={this.state.wrongWords}
+								rightAnswer={this.state.rightAnswer}
 							/>
 						</Route>
 
