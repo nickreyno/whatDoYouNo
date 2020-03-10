@@ -141,7 +141,7 @@ class Question extends Component {
 					wrongWords,
 					rightAnswer
 				}, () => {
-					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongWords);
+					this.props.triggerResults(this.state.score, this.state.timer, this.state.answers, this.state.rightWords, this.state.wrongAnswer, this.state.wrongWords, this.state.rightAnswer);
 				})
 			}
 		} else if (theWord === true) {
