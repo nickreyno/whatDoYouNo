@@ -278,62 +278,6 @@ h2.headerText {
   font-size: 3rem;
 }
 
-/* General Form */
-.leaderForm {
-  padding: 10px;
-  margin-bottom: 3%;
-  font-size: 2rem;
-}
-
-/* Submit Button */
-.leaderButton{
-  font-size: 2.30rem;
-}
-
-
-/* Leaderboard/Dictionary */
-.leaderboard {
-  padding: 0 3.5% 2%;
-  background: #e3f4f3;
-  border-radius: 2rem;
-  width: 80%;
-  margin: 0 auto;
-}
-.leaderboardHeader {
-  font-size: 2.7rem;
-  padding: 20px;
-  letter-spacing: .5rem;
-}
-
-.leaderboardList {
-  background: white;
-  padding: 3%;
-  border-radius: 2rem;
-}
-
-.leaderboardItems{
-  display: flex;
-  font-size: 1.75rem;
-  padding: 10px;
-  margin: 30px auto;
-}
-
-.leaderboardItem {
-  width: 100%;
-}
-
-.leaderboardItem:nth-child(2) {
-  text-align: center;
-}
-
-.leaderboardItem:nth-child(3) {
-  text-align: right;
-}
-
-.leaderboardSpan {
-  font-weight: bold;
-}
-
 
 /* Preloader */
 .preloader {
