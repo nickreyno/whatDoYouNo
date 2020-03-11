@@ -10,6 +10,7 @@ import library from "./Components/library";
 import firebase from "./Components/firebase.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
 import ToggleBttn from "./Components/ToggleBttn.js";
+import "./Components/mediaQuery.css"
 
 class App extends Component {
 	constructor() {
