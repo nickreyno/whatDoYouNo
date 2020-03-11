@@ -238,21 +238,25 @@ class Question extends Component {
 			<Fragment>
 				{this.state.questionNumber < 11 ? (
 					<div className="questionBox" ref={this.background}>
-						<h2>Question {this.state.questionNumber}</h2>
+						
+						<div className= "questionTextBox">
+							
+							<h2>Question {this.state.questionNumber}</h2>
 
-						<div className="timer">
-							<p>{this.state.timer} seconds</p>
+							<div className="timer">
+								<p>time: {this.state.timer}</p>
+								<p className="scoreCounter">score: {this.state.score}</p>
+							</div>
+
+
 						</div>
-
-						{this.state.questionNumber > 1 ? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
-
-						<div className="progressBar">
-							<span style={{ width: `${this.state.questionNumber * 10}%` }} className="questionSpan"></span>
-						</div>
-
+						
 						{this.state.isLoading ? <Preloader /> : null}
 
-						<p className="definition"><span className="wordType">{this.state.definition[0]} </span>{this.state.definition[1]}</p>
+						<p className="definition">
+							<span className="wordType">{this.state.definition[0]} </span>
+							{this.state.definition[1]}
+						</p>
 
 						<div className="buttonParent">
 							{this.state.buttons.length > 0
@@ -268,6 +272,7 @@ class Question extends Component {
 											>
 												{(button.word, button.word)}
 											</button>
+											
 										);
 								  })
 								: null}
@@ -280,6 +285,9 @@ class Question extends Component {
 								</div>
 							) : null}
 						</div>
+						<div className="progressBar">
+							<span style={{ width: `${this.state.questionNumber * 10}%` }} className="questionSpan"></span>
+						</div>
 					</div>
 				) : (
 					<div className="questionBox">
@@ -288,7 +296,7 @@ class Question extends Component {
 
 						<div className="buttonParent">
 							<Link to="/whatDoYouNo/" className="wordButton">
-								play again
+								Play Again
 							</Link>
 
 							<Link to="/whatDoYouNo/results" className="wordButton">
