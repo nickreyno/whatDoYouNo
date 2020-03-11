@@ -294,13 +294,13 @@ background: #6056f9;
 /* Dictionary */
 .dictionaryPlease {
     border: 2px solid black;
-    background: none;
+    background: white;
     color: black;
-    text-transform: uppercase;
+    text-transform: capitalize;
     transition: all 0.2s;
     border-radius: 2rem;
     text-align: center;
-    width: 70%;
+    width: 30%;
     padding: 0.5rem;
     margin: 0 auto;
     display: block;
@@ -672,4 +672,18 @@ footer {
     background: #6056f9;
     color: white;
     padding: 5px;
+}
+
+
+
+/* nick's new changes */
+.mainButton {
+    text-transform: uppercase;
+}
+
+.dictionarySection .emptyDictionary {
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+    font-family: 'Lato', sans-serif;
 }
