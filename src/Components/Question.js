@@ -295,11 +295,11 @@ class Question extends Component {
 						<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage" />
 
 						<div className="buttonParent">
-							<Link to="/whatDoYouNo/" className="wordButton">
+							<Link to="/whatDoYouNo/" className="wordButton wordButtonCongrats">
 								Play Again
 							</Link>
 
-							<Link to="/whatDoYouNo/results" className="wordButton">
+							<Link to="/whatDoYouNo/results" className="wordButton wordButtonCongrats">
 								Show Results
 							</Link>
 						</div>

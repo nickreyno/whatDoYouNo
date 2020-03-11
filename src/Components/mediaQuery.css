@@ -59,10 +59,6 @@
         width: 70%;
     }
 
-    .wordButton {
-        width: 40%;
-    }
-
     div.resultsScore,
     form.resultsForm,
     div.addToDictionList,
@@ -72,7 +68,19 @@
     }
 }
 
-@media(max-width: 650px) {
+@media(max-width: 750px) {
+    .wordButton {
+        width: 45%;
+    }
+}
+
+@media(max-width: 670px) {
+    .wordButton {
+        font-size: 2.75rem;
+    }
+}
+
+@media(max-width: 655px) {
 
     h1 {
         font-size: 3.2rem;
@@ -83,8 +91,7 @@
     }
 
     .innerWrapper {
-        width: 100%;
-        border-radius: 0;
+        width: 85%;
     }
 
     .buttonContainer button {
@@ -94,6 +101,10 @@
     .wordButton {
         font-size: 2.5rem;
         width: 40%;
+    }
+    
+    .wordButtonCongrats.wordButton {
+        width: 45%;
     }
 
     div.resultsScore,
@@ -109,9 +120,7 @@
     }
 
     .questionBox{
-        padding: 45px;  
-        border-radius: 0;
-
+        padding: 45px;
     }
 
     .mainButton{
@@ -123,15 +132,26 @@
         width: 100%;
     }
 
-    .wordButton {
-        width: 48%;
+}
+
+@media(max-width: 590px) {
+    .wordButtonCongrats.wordButton {
+        font-size: 1.95rem;
+        width: 47%;
+
     }
 }
 
 
 @media(max-width: 500px) {
-    main{
-        background-color: #e3f4f3;
+    
+    .innerWrapper {
+        width: 80%;
+        margin-top: 5%;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
     }
     .buttonParent {
         flex-direction: column;
@@ -187,12 +207,19 @@
         margin-top: 0;
     }
 
+    .wordButtonCongrats.wordButton {
+        margin-bottom: 10px;
+    }
 
+    .questionBox h2 {
+        font-size: 2.5rem;
+    }
 }
 
 @media(max-width: 428px) {
-    h1 {
-        font-size: 2.5rem;
+    
+    .questionBox h2 {
+        font-size: 2rem;
     }
 
     h3.resultsHeader {
@@ -221,8 +248,12 @@
     }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 395px) {
     .questionBox h2 {
-        font-size: 2.75rem;
+        font-size: 1.5rem;
+    }
+
+    .wordButtonCongrats.wordButton {
+        width: 50%;
     }
 }
