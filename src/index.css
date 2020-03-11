@@ -245,6 +245,14 @@ background: #6056f9;
     font-size: 4rem;
 }
 
+.questionTextBox{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+}
 .questionBox.correct {
     background-color: #cfff31;
     pointer-events: none;
@@ -270,21 +278,21 @@ background: #6056f9;
 /* Score and Timer Display */
 .scoreCounter,
 .timer {
-    top:2.5rem;
-    position: absolute;
+    /* top:2.5rem;
+    position: absolute; */
     font-size: 2.5rem;
     text-transform: capitalize;
 }
 
 /* Score Counter */
 .scoreCounter {
-    align-self: flex-end;
-    top: 5rem;
+    /* align-self: flex-end; */
+    /* top: 5rem; */
 }
 
 /* Timer */
 .timer {
-    align-self: flex-end;
+    /* align-self: flex-end; */
 }
 
 /* Progress Bar */
@@ -699,7 +707,6 @@ footer {
 .goHome {
     width: 150px;
     font-size: 1.8rem;
-    position: absolute;
     left: 2.5rem;
     top: 2.5rem;
 

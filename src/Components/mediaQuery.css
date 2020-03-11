@@ -2,13 +2,6 @@
     .leaderBoard {
         width: 50%;
     }
-
-    div.resultsScore,
-    form.resultsForm,
-    div.addToDictionList,
-    .show.leaderBoard {
-        width: 65%;
-    }
 }
 
 @media(max-width: 850px) {
@@ -21,7 +14,7 @@
     }
 
     .questionBox h2 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .timer {
@@ -43,9 +36,9 @@
 
     div.resultsScore,
     form.resultsForm,
-    div.addToDictionList,
+    ul.addToDictionList,
     .show.leaderBoard {
-        width: 75%;
+        width: 65%;
     }
 }
 
@@ -73,7 +66,7 @@
 
     div.resultsScore,
     form.resultsForm,
-    div.addToDictionList,
+    ul.addToDictionList,
     .show.leaderBoard {
         width: 80%;
     }
@@ -118,7 +111,7 @@
 
     div.resultsScore,
     form.resultsForm,
-    div.addToDictionList {
+    ul.addToDictionList {
         width: 90%;
     }
 
