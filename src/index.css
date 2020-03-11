@@ -35,13 +35,36 @@ html{
 }
 
 /* Font Styles */
-h1 {
+h1,
+.dictionarySection h2,
+.leaderboardHeader {
+font-family: 'Josefin Slab', serif;
+text-align: center;
+}
+
+h2.headerText,
+.leaderBoard:after,
+.toggleBttn,
+.resultsHeader {
     font-family: 'Josefin Slab', serif;
+}
+
+.mainButton,
+.wordButton,
+.resultsButton,
+.buttonContainer button,
+.preloader,
+footer {
+    font-family: 'Lato', sans-serif;
     text-align: center;
 }
 
-h2.headerText {
-    font-family: 'Josefin Slab', serif;
+.questionTitle,
+.definition,
+.dictionaryPlease,
+.resultsScore,
+.addToDictionList {
+    font-family: 'Lato', sans-serif;
 }
 
 /* Wrappers */
@@ -144,7 +167,6 @@ text-transform: capitalize;
 .wordButton,
 .resultsButton{
 font-size: 3rem;
-font-family: 'Lato', sans-serif;
 border: 2px solid black;
 background: white;
 letter-spacing: .5rem;
@@ -153,7 +175,6 @@ transition: all 0.2s;
 border-radius: 2rem;
 width: 27%;
 padding: 0.5rem;
-text-align: center;
 }
 
 .mainButton {
@@ -195,7 +216,6 @@ background: #6056f9;
 
 .buttonContainer button {
     font-size: 3rem;
-    font-family: 'Lato', sans-serif;
     border: 2px solid black;
     background: white;
     letter-spacing: .5rem;
@@ -203,7 +223,6 @@ background: #6056f9;
     text-transform: uppercase;
     transition: all 0.2s;
     border-radius: 2rem;
-    text-align: center;
     padding: 0.5rem 1rem;
 }
 
@@ -237,11 +256,6 @@ background: #6056f9;
     border-radius: 2rem;
     padding: 1rem;
     transition: width 0.5s ease;
-}
-
-/* Question Title */
-.questionTitle {
-    font-family: 'Lato', sans-serif;
 }
 
 /* Score and Timer Display */
@@ -296,11 +310,64 @@ background: #6056f9;
     min-height: 60vh;
 }
 
+/* Dictionary Title Text */
+
+.dictionarySection h2{
+    font-size: 4rem;
+    text-transform: capitalize;
+    padding-top: 2%;
+}
+
+.dictionarySection h3 {
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin: 5px 0;
+}
+
+/* Dictionary */
+.dictionarySection ul {
+    background: #fafafa;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dictionarySection li {
+    position: relative;
+    width: calc(40% - 15px);
+}
+.dictionarySection li:nth-of-type(odd){
+    margin: 15px 15px 15px 10%;
+}
+
+.dictionarySection li:nth-of-type(even){
+margin: 15px 10% 15px 15px;
+}
+
+.dictionarySection ul:last-child {
+    align-self: flex-start;
+}
+
+.dictionarySection p {
+    font-size: 1.6rem;
+	
+    position: relative;
+}
+
+.wordType {
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+}
+
 /* Dictionary and Definitions */
 .definition,
 .dictionaryPlease {
     font-size: 2.5rem;
-    font-family: 'Lato', sans-serif;
     letter-spacing: .5rem;
 }
 
@@ -314,12 +381,276 @@ background: #6056f9;
     margin: 0 auto; 
 }
 
-/* Preloader */
-.preloader {
+/* Leaderboard Title */
+.leaderBoard h2 {
+    position: relative;
+}
+
+.leaderboardHeader {
+    font-size: 2.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+/* Leaderboard */
+.leaderBoard {
+    position: fixed;
+    width: 35vw;
+        top: 124.5px;
+    height: calc(100vh - 249.5px);
+    left: 0;
+    transition: all 0.3s cubic-bezier(0, 0.52, 0, 1);
+    z-index: 1000;
+    background: #e3f4f3;
+    padding: 20px;
+    border-radius: 0 0 20px;
+    box-shadow: 2px 2px 4px 1px #d7d7d7;
+}
+    .leaderBoard:after {
+    /* content: "Leaderboard"; */
+    content: "Close";
+    position: absolute;
+    /* right: -179px; */
+    right: -78px;
+    top: -35.5px;
+    font-size: 3rem;
+    border: none;
+    background: #e3f4f3;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: 0.5rem;
+    color: black;
+    transform: rotate(90deg);
+    transform-origin: left bottom;
+    padding: 5px 5px 0;
+    letter-spacing: 1px;
+    box-shadow: 2px -4px 4px 1px #d7d7d7;
+}
+
+/* Leaderboard List */
+.leaderBoard ol {
+    border-radius: 10px;
+    overflow-y: scroll;
+    height: 55vh;
+    box-shadow: inset 0 0 4px grey;
+}
+
+.leaderboardList {
+    background: white;
+    padding: 3%;
+    border-radius: 2rem;
+    list-style-type: decimal;
+}
+
+.leaderboardItems {
+    display: flex;
+    font-size: 1.75rem;
+    padding: 10px;
+    margin: 5px auto;
+    position: relative;
+}
+
+.leaderboardItems:not(:last-of-type):after {
+    content: " ";
+    width: 80%;
+    border-bottom: 4px double #e3f4f3;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+
+}
+
+.leaderboardItems p {
+    text-transform: capitalize;
+}
+
+.leaderboardItem {
+    width: 100%;
+}
+
+.leaderboardItem:nth-child(2) {
     text-align: center;
+}
+
+.leaderboardItem:nth-child(3) {
+    text-align: right;
+}
+
+.leaderboardSpan {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Leaderboard Hide/Show */
+.leaderBoard.hide {
+    transform: translateX(-100vw)
+}
+
+.leaderBoard.show {
+    transform: translateX(0vw)
+}
+
+
+/* Leaderboard Hide/Show Toggle Button*/
+.toggleBttn {
+    position: fixed;
+    top: 99.5px;
+    left: 0;
+    transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+    font-size: 3rem;
+    border: none;
+    background: #e3f4f3;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: 0.5rem;
+    color: black;
+    transform: rotate(90deg);
+    transform-origin: left bottom;
+    padding-top: 5px;
+    letter-spacing: 1px;
+    height: auto;
+    box-shadow: 2px -2px 4px 1px #d7d7d7;
+}
+
+.toggleBttn:hover {
+    cursor: pointer;
+    transform-origin: left bottom;
+    transform: scaleX(1.1) rotate(90deg);
+}
+
+.buttonContainer button:hover {
+    transform: scale(1.1);
+}
+
+/* Results Page General */
+.resultsCont {
+    text-align: center;
+    background: #e3f4f3;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+/* Results Page Header */
+.resultsHeader {
+    font-size: 5rem;
+    padding: 15px;
+    letter-spacing: 0.3rem;
+    text-transform: capitalize;
+}
+
+/* Results Page Score Display */
+.resultsScore,
+.addToDictionList {
+font-size: 2.5rem;
+margin: 3% auto;
+padding: 5px;
+width: 50%;
+background: white;
+border-radius: 2rem;
+}
+
+/* Leaderboard Form */
+.resultsForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 3%;
+    font-size: 2rem;
+    background: white;
+    border-radius: 2rem;
+    width: 50%;
+    margin: 3% auto;
+    padding: 5px;
+}
+
+.resultsInput {
+    margin: 10px;
+    line-height: 2.5rem;
+}
+    
+.addToDictionList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+    
+.rightWordsList,
+.wrongWordsList {
+    width: calc(50% - 10px);
+}
+
+.addToDictionItem {
+    width: 100%;
+    margin: 10px 0;
     font-size: 2rem;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+}
+
+.addToDictionItem span {
+    font-weight: bold;
+    margin: 0 8px;
+}
+
+.addToDictionList h3 {
+    text-transform: capitalize;
+    font-weight: normal;
+    width: 100%;
+}
+
+.addToDictionList h4 {
+font-weight: normal;
+text-transform: capitalize;
+width: calc(50% - 10px);
+margin: 10px 0px;
+text-decoration: underline;
+}
+
+.rightWords,
+.wrongWords {
+display: flex;
+justify-content: center;
+text-align: justify;
+background: #cfff31;
+padding: 5px 10px;
+border-radius: 2rem;
+text-transform: capitalize;
+box-shadow: 2px 2px 4px #8a9695, inset 0 0 0 4px #e3f4f3;
+}
+
+.wrongWords {
+background: #ff5964;
+}
+
+.rightWords:hover,
+.wrongWords:hover {
+cursor: pointer;
+box-shadow: 2px 2px 4px #7c8786, inset 0 0 0 4px white;
+}
+
+.score {
+font-size: 3rem;
+}
+
+/* Submit Button */
+.resultsButton {
+font-size: 2.3rem;
+border-radius: 2rem;
+transition: all 0.2s;
+}
+
+.resultsButton:hover {
+color: white;
+background: #6056f9;
+transform: scale(1.1, 1.1);
+}
+
+/* Preloader */
+.preloader {
+    font-size: 2rem;
     padding: 20px;
     letter-spacing: .5rem;
 }
@@ -336,8 +667,6 @@ footer {
     background: #6056f9;
     color: white;
     padding: 5px;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
 }
 
 

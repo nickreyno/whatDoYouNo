@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import firebase from "./firebase.js";
-import "./Results.css";
 
 class Results extends Component {
 	constructor() {
