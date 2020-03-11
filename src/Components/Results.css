@@ -19,17 +19,17 @@
     text-transform: capitalize;
   }
   
-  /* Score Display */
-  .resultsScore,
-  .addToDictionList {
-    font-family: 'Lato', sans-serif;
-    font-size: 2.5rem;
-    margin: 3% auto;
-    padding: 5px;
-    width: 50%;
-    background: white;
-    border-radius: 2rem;
-  }
+/* Score Display */
+.resultsScore,
+.addToDictionList {
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  margin: 3% auto;
+  padding: 5px;
+  width: 50%;
+  background: white;
+  border-radius: 2rem;
+}
 
   /* General Form */
 .resultsForm {
@@ -49,18 +49,18 @@
 
 .resultsInput{
   margin: 10px;
+  line-height: 2.5rem;
 }
   
-  .addToDictionItem {
-    font-size: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    padding: 1rem 0;
-    font-weight: bold;
-    text-align: center;
-
-  }
+.addToDictionItem {
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 1rem 0;
+  font-weight: bold;
+  text-align: center;
+}
   
   .rightWords {
     background: #cfff31;
@@ -87,8 +87,9 @@
 .resultsButton {
 	font-size: 2.3rem;
 	border-radius: 2rem;
-	transition: all 0.2s;
-} 
+  transition: all 0.2s;
+  width: 40%;
+}
 
 .resultsButton:hover {
 	color: white;

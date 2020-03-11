@@ -68,7 +68,6 @@ class Results extends Component {
 					type="submit">
 					Submit
 					</button>
-
 				</form>
 				{/* end of form */}
 
@@ -80,7 +79,7 @@ class Results extends Component {
 							<li
 								className="addToDictionItem"
 								key={i}
-								>
+							>
 								<span onClick={() => this.props.addToDictionary(this.props.rightWords[i], this.props.wrongAnswers[i])} className='rightWords'>{this.props.rightWords[i]} {this.props.wrongAnswers[i]}</span>
 
 								<span onClick={() => this.props.addToDictionary(this.props.wrongWords[i], this.props.rightAnswers[i])} className='wrongWords'>{this.props.wrongWords[i]} {this.props.rightAnswers[i]}</span>
