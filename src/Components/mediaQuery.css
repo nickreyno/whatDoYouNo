@@ -76,7 +76,7 @@
     }
 
     .innerWrapper {
-        width: 100%;
+        width: 95%;
     }
 
     .buttonContainer button {
@@ -178,5 +178,11 @@
 
     .questionImage {
         width: 100%;
+    }
+}
+
+@media(max-width: 400px) {
+    .questionBox h2 {
+        font-size: 2.75rem;
     }
 }
