@@ -290,7 +290,7 @@ class Question extends Component {
 						</div>
 					</div>
 				) : (
-					<div className="questionBox">
+					<div className="questionBox congrats">
 						<h2 className="questionTitle">Congratulations!</h2>
 						<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage" />
 

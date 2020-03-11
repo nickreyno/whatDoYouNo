@@ -77,7 +77,12 @@
 
 	.dictionarySection li:nth-of-type(even) {
 		margin: 15px 7% 15px 15px;
-	}
+    }
+    
+    .addToDictionItem {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (max-width: 750px) {
@@ -106,7 +111,7 @@
 		padding: 10px 40px;
 	}
 
-	.innerWrapper {
+	div .innerWrapper {
 		width: 100%;
 		border-radius: 0;
 	}
@@ -134,7 +139,8 @@
 
 	.questionBox {
 		padding: 45px;
-		border-radius: 0;
+        border-radius: 0;
+        width: 100%;
 	}
 
 	.progressBar {
@@ -237,11 +243,6 @@
 }
 
 @media (max-width: 500px) {
-	/* check */
-	/* .innerWrapper {
-        width: 80%;
-        margin-top: 5%;
-    } */
 
 	h1 {
 		font-size: 2.5rem;
@@ -252,14 +253,14 @@
 	}
 
 	.dictionarySection li:nth-of-type(odd) {
-		width: calc(40% - 10px);
-		margin: 10px 15px 15px 7%;
+        margin: 15px auto;
+        width: 70%;
 	}
 
 	.dictionarySection li:nth-of-type(even) {
-		width: calc(40% - 10px);
-		margin: 15px 7% 15px 10px;
-	}
+        margin: 15px auto;
+        width: 70%;
+    }
 	header {
 		margin: 0;
 	}
@@ -317,7 +318,8 @@
 	}
 
 	.questionBox {
-		margin-top: 0;
+        margin-top: 0;
+        height: calc(100vh - 94px);
 	}
 
 	.buttonContainer {
@@ -327,7 +329,8 @@
 	}
 
 	.buttonContainer button {
-		margin: 10px;
+        margin: 10px;
+        width:70%;
 	}
 
 	.instructions {
@@ -346,7 +349,7 @@
 	}
 
 	.questionBox h2 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 	}
 
 	h3.resultsHeader {
@@ -376,15 +379,25 @@
 }
 
 @media (max-width: 400px) {
-	.questionBox h2 {
-		font-size: 2.75rem;
-	}
 
-	.questionBox h2 {
-		font-size: 1.5rem;
+	.questionBox.congrats h2 {
+        margin-bottom: 10px;
 	}
 
 	.wordButtonCongrats.wordButton {
 		width: 50%;
 	}
+}
+
+@media (max-width: 360px) {
+    .dictionarySection h2 {
+        font-size: 3rem;
+    }
+    .definition {
+        font-size: 1.8rem;
+    }
+
+    .timer {
+        padding-top: 0;
+    }
 }
