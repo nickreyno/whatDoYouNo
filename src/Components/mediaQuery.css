@@ -36,7 +36,7 @@
 
     div.resultsScore,
     form.resultsForm,
-    ul.addToDictionList,
+    div.addToDictionList,
     .show.leaderBoard {
         width: 65%;
     }
@@ -66,7 +66,7 @@
 
     div.resultsScore,
     form.resultsForm,
-    ul.addToDictionList,
+    div.addToDictionList,
     .show.leaderBoard {
         width: 80%;
     }
@@ -111,7 +111,7 @@
 
     div.resultsScore,
     form.resultsForm,
-    ul.addToDictionList {
+    div.addToDictionList {
         width: 90%;
     }
 

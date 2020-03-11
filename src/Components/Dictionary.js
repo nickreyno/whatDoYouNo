@@ -69,20 +69,23 @@ class Dictionary extends Component {
 		return (
 			<section className="dictionarySection">
 				<h2>my dictionary</h2>
-				<ul>
-					{this.state.entriesFormatted.map((item, i) => {
-						return (
-							<li key={i}>
-								{" "}
-								<h3>{item.word}</h3>{" "}
-								<p>
-									<span className="wordType">{item.def[0]} </span>
-									{item.def[1]}
-								</p>
-							</li>
-						);
-					})}
-				</ul>
+				{this.state.entriesFormatted.length > 0 ? (
+					<ul>
+						{this.state.entriesFormatted.map((item, i) => {
+							return (
+								<li key={i}>
+									<h3>{item.word}</h3>
+									<p>
+										<span className="wordType">{item.def[0]} </span>
+										{item.def[1]}
+									</p>
+								</li>
+							);
+						})}
+					</ul>
+				) : (
+						<p className="emptyDictionary">Add words from the results page to see their definitions displayed here!</p>
+				)}
 			</section>
 		);
 	}

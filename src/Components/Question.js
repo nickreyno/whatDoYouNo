@@ -274,7 +274,7 @@ class Question extends Component {
 							{this.state.error ? (
 								<div>
 									<p className="errorText">error retrieving. please play again</p>
-									<Link to="/" className="wordButton">
+									<Link to="/whatDoYouNo/" className="wordButton">
 										go back home
 									</Link>
 								</div>
@@ -287,11 +287,11 @@ class Question extends Component {
 						<img src={knowledge} alt="Shooting star reading 'the more you know'" className="questionImage" />
 
 						<div className="buttonParent">
-							<Link to="/" className="wordButton">
+							<Link to="/whatDoYouNo/" className="wordButton">
 								play again
 							</Link>
 
-							<Link to="/results" className="wordButton">
+							<Link to="/whatDoYouNo/results" className="wordButton">
 								Show Results
 							</Link>
 						</div>
