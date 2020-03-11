@@ -293,7 +293,7 @@ class Question extends Component {
 
 						<div className="buttonParent">
 							<Link to="/whatDoYouNo/" className="wordButton">
-								play again
+								Play Again
 							</Link>
 
 							<Link to="/whatDoYouNo/results" className="wordButton">
