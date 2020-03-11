@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/whatDoYouNo/static/css/main.3eb0b457.chunk.css",
+    "main.js": "/whatDoYouNo/static/js/main.fe758e98.chunk.js",
+    "main.js.map": "/whatDoYouNo/static/js/main.fe758e98.chunk.js.map",
+    "runtime-main.js": "/whatDoYouNo/static/js/runtime-main.8933c4c1.js",
+    "runtime-main.js.map": "/whatDoYouNo/static/js/runtime-main.8933c4c1.js.map",
+    "static/js/2.ed948360.chunk.js": "/whatDoYouNo/static/js/2.ed948360.chunk.js",
+    "static/js/2.ed948360.chunk.js.map": "/whatDoYouNo/static/js/2.ed948360.chunk.js.map",
+    "index.html": "/whatDoYouNo/index.html",
+    "precache-manifest.2a6358062fe0400edea8097ba1bdb25e.js": "/whatDoYouNo/precache-manifest.2a6358062fe0400edea8097ba1bdb25e.js",
+    "service-worker.js": "/whatDoYouNo/service-worker.js",
+    "static/css/main.3eb0b457.chunk.css.map": "/whatDoYouNo/static/css/main.3eb0b457.chunk.css.map",
+    "static/js/2.ed948360.chunk.js.LICENSE.txt": "/whatDoYouNo/static/js/2.ed948360.chunk.js.LICENSE.txt",
+    "static/media/knowledge.webp": "/whatDoYouNo/static/media/knowledge.9f3db455.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8933c4c1.js",
+    "static/js/2.ed948360.chunk.js",
+    "static/css/main.3eb0b457.chunk.css",
+    "static/js/main.fe758e98.chunk.js"
+  ]
+}
