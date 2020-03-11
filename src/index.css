@@ -377,12 +377,13 @@ margin: 15px 10% 15px 15px;
 }
 
 /* Congrats Page */
-/* .questionTitle {
+.questionTitle {
     font-size: 3rem;
-} */
+    padding-top: 0;
+}
 
 .questionImage {
-    width: 65%;
+    width: 45%;
     margin: 0 auto; 
 }
 
