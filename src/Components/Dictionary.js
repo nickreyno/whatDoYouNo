@@ -27,7 +27,7 @@ class Dictionary extends Component {
 
 	getDefinition = (entries, iteration) => {
 		axios({
-			url: `http://api.datamuse.com/words?`,
+			url: `https://api.datamuse.com/words?`,
 			method: "GET",
 			params: {
 				sp: entries[iteration],

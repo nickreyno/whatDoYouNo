@@ -41,7 +41,7 @@ class Question extends Component {
 	//////////////////////////////////////////
 	getComparison = chosenWord => {
 		axios({
-			url: `http://api.datamuse.com/words?`,
+			url: `https://api.datamuse.com/words?`,
 			method: "GET",
 			params: {
 				rel_hom: chosenWord,
