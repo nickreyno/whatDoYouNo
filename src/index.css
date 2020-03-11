@@ -49,6 +49,10 @@ h2.headerText,
     font-family: 'Josefin Slab', serif;
 }
 
+h2.headerText {
+    line-height: 3.3rem;
+}
+
 .mainButton,
 .wordButton,
 .resultsButton,
@@ -65,6 +69,10 @@ footer {
 .resultsScore,
 .addToDictionList {
     font-family: 'Lato', sans-serif;
+}
+
+a.dictionaryPlease {
+    width: 50%;
 }
 
 /* Wrappers */
@@ -132,6 +140,7 @@ text-transform: capitalize;
     font-size: 1.5rem;
     letter-spacing: .2rem;
     text-align: center;
+    line-height: 2.5rem;
 }
 
 /* Main, Questions, and Results Background */
@@ -163,7 +172,7 @@ text-transform: capitalize;
 /* Instructions */
 .instructions {
     font-size: 2rem;
-    margin: 3% 0 2% 0;
+    margin: 5rem 0 2rem 0;
 }
 
 /* Buttons */
@@ -388,7 +397,7 @@ margin: 15px 10% 15px 15px;
 }
 
 .questionImage {
-    width: 45%;
+    width: 44%;
     margin: 0 auto; 
 }
 
