@@ -208,6 +208,11 @@ background: #6056f9;
     margin: 5rem 0;
 }
 
+.buttonContainer .levelSelected {
+    background: #6056f9;
+    color: white;
+}
+
 .buttonParent {
     display: flex;
     justify-content: space-evenly;
@@ -668,14 +673,3 @@ footer {
     color: white;
     padding: 5px;
 }
-
-
-
-
-
-
-
-/* .buttonContainer .levelSelected {
-    background: #6056f9;
-    color: white;
-} */
