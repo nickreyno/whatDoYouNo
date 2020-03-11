@@ -119,6 +119,7 @@
 	font-size: 2.3rem;
 	border-radius: 2rem;
 	transition: all 0.2s;
+	width: 40%;
 }
 
 .resultsButton:hover {
