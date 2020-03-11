@@ -45,7 +45,8 @@ text-align: center;
 h2.headerText,
 .leaderBoard:after,
 .toggleBttn,
-.resultsHeader {
+.resultsHeader,
+.instructions {
     font-family: 'Josefin Slab', serif;
 }
 

@@ -90,17 +90,24 @@
         font-size: 4rem;
     }
 
+    h2.headerText,
+    .homophoneDef{
+        padding: 10px 40px
+    }
+
     .innerWrapper {
         width: 85%;
     }
 
     .buttonContainer button {
         font-size: 2.2rem;
+       
     }
 
     .wordButton {
         font-size: 2.5rem;
         width: 40%;
+        margin: 20px;
     }
     
     .wordButtonCongrats.wordButton {
@@ -121,10 +128,6 @@
 
     .questionBox{
         padding: 45px;
-    }
-
-    .mainButton{
-        position: absolute;
     }
 
     .progressBar{
@@ -209,6 +212,19 @@
 
     .wordButtonCongrats.wordButton {
         margin-bottom: 10px;
+
+    .buttonContainer{
+        flex-direction: column;
+        align-items: center;
+        margin: 10px auto;
+    }
+
+    .buttonContainer button{
+        margin: 10px;
+    }
+
+    .instructions{
+        margin: 20px;
     }
 
     .questionBox h2 {
