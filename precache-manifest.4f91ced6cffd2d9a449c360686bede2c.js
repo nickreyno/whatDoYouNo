@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "76115859c9ecc0cc269b2b08090d7bc4",
+    "revision": "03aad744741ffa14ac1b45e5e1b970d8",
     "url": "/whatDoYouNo/index.html"
   },
   {
-    "revision": "7fa3274c0afbdb3ba401",
+    "revision": "c8779fee556c3d8a2c86",
     "url": "/whatDoYouNo/static/css/main.2b3f49d5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/whatDoYouNo/static/js/2.7352e4dd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7fa3274c0afbdb3ba401",
-    "url": "/whatDoYouNo/static/js/main.bb255fcf.chunk.js"
+    "revision": "c8779fee556c3d8a2c86",
+    "url": "/whatDoYouNo/static/js/main.483416e4.chunk.js"
   },
   {
     "revision": "19e8214eea06fa0fcabc",
