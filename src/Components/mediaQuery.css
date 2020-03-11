@@ -2,6 +2,25 @@
     .leaderBoard {
         width: 50%;
     }
+
+    div.resultsScore,
+    form.resultsForm,
+    div.addToDictionList,
+    .show.leaderBoard,
+    a.dictionaryPlease {
+        width: 65%;
+    }
+
+    .questionImage {
+        width: 48%;
+    }
+
+}
+
+@media(max-width: 1000px) {
+    .questionImage {
+        width: 55%;
+    }
 }
 
 @media(max-width: 850px) {
@@ -17,7 +36,8 @@
         font-size: 3rem;
     }
 
-    .timer {
+    .timer,
+    .scoreCounter {
         font-size: 2rem;
     }
 
@@ -26,8 +46,9 @@
         width: 60%;
     }
 
-    #enterName {
-        width: 80%;
+    #enterName,
+    .questionImage {
+        width: 70%;
     }
 
     .wordButton {
@@ -36,13 +57,15 @@
 
     div.resultsScore,
     form.resultsForm,
-    ul.addToDictionList,
-    .show.leaderBoard {
-        width: 65%;
+    div.addToDictionList,
+    .show.leaderBoard,
+    a.dictionaryPlease {
+        width: 75%;
     }
 }
 
 @media(max-width: 650px) {
+
     h1 {
         font-size: 3.2rem;
     }
@@ -53,6 +76,7 @@
 
     .innerWrapper {
         width: 100%;
+        border-radius: 0;
     }
 
     .buttonContainer button {
@@ -66,29 +90,50 @@
 
     div.resultsScore,
     form.resultsForm,
-    ul.addToDictionList,
-    .show.leaderBoard {
+    div.addToDictionList,
+    .show.leaderBoard,
+    a.dictionaryPlease {
         width: 80%;
+    }
+
+    .questionImage {
+        width: 75%;
+    }
+
+    .questionBox{
+        padding: 45px;  
+        border-radius: 0;
+
+    }
+
+    .mainButton{
+        position: absolute;
+    }
+
+    .progressBar{
+        margin-top: 40px;
+        width: 100%;
     }
 }
 
+
 @media(max-width: 500px) {
-    #enterName {
-        width: 100%;
+    main{
+        background-color: #e3f4f3;
     }
-
-    .buttonContainer {
+    .buttonParent {
         flex-direction: column;
+        align-items: center;
     }
 
-    .buttonContainer button {
+    .buttonParent button {
         font-size: 1.8rem;
         width: 50%;
         margin: 0 auto 2rem;
     }
 
     .resultsButton.resultsInput {
-        width: 80%;
+        width: 70%;
     }
 
     label.resultsInput {
@@ -111,13 +156,25 @@
 
     div.resultsScore,
     form.resultsForm,
-    ul.addToDictionList {
+    div.addToDictionList,
+    a.dictionaryPlease,
+    #enterName {
         width: 90%;
     }
 
     .addToDictionList h4 {
         font-size: 2rem;
     }
+
+    .questionImage {
+        width: 95%;
+    }
+
+    .questionBox{
+        margin-top: 0;
+    }
+
+
 }
 
 @media(max-width: 424px) {
@@ -140,5 +197,16 @@
 
     .show.leaderBoard p{
         font-size: 1.6rem;
+    }
+
+    .questionImage {
+        width: 100%;
+    }
+
+}
+
+@media(max-width: 400px) {
+    .questionBox h2 {
+        font-size: 2.75rem;
     }
 }
