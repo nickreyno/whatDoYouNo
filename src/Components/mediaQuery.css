@@ -58,6 +58,7 @@
 		width: 70%;
 	}
 
+	/* check */
 	.wordButton {
 		width: 40%;
 	}
@@ -68,18 +69,30 @@
 	.show.leaderBoard,
 	a.dictionaryPlease {
 		width: 75%;
-    }
-    
-    .dictionarySection li:nth-of-type(odd) {
-        margin: 15px 15px 15px 7%;
-    }
-    
-    .dictionarySection li:nth-of-type(even) {
-        margin: 15px 7% 15px 15px;
-    }
+	}
+
+	.dictionarySection li:nth-of-type(odd) {
+		margin: 15px 15px 15px 7%;
+	}
+
+	.dictionarySection li:nth-of-type(even) {
+		margin: 15px 7% 15px 15px;
+	}
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
+	.wordButton {
+		width: 45%;
+	}
+}
+
+@media (max-width: 670px) {
+	.wordButton {
+		font-size: 2.75rem;
+	}
+}
+
+@media (max-width: 655px) {
 	h1 {
 		font-size: 3.2rem;
 	}
@@ -141,55 +154,112 @@
 	}
 	.show.leaderBoard {
 		position: fixed;
-        width: 100vw;
-        top:0;
+		width: 100vw;
+		top: 0;
 		height: 100vh;
 		left: 0;
 		transition: all 0.3s cubic-bezier(0, 0.52, 0, 1);
 		z-index: 1000;
 		background: #e3f4f3;
-        padding: 20px;
-        border-radius: 0;
-    }
-    
-    .leaderBoard ol {
-        height: 90%;
-    }
+		padding: 20px;
+		border-radius: 0;
+	}
+
+	h1 {
+		font-size: 3.2rem;
+	}
+
+	h3.resultsHeader {
+		font-size: 4rem;
+	}
+
+	h2.headerText,
+	.homophoneDef {
+		padding: 10px 40px;
+	}
+
+	.innerWrapper {
+		width: 85%;
+	}
+
+	.leaderBoard ol {
+		height: 90%;
+	}
 	.leaderBoard:after {
-        font-family: sans-serif;
-        content: "X";
-        text-align: center;
-        top: 10px;
-        right: 20px;
-        transform: none;
-        border-radius: 10px;
-        line-height: 1;
-        width: 20px;
-        border: 2px solid white;
-        box-shadow: none;
-    }
+		font-family: sans-serif;
+		content: "X";
+		text-align: center;
+		top: 10px;
+		right: 20px;
+		transform: none;
+		border-radius: 10px;
+		line-height: 1;
+		width: 20px;
+		border: 2px solid white;
+		box-shadow: none;
+	}
 
-    .dictionarySection {
-        padding-top: 6rem;
-    }
+	.wordButtonCongrats.wordButton {
+		width: 45%;
+	}
 
-    .dictionarySection .emptyDictionary {
-        width: 80%;
-        margin: 0 auto;
-    }
-        
-    .dictionarySection li:nth-of-type(odd) {
-        width: calc(40% - 10px);
-        margin: 10px 15px 15px 7%;
-    }
-    
-    .dictionarySection li:nth-of-type(even) {
-        width: calc(40% - 10px);
-        margin: 15px 7% 15px 10px;
-    }
+	div.resultsScore,
+	form.resultsForm,
+	div.addToDictionList,
+	.show.leaderBoard,
+	a.dictionaryPlease {
+		width: 80%;
+	}
+
+	.questionImage {
+		width: 75%;
+	}
+
+	.questionBox {
+		padding: 45px;
+	}
+
+	.dictionarySection {
+		padding-top: 6rem;
+	}
+
+	.dictionarySection .emptyDictionary {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 590px) {
+	.wordButtonCongrats.wordButton {
+		font-size: 1.95rem;
+		width: 47%;
+	}
 }
 
 @media (max-width: 500px) {
+	/* check */
+	/* .innerWrapper {
+        width: 80%;
+        margin-top: 5%;
+    } */
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	.wordButtonCongrats.wordButton {
+		margin-bottom: 10px;
+	}
+
+	.dictionarySection li:nth-of-type(odd) {
+		width: calc(40% - 10px);
+		margin: 10px 15px 15px 7%;
+	}
+
+	.dictionarySection li:nth-of-type(even) {
+		width: calc(40% - 10px);
+		margin: 15px 7% 15px 10px;
+	}
 	header {
 		margin: 0;
 	}
@@ -275,6 +345,10 @@
 		font-size: 2.5rem;
 	}
 
+	.questionBox h2 {
+		font-size: 2rem;
+	}
+
 	h3.resultsHeader {
 		font-size: 3.5rem;
 	}
@@ -304,5 +378,13 @@
 @media (max-width: 400px) {
 	.questionBox h2 {
 		font-size: 2.75rem;
+	}
+
+	.questionBox h2 {
+		font-size: 1.5rem;
+	}
+
+	.wordButtonCongrats.wordButton {
+		width: 50%;
 	}
 }
