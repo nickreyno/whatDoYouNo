@@ -9,7 +9,6 @@
 	justify-content: center;
 	align-self: center;
 }
-
 .resultsHeader {
 	font-size: 5rem;
 	padding: 15px;
@@ -17,7 +16,6 @@
 	font-family: "Josefin Slab", serif;
 	text-transform: capitalize;
 }
-
 /* Score Display */
 .resultsScore,
 .addToDictionList {
@@ -29,7 +27,6 @@
 	background: white;
 	border-radius: 2rem;
 }
-
 /* General Form */
 .resultsForm {
 	display: flex;
@@ -45,82 +42,69 @@
 	margin: 3% auto;
 	padding: 5px;
 }
-
 .resultsInput {
-  margin: 10px;
-  line-height: 2.5rem;
+	margin: 10px;
+	line-height: 2.5rem;
 }
-
 .addToDictionList {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-
 .rightWordsList,
 .wrongWordsList {
 	width: calc(50% - 10px);
 }
-
 .addToDictionItem {
 	width: 100%;
 	margin: 10px 0;
 	font-size: 2rem;
 	text-align: center;
 }
-
 .addToDictionItem span {
-  font-weight: bold;
-  margin: 0 8px;
+	font-weight: bold;
+	margin: 0 8px;
 }
-
 .addToDictionList h3 {
 	text-transform: capitalize;
 	font-weight: normal;
 	width: 100%;
 }
-
 .addToDictionList h4 {
 	font-weight: normal;
 	text-transform: capitalize;
-  width: calc(50% - 10px);
-  margin: 10px 0px;
-  text-decoration: underline;
+	width: calc(50% - 10px);
+	margin: 10px 0px;
+	text-decoration: underline;
 }
-
 .rightWords,
 .wrongWords {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
+	display: flex;
+	justify-content: center;
+	text-align: justify;
 	background: #cfff31;
 	padding: 5px 10px;
 	border-radius: 2rem;
 	text-transform: capitalize;
 	box-shadow: 2px 2px 4px #8a9695, inset 0 0 0 4px #e3f4f3;
 }
-
 .wrongWords {
 	background: #ff5964;
 }
-
 .rightWords:hover,
 .wrongWords:hover {
 	cursor: pointer;
 	box-shadow: 2px 2px 4px #7c8786, inset 0 0 0 4px white;
 }
-
 .score {
 	font-size: 3rem;
 }
-
 /* Submit Button */
 .resultsButton {
 	font-size: 2.3rem;
 	border-radius: 2rem;
 	transition: all 0.2s;
 }
-
 .resultsButton:hover {
 	color: white;
 	background: #6056f9;
