@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ef93d8af9d74973bc5020d4e5a7a8693",
+    "revision": "76115859c9ecc0cc269b2b08090d7bc4",
     "url": "/whatDoYouNo/index.html"
   },
   {
-    "revision": "e1e0af9a38eabf8303c1",
-    "url": "/whatDoYouNo/static/css/main.3eb0b457.chunk.css"
+    "revision": "7fa3274c0afbdb3ba401",
+    "url": "/whatDoYouNo/static/css/main.2b3f49d5.chunk.css"
   },
   {
-    "revision": "470eb2b606fb32dc2d8a",
-    "url": "/whatDoYouNo/static/js/2.ed948360.chunk.js"
+    "revision": "0b36c4698e8e5caf9920",
+    "url": "/whatDoYouNo/static/js/2.7352e4dd.chunk.js"
   },
   {
     "revision": "7ba5a91c6aa4ae9cc068a25fb13d169c",
-    "url": "/whatDoYouNo/static/js/2.ed948360.chunk.js.LICENSE.txt"
+    "url": "/whatDoYouNo/static/js/2.7352e4dd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e1e0af9a38eabf8303c1",
-    "url": "/whatDoYouNo/static/js/main.fe758e98.chunk.js"
+    "revision": "7fa3274c0afbdb3ba401",
+    "url": "/whatDoYouNo/static/js/main.bb255fcf.chunk.js"
   },
   {
     "revision": "19e8214eea06fa0fcabc",
