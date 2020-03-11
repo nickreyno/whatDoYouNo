@@ -6,7 +6,8 @@
     div.resultsScore,
     form.resultsForm,
     div.addToDictionList,
-    .show.leaderBoard {
+    .show.leaderBoard,
+    a.dictionaryPlease {
         width: 65%;
     }
 
@@ -55,7 +56,8 @@
     div.resultsScore,
     form.resultsForm,
     div.addToDictionList,
-    .show.leaderBoard {
+    .show.leaderBoard,
+    a.dictionaryPlease {
         width: 75%;
     }
 
@@ -89,7 +91,8 @@
     div.resultsScore,
     form.resultsForm,
     div.addToDictionList,
-    .show.leaderBoard {
+    .show.leaderBoard,
+    a.dictionaryPlease {
         width: 80%;
     }
 
@@ -137,7 +140,8 @@
 
     div.resultsScore,
     form.resultsForm,
-    div.addToDictionList {
+    div.addToDictionList,
+    a.dictionaryPlease {
         width: 90%;
     }
 
