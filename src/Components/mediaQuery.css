@@ -1,40 +1,98 @@
+@media(max-width: 1200px) {
+    .leaderBoard {
+        width: 50%;
+    }
+}
+
 @media(max-width: 850px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h3.resultsHeader {
+        font-size: 4.5rem;
+    }
+
+    .questionBox h2 {
+        font-size: 3rem;
+    }
+
+    .timer {
+        font-size: 2rem;
+    }
+
+    .resultsButton.resultsInput,
     div.resultsScore {
         width: 60%;
+    }
+
+    #enterName {
+        width: 80%;
     }
 
     .wordButton {
         width: 40%;
     }
+
+    div.resultsScore,
+    form.resultsForm,
+    ul.addToDictionList,
+    .show.leaderBoard {
+        width: 65%;
+    }
 }
 
 @media(max-width: 650px) {
-    .buttonContainer button {
-        font-size: 2.2rem;
+    h1 {
+        font-size: 3.2rem;
     }
 
-    div.resultsScore {
-        width: 70%;
+    h3.resultsHeader {
+        font-size: 4rem;
+    }
+
+    .innerWrapper {
+        width: 100%;
+    }
+
+    .buttonContainer button {
+        font-size: 2.2rem;
     }
 
     .wordButton {
         font-size: 2.5rem;
         width: 40%;
     }
+
+    div.resultsScore,
+    form.resultsForm,
+    ul.addToDictionList,
+    .show.leaderBoard {
+        width: 80%;
+    }
 }
 
 @media(max-width: 500px) {
+    #enterName {
+        width: 100%;
+    }
+
     .buttonContainer {
         flex-direction: column;
     }
+
     .buttonContainer button {
         font-size: 1.8rem;
         width: 50%;
         margin: 0 auto 2rem;
     }
 
-    div.resultsScore {
+    .resultsButton.resultsInput {
         width: 80%;
+    }
+
+    label.resultsInput {
+        font-size: 1.8rem;
     }
 
     .questionTitle {
@@ -42,21 +100,45 @@
         font-size: 2.5rem;
     }
 
+    .timer,
+    .scoreCounter {
+        top: 8rem;
+    }
+
     .wordButton {
         width: 45%;
     }
+
+    div.resultsScore,
+    form.resultsForm,
+    ul.addToDictionList {
+        width: 90%;
+    }
+
+    .addToDictionList h4 {
+        font-size: 2rem;
+    }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 424px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h3.resultsHeader {
+        font-size: 3.5rem;
+    }
+
     .buttonContainer button {
         width: 70%;
     }
 
-    .questionTitle {
+    .questionTitle,
+    .wordButton {
         font-size: 2rem;
     }
 
-    .wordButton {
-        font-size: 2rem;
+    .show.leaderBoard p{
+        font-size: 1.6rem;
     }
 }

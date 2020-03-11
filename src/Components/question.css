@@ -12,6 +12,10 @@
     transition: all 0.2s;
 }
 
+.questionBox h2 {
+    font-size: 4rem;
+}
+
 .questionBox.correct {
     background-color: #cfff31;
     pointer-events: none;
