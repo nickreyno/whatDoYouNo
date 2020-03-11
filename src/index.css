@@ -254,6 +254,14 @@ background: #6056f9;
     transition: all 0.2s;
 }
 
+.goHome {
+    width: 150px;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 2.5rem;
+    top: 2.5rem;
+}
+
 .questionBox h2 {
     font-size: 4rem;
 }
@@ -345,6 +353,10 @@ background: #6056f9;
     text-transform: capitalize;
     font-size: 3rem;
     margin: 5px 0;
+}
+
+.dictionarySection .gohome {
+    top: 2.5rem;
 }
 
 /* Dictionary */
@@ -716,17 +728,4 @@ footer {
     text-align: center;
     margin: 10px;
     font-family: 'Lato', sans-serif;
-}
-
-.goHome {
-    width: 150px;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 2.5rem;
-    top: 2.5rem;
-
-}
-
-.dictionarySection .gohome {
-    top: 2.5rem;
 }
