@@ -15,11 +15,19 @@
         width: 48%;
     }
 
+    .wordButton {
+        width:34%;
+    }
+
 }
 
 @media(max-width: 1000px) {
     .questionImage {
         width: 55%;
+    }
+
+    .wordButton {
+        width: 40%;
     }
 }
 
@@ -63,7 +71,13 @@
     }
 }
 
-@media(max-width: 650px) {
+@media(max-width: 755px) {
+    .wordButton {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width: 655px) {
     h1 {
         font-size: 3.2rem;
     }
@@ -95,6 +109,10 @@
 
     .questionImage {
         width: 75%;
+    }
+
+    .wordButton {
+        width: 48%;
     }
 }
 
@@ -129,6 +147,7 @@
 
     .wordButton {
         width: 45%;
+        font-size: 1.75rem;
     }
 
     div.resultsScore,
@@ -146,9 +165,9 @@
     .questionImage {
         width: 95%;
     }
-}
+} 
 
-@media(max-width: 424px) {
+@media(max-width: 428px) {
     h1 {
         font-size: 2.5rem;
     }
@@ -163,7 +182,7 @@
 
     .questionTitle,
     .wordButton {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .show.leaderBoard p{
@@ -172,6 +191,10 @@
 
     .questionImage {
         width: 100%;
+    }
+
+    .wordButton {
+        font-size: 2.75rem;
     }
 }
 
