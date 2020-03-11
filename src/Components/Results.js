@@ -6,11 +6,10 @@ class Results extends Component {
 	constructor() {
 		super();
 
-		this.state = {			
-			userInput: "",
-		}
+		this.state = {
+			userInput: ""
+		};
 	}
-
 
 	handleNameChange = event => {
 		this.setState({
@@ -48,59 +47,61 @@ class Results extends Component {
 				</div>
 
 				{/* start of form */}
-				<form 
-				action="submit" 
-				onSubmit = {this.handleSubmit}
-				className="resultsForm">
-					<label 
-					htmlFor="enterName"
-					className="resultsInput">
-					Add your name and score to the leaderboard: 
+				<form action="submit" onSubmit={this.handleSubmit} className="resultsForm">
+					<label htmlFor="enterName" className="resultsInput">
+						Add your name and score to the leaderboard:
 					</label>
-					<input 
-					type="text" 
-					id="enterName"
-					className="resultsInput"
-					value={this.state.userInput}
-					onChange={this.handleNameChange} />
-					<button 
-					className="resultsButton resultsInput"
-					type="submit">
-					Submit
+					<input
+						type="text"
+						id="enterName"
+						className="resultsInput"
+						value={this.state.userInput}
+						onChange={this.handleNameChange}
+					/>
+					<button className="resultsButton resultsInput" type="submit">
+						Submit
 					</button>
-
 				</form>
 				{/* end of form */}
-
 				{/* start of dictionary */}
-				<ul className="addToDictionList">
-					<h4>add words to your dictionary list</h4>
-					{this.props.rightWordsWrongAnswers.map((word, i) => {
-						return (
-							<li
-								className="addToDictionItem"
-								key={i}
-								>
-								<span onClick={() => this.props.addToDictionary(this.props.rightWords[i], this.props.wrongAnswers[i])} className='rightWords'>{this.props.rightWords[i]} {this.props.wrongAnswers[i]}</span>
+				<div className="addToDictionList">
+					<h3>add words to your dictionary list by clicking on them</h3>
+					<h4>right answers</h4>
+					<h4>wrong answers</h4>
 
-								<span onClick={() => this.props.addToDictionary(this.props.wrongWords[i], this.props.rightAnswers[i])} className='wrongWords'>{this.props.wrongWords[i]} {this.props.rightAnswers[i]}</span>
-							</li>
-						)
-					})}
-				</ul>
+					<ul className="rightWordsList">
+						{this.props.rightWords.map((word, i) => {
+							return (
+								<li className="addToDictionItem rightWords" key={i}
+										onClick={() => this.props.addToDictionary(this.props.rightWords[i], this.props.wrongAnswers[i])}
+									>
+										<span>{this.props.rightWords[i]}</span> & <span>{this.props.wrongAnswers[i]}</span>
+
+								</li>
+							);
+						})}
+					</ul>
+					<ul className="wrongWordsList">
+						{this.props.wrongWords.map((word, i) => {
+							return (
+								<li className="addToDictionItem wrongWords" key={i}
+										onClick={() => this.props.addToDictionary(this.props.wrongWords[i], this.props.rightAnswers[i])}
+									>
+										<span>{this.props.wrongWords[i]}</span> & <span>{this.props.rightAnswers[i]}</span>
+
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+
 				{/* end of dictionary */}
-
-			{/* end of resultsCont */}
 			</div>
-			);
-
+		);
 	}
 }
-	
 
 export default Results;
-
-
 
 // onClick = {() => {
 // 	this.props.addToDictionary(resultWords.word1, resultWords.word2);
