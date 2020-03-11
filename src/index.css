@@ -6,8 +6,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-/* stripping styles */
+/* THIS IS THE DRY VERSION */
 
+/* Stripping Styles */
 body,
 a,
 p,
@@ -22,6 +23,28 @@ li{
     list-style: none;
 }
 
+/* Base Styling */
+img{
+    width: 100%;
+    display: block;
+    }
+    
+html{
+    font-size: 62.5%;
+    height: 70%;
+}
+
+/* Font Styles */
+h1 {
+    font-family: 'Josefin Slab', serif;
+    text-align: center;
+}
+
+h2.headerText {
+    font-family: 'Josefin Slab', serif;
+}
+
+/* Wrappers */
 .wrapper{
     max-width: 1500px;
     margin: 0 auto;
@@ -32,160 +55,129 @@ li{
     min-height: 100%;
 }
 .innerWrapper{
-  width: 80%;
-  margin: 0 auto;
+width: 80%;
+margin: 0 auto;
 }
 
-li{
-    list-style: none;
-}
-
-
-/* base styling */
-
-img{
-  width: 100%;
-  display: block;
-}
-
-html{
-    font-size: 62.5%;
-    height: 70%;
-}
-
-
-/* header styles */
-
+/* Header */
 header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
 }
 
 h1{
-  position: relative;
-  font-family: 'Josefin Slab', serif;
-  font-size: 5rem;
-  text-align: center;
-  padding: 10px;
-  border: 3px solid black;
-  padding: 20px;
-  letter-spacing: .5rem;
-  text-transform: uppercase;
+    position: relative;
+    font-size: 5rem;
+    padding: 10px;
+    border: 3px solid black;
+    padding: 20px;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
 }
 
 h1:before{
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border: 5px solid black;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 5px solid black;
 }
 
+/* Header and Titles */
 h2.headerText,
 .questionTitle{
-  font-size: 2.5rem;
-  text-align: center;
-  padding: 20px;
-  letter-spacing: .5rem;
-  text-transform: capitalize;
+font-size: 2.5rem;
+text-align: center;
+padding: 20px;
+letter-spacing: .5rem;
+text-transform: capitalize;
 }
 
-h2.headerText {
-  font-family: 'josefin slab', sans-serif
+/* Start Page */
+.homophoneItalic {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.homophoneDef {
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+/* Main, Questions, and Results Background */
+.resultsCont,
+.mainBackground,
+.questionBox,
+.dictionarySection {
+    background: #e3f4f3;
+    margin-top: 5rem;
+    padding: 2.5rem;
+    border-radius: 2rem;
+}
+
+.resultsCont,
+.mainBackground,
+.questionBox {
+    text-align: center;
+}
+
+.mainBackground {
+    margin-top: 5rem;
+    padding: 2.5rem;
+}
+
+/* Instructions */
+.instructions {
+    font-size: 2rem;
+    margin: 3% 0 2% 0;
 }
 
 /* Buttons */
 .mainButton,
 .wordButton,
- .resultsButton{
-  font-size: 3rem;
-  font-family: 'Lato', sans-serif;
-  border: 2px solid black;
-  background: white;
-  letter-spacing: .5rem;
-  color: black;
-  transition: all 0.2s;
-  border-radius: 2rem;
-  width: 27%;
-  padding: 0.5rem;
+.resultsButton{
+font-size: 3rem;
+font-family: 'Lato', sans-serif;
+border: 2px solid black;
+background: white;
+letter-spacing: .5rem;
+color: black;
+transition: all 0.2s;
+border-radius: 2rem;
+width: 27%;
+padding: 0.5rem;
+text-align: center;
 }
 
 .mainButton {
-  display: block;
-  margin: 0 auto;
-  width: 70%;
-  text-align: center;
-  margin-bottom: 5rem;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    margin-bottom: 5rem;
 }
-
 
 .wordButton:hover,
 .wordButton:focus,
 .mainButton:hover,
-.mainButton:focus {
-  background: #6056f9;
-  color: #e3f4f3;
-  transform: scale(1.1, 1.1)
+.mainButton:focus,
+.dictionaryPlease:hover, 
+.buttonContainer button:hover{
+background: #6056f9;
+color: #e3f4f3;
+transform: scale(1.1, 1.1)
 }
 
 .resultsButton:active,
 .mainButton:active,
 .wordButton:active {
-  background: #6056f9;
-}
-
-.dictionaryPlease {
-    font-size: 2.5rem;
-    font-family: 'Lato', sans-serif;
-    border: 2px solid black;
-    background: none;
-    letter-spacing: .5rem;
-    color: black;
-    text-transform: uppercase;
-    transition: all 0.2s;
-    border-radius: 2rem;
-    text-align: center;
-    width: 70%;
-    padding: 0.5rem;
-    margin: 0 auto;
-    display: block;
-}
-
-.dictionaryPlease:hover,
-.buttonContainer button:hover {
-    background: #6056f9;
-    color: white;
-    transform: scale(1.1, 1.1);
-}
-
-.definition {
-  font-size: 2.5rem;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: .5rem;
-}
-
-/* Main Page */
-.homophoneItalic {
-  font-style: italic;
-  font-weight: bold;
-}
-
-.homophoneDef {
-  font-size: 1.5rem;
-  letter-spacing: .2rem;
-  text-align: center;
-}
-
-/* Instructions */
-.instructions {
-  font-size: 2rem;
-  margin: 3% 0 2% 0;
+background: #6056f9;
 }
 
 .buttonContainer {
@@ -193,6 +185,12 @@ h2.headerText {
     justify-content: space-around;
     width: 100%;
     margin: 5rem 0;
+}
+
+.buttonParent {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
 }
 
 .buttonContainer button {
@@ -209,68 +207,146 @@ h2.headerText {
     padding: 0.5rem 1rem;
 }
 
-.buttonContainer .levelSelected {
-    background: #6056f9;
-    color: white;
+/* Question Section and Changing Background */
+.questionBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 60vh;
+    transition: all 0.2s;
 }
 
-/* ============ */
-.buttonContainer {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin: 5rem 0;
+.questionBox.correct {
+    background-color: #cfff31;
+    pointer-events: none;
 }
 
-.buttonContainer button {
-  font-size: 3rem;
-  font-family: 'Lato', sans-serif;
-  border: 2px solid black;
-  background: white;
-  letter-spacing: .5rem;
-  color: black;
-  text-transform: uppercase;
+.questionBox.incorrect {
+    background-color: #ff5964;
+    pointer-events: none;
 }
 
-.buttonContainer .levelSelected {
-  background: #6056f9;
-  color: white;
-}
-/* ======================= */
-
-
-
-
-/* Preloader */
-.preloader {
-  text-align: center;
-  font-size: 2rem;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  padding: 20px;
-  letter-spacing: .5rem;
-}
-
-/* footer */
-footer{
-  background: #6056f9;
-  color: white;
-  padding: 5px;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
+.questionSpan {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    max-width: calc(100% - 1rem);
+    background: #cfff31;
+    border-radius: 2rem;
+    padding: 1rem;
+    transition: width 0.5s ease;
 }
 
 /* Question Title */
-
 .questionTitle {
-  font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-/* Main Background */
-.mainBackground {
-  background: #e3f4f3;
-  margin-top: 5rem;
-  padding: 2.5rem;
-  text-align: center;
-  border-radius: 2rem;
+/* Score and Timer Display */
+.scoreCounter,
+.timer {
+    top:2.5rem;
+    position: absolute;
+    font-size: 2.5rem;
 }
+
+/* Score Counter */
+.scoreCounter {
+    align-self: flex-end;
+}
+
+/* Timer */
+.timer {
+    align-self: flex-start;
+}
+
+/* Progress Bar */
+.progressBar {
+    width: 80%;
+    margin: 0 auto 2.5rem;
+    position: relative;
+    background: #6056f9;
+    height: 3rem;
+    border-radius: 30px;
+}
+
+/* Dictionary */
+.dictionaryPlease {
+    border: 2px solid black;
+    background: none;
+    color: black;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2rem;
+    text-align: center;
+    width: 70%;
+    padding: 0.5rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.dictionarySection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 60vh;
+}
+
+/* Dictionary and Definitions */
+.definition,
+.dictionaryPlease {
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .5rem;
+}
+
+/* Congrats Page */
+/* .questionTitle {
+    font-size: 3rem;
+} */
+
+.questionImage {
+    width: 65%;
+    margin: 0 auto; 
+}
+
+/* Preloader */
+.preloader {
+    text-align: center;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+    letter-spacing: .5rem;
+}
+
+/* Error Message */
+.errorText {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+    background: #6056f9;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+
+
+
+
+/* .buttonContainer .levelSelected {
+    background: #6056f9;
+    color: white;
+} */

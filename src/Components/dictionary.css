@@ -1,16 +1,5 @@
 /* this indicates a tracked change */
-.dictionarySection {
-	position: relative;
-	background: #e3f4f3;
-	margin-top: 5rem;
-	padding: 2.5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	text-align: left;
-	border-radius: 2rem;
-	min-height: 60vh;
-}
+
 
 .dictionarySection h2{
 	font-family: 'Josefin Slab', serif;

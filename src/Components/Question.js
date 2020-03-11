@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import "./question.css";
 import axios from "axios";
 import knowledge from "./assets/knowledge.webp";
 import Preloader from "./Preloader.js";
