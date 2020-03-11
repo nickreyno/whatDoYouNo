@@ -1,6 +1,6 @@
 .leaderBoard {
 	position: fixed;
-	width: 30vw;
+	width: 35vw;
 	height: 70vh;
     /* top: 99.5px; */
     top: 124.5px;
@@ -73,7 +73,7 @@
 	background: white;
 	padding: 3%;
     border-radius: 2rem;
-    list-style-type: decimal;
+	list-style-type: decimal;
 }
 
 .leaderboardItems {
@@ -134,6 +134,7 @@
 	letter-spacing: 1px;
 	height: auto;
 	box-shadow: 2px -2px 4px 1px #d7d7d7;
+	z-index: 999;
 }
 
 .toggleBttn:hover {

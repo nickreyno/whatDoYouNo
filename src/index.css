@@ -97,13 +97,14 @@ h2.headerText,
 }
 
 h2.headerText {
-  font-family: 'josefin slab', sans-serif
+  font-family: 'josefin slab', sans-serif;
+  font-size: 3rem;
 }
 
 /* Buttons */
 .mainButton,
 .wordButton,
- .resultsButton{
+.resultsButton {
   font-size: 3rem;
   font-family: 'Lato', sans-serif;
   border: 2px solid black;
@@ -177,15 +178,16 @@ h2.headerText {
 }
 
 .homophoneDef {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   letter-spacing: .2rem;
   text-align: center;
+  line-height: 2.7rem;
 }
 
 /* Instructions */
 .instructions {
-  font-size: 2rem;
-  margin: 3% 0 2% 0;
+  font-size: 2.5rem;
+  margin: 4rem 0 2rem;
 }
 
 .buttonContainer {

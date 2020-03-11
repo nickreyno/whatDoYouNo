@@ -47,7 +47,8 @@
 }
 
 .resultsInput {
-	margin: 10px;
+  margin: 10px;
+  line-height: 2.5rem;
 }
 
 .addToDictionList {
