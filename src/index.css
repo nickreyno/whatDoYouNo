@@ -591,6 +591,7 @@ border-radius: 2rem;
 .resultsInput {
     margin: 10px;
     line-height: 2.5rem;
+    width: 50%;
 }
     
 .addToDictionList {

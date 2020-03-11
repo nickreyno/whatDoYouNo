@@ -45,8 +45,9 @@
         width: 60%;
     }
 
-    #enterName {
-        width: 80%;
+    #enterName,
+    .questionImage {
+        width: 70%;
     }
 
     .wordButton {
@@ -59,10 +60,6 @@
     .show.leaderBoard,
     a.dictionaryPlease {
         width: 75%;
-    }
-
-    .questionImage {
-        width: 70%;
     }
 }
 
@@ -102,10 +99,6 @@
 }
 
 @media(max-width: 500px) {
-    #enterName {
-        width: 100%;
-    }
-
     .buttonContainer {
         flex-direction: column;
     }
@@ -117,7 +110,7 @@
     }
 
     .resultsButton.resultsInput {
-        width: 80%;
+        width: 70%;
     }
 
     label.resultsInput {
@@ -141,7 +134,8 @@
     div.resultsScore,
     form.resultsForm,
     div.addToDictionList,
-    a.dictionaryPlease {
+    a.dictionaryPlease,
+    #enterName {
         width: 90%;
     }
 
