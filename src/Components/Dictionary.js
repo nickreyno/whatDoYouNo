@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Dictionary extends Component {
 	constructor() {
@@ -69,6 +70,9 @@ class Dictionary extends Component {
 		return (
 			<section className="dictionarySection">
 				<h2>my dictionary</h2>
+				<Link className="goHome mainButton" to="/whatDoYouNo/">
+					Go Home
+				</Link>
 				{this.state.entriesFormatted.length > 0 ? (
 					<ul>
 						{this.state.entriesFormatted.map((item, i) => {
@@ -84,7 +88,7 @@ class Dictionary extends Component {
 						})}
 					</ul>
 				) : (
-						<p className="emptyDictionary">Add words from the results page to see their definitions displayed here!</p>
+					<p className="emptyDictionary">Add words from the results page to see their definitions displayed here!</p>
 				)}
 			</section>
 		);

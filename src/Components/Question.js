@@ -240,11 +240,13 @@ class Question extends Component {
 					<div className="questionBox" ref={this.background}>
 						<h2>Question {this.state.questionNumber}</h2>
 
+						<Link className="goHome mainButton" to="/whatDoYouNo/">
+							Go Home
+						</Link>
 						<div className="timer">
-							<p>{this.state.timer} seconds</p>
+							<p>time: {this.state.timer}</p>
 						</div>
-
-						{this.state.questionNumber > 1 ? <h3 className="scoreCounter">score: {this.state.score}</h3> : null}
+						<p className="scoreCounter">score: {this.state.score}</p>
 
 						<div className="progressBar">
 							<span style={{ width: `${this.state.questionNumber * 10}%` }} className="questionSpan"></span>
@@ -252,7 +254,10 @@ class Question extends Component {
 
 						{this.state.isLoading ? <Preloader /> : null}
 
-						<p className="definition"><span className="wordType">{this.state.definition[0]} </span>{this.state.definition[1]}</p>
+						<p className="definition">
+							<span className="wordType">{this.state.definition[0]} </span>
+							{this.state.definition[1]}
+						</p>
 
 						<div className="buttonParent">
 							{this.state.buttons.length > 0
