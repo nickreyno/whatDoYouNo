@@ -5,7 +5,6 @@ import LeaderBoard from "./Components/LeaderBoard.js";
 import Question from "./Components/Question.js";
 import Results from "./Components/Results.js";
 import StartScreen from "./Components/StartScreen.js";
-import "./App.css";
 import axios from "axios";
 import library from "./Components/library";
 import firebase from "./Components/firebase.js";
