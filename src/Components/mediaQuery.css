@@ -1,245 +1,308 @@
-@media(max-width: 1200px) {
-    .leaderBoard {
-        width: 50%;
-    }
+@media (max-width: 1200px) {
+	.leaderBoard {
+		width: 50%;
+	}
 
-    div.resultsScore,
-    form.resultsForm,
-    div.addToDictionList,
-    .show.leaderBoard,
-    a.dictionaryPlease {
-        width: 65%;
-    }
+	div.resultsScore,
+	form.resultsForm,
+	div.addToDictionList,
+	.show.leaderBoard,
+	a.dictionaryPlease {
+		width: 65%;
+	}
 
-    .questionImage {
-        width: 48%;
-    }
+	.questionImage {
+		width: 48%;
+	}
 
-    .wordButton {
-        width:34%;
-    }
-
+	.wordButton {
+		width: 34%;
+	}
 }
 
-@media(max-width: 1000px) {
-    .questionImage {
-        width: 55%;
-    }
+@media (max-width: 1000px) {
+	.questionImage {
+		width: 55%;
+	}
 
-    .wordButton {
-        width: 40%;
-    }
+	.wordButton {
+		width: 40%;
+	}
 }
 
-@media(max-width: 850px) {
-    h1 {
-        font-size: 4rem;
-    }
+@media (max-width: 850px) {
+	h1 {
+		font-size: 4rem;
+	}
 
-    h3.resultsHeader {
-        font-size: 4.5rem;
-    }
+	h3.resultsHeader {
+		font-size: 4.5rem;
+	}
 
-    .questionBox h2 {
-        font-size: 3rem;
-    }
+	.questionBox h2 {
+		font-size: 3rem;
+	}
 
-    .timer,
-    .scoreCounter {
-        font-size: 2rem;
-    }
+	.timer,
+	.scoreCounter {
+		font-size: 2rem;
+	}
 
-    .resultsButton.resultsInput,
-    div.resultsScore {
-        width: 60%;
-    }
+	.resultsButton.resultsInput,
+	div.resultsScore {
+		width: 60%;
+	}
 
-    #enterName,
-    .questionImage {
-        width: 70%;
-    }
+	#enterName,
+	.questionImage {
+		width: 70%;
+	}
 
-    .wordButton {
-        width: 40%;
-    }
+	.wordButton {
+		width: 40%;
+	}
 
-    div.resultsScore,
-    form.resultsForm,
-    div.addToDictionList,
-    .show.leaderBoard,
-    a.dictionaryPlease {
-        width: 75%;
-    }
-}
-
-@media(max-width: 650px) {
-
-    h1 {
-        font-size: 3.2rem;
-    }
-
-    h3.resultsHeader {
-        font-size: 4rem;
-    }
-
-    h2.headerText,
-    .homophoneDef{
-        padding: 10px 40px
-    }
-
-    .innerWrapper {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    .buttonContainer button {
-        font-size: 2.2rem;
-       
-    }
-
-    .wordButton {
-        font-size: 2.5rem;
-        width: 40%;
-        margin: 20px;
+	div.resultsScore,
+	form.resultsForm,
+	div.addToDictionList,
+	.show.leaderBoard,
+	a.dictionaryPlease {
+		width: 75%;
     }
     
-
-    div.resultsScore,
-    form.resultsForm,
-    div.addToDictionList,
-    .show.leaderBoard,
-    a.dictionaryPlease {
-        width: 80%;
+    .dictionarySection li:nth-of-type(odd) {
+        margin: 15px 15px 15px 7%;
     }
-
-    .questionImage {
-        width: 75%;
+    
+    .dictionarySection li:nth-of-type(even) {
+        margin: 15px 7% 15px 15px;
     }
+}
 
-    .questionBox{
-        padding: 45px;  
+@media (max-width: 650px) {
+	h1 {
+		font-size: 3.2rem;
+	}
+
+	h3.resultsHeader {
+		font-size: 4rem;
+	}
+
+	h2.headerText,
+	.homophoneDef {
+		padding: 10px 40px;
+	}
+
+	.innerWrapper {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.buttonContainer button {
+		font-size: 2.2rem;
+	}
+
+	.wordButton {
+		font-size: 2.5rem;
+		width: 40%;
+		margin: 20px;
+	}
+
+	div.resultsScore,
+	form.resultsForm,
+	div.addToDictionList,
+	a.dictionaryPlease {
+		width: 80%;
+	}
+
+	.questionImage {
+		width: 75%;
+	}
+
+	.questionBox {
+		padding: 45px;
+		border-radius: 0;
+	}
+
+	.progressBar {
+		margin-top: 40px;
+		width: 100%;
+	}
+
+	.wordButton {
+		width: 48%;
+	}
+	.resultsCont {
+		padding-top: 5rem;
+	}
+	.goHome {
+		left: initial;
+		right: 5rem;
+	}
+	.show.leaderBoard {
+		position: fixed;
+        width: 100vw;
+        top:0;
+		height: 100vh;
+		left: 0;
+		transition: all 0.3s cubic-bezier(0, 0.52, 0, 1);
+		z-index: 1000;
+		background: #e3f4f3;
+        padding: 20px;
         border-radius: 0;
-
+    }
+    
+    .leaderBoard ol {
+        height: 90%;
+    }
+	.leaderBoard:after {
+        font-family: sans-serif;
+        content: "X";
+        text-align: center;
+        top: 10px;
+        right: 20px;
+        transform: none;
+        border-radius: 10px;
+        line-height: 1;
+        width: 20px;
+        border: 2px solid white;
+        box-shadow: none;
     }
 
-    .progressBar{
-        margin-top: 40px;
-        width: 100%;
+    .dictionarySection {
+        padding-top: 6rem;
     }
 
-    .wordButton {
-        width: 48%;
+    .dictionarySection .emptyDictionary {
+        width: 80%;
+        margin: 0 auto;
     }
-}
-
-
-@media(max-width: 500px) {
-    main{
-        background-color: #e3f4f3;
+        
+    .dictionarySection li:nth-of-type(odd) {
+        width: calc(40% - 10px);
+        margin: 10px 15px 15px 7%;
     }
-    .buttonParent {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .buttonParent button {
-        font-size: 1.8rem;
-        width: 50%;
-        margin: 0 auto 2rem;
-    }
-
-    .resultsButton.resultsInput {
-        width: 70%;
-    }
-
-    label.resultsInput {
-        font-size: 1.8rem;
-    }
-
-    .questionTitle {
-        padding: 0;
-        font-size: 2.5rem;
-    }
-
-    .timer,
-    .scoreCounter {
-        top: 8rem;
-    }
-
-    .wordButton {
-        width: 45%;
-        font-size: 1.75rem;
-    }
-
-    div.resultsScore,
-    form.resultsForm,
-    div.addToDictionList,
-    a.dictionaryPlease,
-    #enterName {
-        width: 90%;
-    }
-
-    .addToDictionList h4 {
-        font-size: 2rem;
-    }
-
-    .questionImage {
-        width: 95%;
-    }
-
-    .questionBox{
-        margin-top: 0;
-    }
-
-    .buttonContainer{
-        flex-direction: column;
-        align-items: center;
-        margin: 10px auto;
-    }
-
-    .buttonContainer button{
-        margin: 10px;
-    }
-
-    .instructions{
-        margin: 20px;
-    }
-
-}
-
-@media(max-width: 428px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h3.resultsHeader {
-        font-size: 3.5rem;
-    }
-
-    .buttonContainer button {
-        width: 70%;
-    }
-
-    .questionTitle,
-    .wordButton {
-        font-size: 2.5rem;
-    }
-
-    .show.leaderBoard p{
-        font-size: 1.6rem;
-    }
-
-    .questionImage {
-        width: 100%;
-    }
-
-    .wordButton {
-        font-size: 2.75rem;
+    
+    .dictionarySection li:nth-of-type(even) {
+        width: calc(40% - 10px);
+        margin: 15px 7% 15px 10px;
     }
 }
 
-@media(max-width: 400px) {
-    .questionBox h2 {
-        font-size: 2.75rem;
-    }
+@media (max-width: 500px) {
+	header {
+		margin: 0;
+	}
+	main {
+		background-color: #e3f4f3;
+	}
+	.buttonParent {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.buttonParent button {
+		font-size: 1.8rem;
+		width: 50%;
+		margin: 0 auto 2rem;
+	}
+
+	.resultsButton.resultsInput {
+		width: 70%;
+	}
+
+	label.resultsInput {
+		font-size: 1.8rem;
+	}
+
+	.questionTitle {
+		padding: 0;
+		font-size: 2.5rem;
+	}
+
+	.timer,
+	.scoreCounter {
+		top: 8rem;
+	}
+
+	.wordButton {
+		width: 45%;
+		font-size: 1.75rem;
+	}
+
+	div.resultsScore,
+	form.resultsForm,
+	div.addToDictionList,
+	a.dictionaryPlease,
+	#enterName {
+		width: 90%;
+	}
+
+	.addToDictionList h4 {
+		font-size: 2rem;
+	}
+
+	.questionImage {
+		width: 95%;
+	}
+
+	.questionBox {
+		margin-top: 0;
+	}
+
+	.buttonContainer {
+		flex-direction: column;
+		align-items: center;
+		margin: 10px auto;
+	}
+
+	.buttonContainer button {
+		margin: 10px;
+	}
+
+	.instructions {
+		margin: 20px;
+	}
+
+	.goHome {
+		top: -4rem;
+		right: 4rem;
+	}
+}
+
+@media (max-width: 428px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h3.resultsHeader {
+		font-size: 3.5rem;
+	}
+
+	.buttonContainer button {
+		width: 70%;
+	}
+
+	.questionTitle,
+	.wordButton {
+		font-size: 2.5rem;
+	}
+
+	.show.leaderBoard p {
+		font-size: 1.6rem;
+	}
+
+	.questionImage {
+		width: 100%;
+	}
+
+	.wordButton {
+		font-size: 2.75rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.questionBox h2 {
+		font-size: 2.75rem;
+	}
 }

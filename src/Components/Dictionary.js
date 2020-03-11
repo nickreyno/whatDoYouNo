@@ -71,7 +71,7 @@ class Dictionary extends Component {
 			<section className="dictionarySection">
 				<h2>my dictionary</h2>
 				<Link className="goHome mainButton" to="/whatDoYouNo/">
-					Go Home
+					Home
 				</Link>
 				{this.state.entriesFormatted.length > 0 ? (
 					<ul>
