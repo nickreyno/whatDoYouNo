@@ -173,7 +173,7 @@ class App extends Component {
 
 									<p className="homophoneDef">
 										Select your level of difficulty below and click start. Click on the word that matches the definition
-										shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!
+										shown. Your number of correct answers determines your place on the leaderboard! Good luck!
 									</p>
 
 									<div ref={this.levelButton} className="buttonContainer">

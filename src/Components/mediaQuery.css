@@ -212,7 +212,6 @@
 	div.resultsScore,
 	form.resultsForm,
 	div.addToDictionList,
-	.show.leaderBoard,
 	a.dictionaryPlease {
 		width: 80%;
 	}
@@ -319,7 +318,7 @@
 
 	.questionBox {
         margin-top: 0;
-        height: calc(100vh - 94px);
+        min-height: calc(100vh - 94px);
 	}
 
 	.buttonContainer {
