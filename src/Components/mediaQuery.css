@@ -41,10 +41,11 @@
     }
 
     .questionBox h2 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
-    .timer {
+    .timer,
+    .scoreCounter {
         font-size: 2rem;
     }
 
@@ -71,13 +72,8 @@
     }
 }
 
-@media(max-width: 755px) {
-    .wordButton {
-        font-size: 2.5rem;
-    }
-}
+@media(max-width: 650px) {
 
-@media(max-width: 655px) {
     h1 {
         font-size: 3.2rem;
     }
@@ -87,7 +83,8 @@
     }
 
     .innerWrapper {
-        width: 95%;
+        width: 100%;
+        border-radius: 0;
     }
 
     .buttonContainer button {
@@ -111,17 +108,37 @@
         width: 75%;
     }
 
+    .questionBox{
+        padding: 45px;  
+        border-radius: 0;
+
+    }
+
+    .mainButton{
+        position: absolute;
+    }
+
+    .progressBar{
+        margin-top: 40px;
+        width: 100%;
+    }
+
     .wordButton {
         width: 48%;
     }
 }
 
+
 @media(max-width: 500px) {
-    .buttonContainer {
+    main{
+        background-color: #e3f4f3;
+    }
+    .buttonParent {
         flex-direction: column;
+        align-items: center;
     }
 
-    .buttonContainer button {
+    .buttonParent button {
         font-size: 1.8rem;
         width: 50%;
         margin: 0 auto 2rem;
@@ -165,7 +182,13 @@
     .questionImage {
         width: 95%;
     }
-} 
+
+    .questionBox{
+        margin-top: 0;
+    }
+
+
+}
 
 @media(max-width: 428px) {
     h1 {

@@ -238,20 +238,19 @@ class Question extends Component {
 			<Fragment>
 				{this.state.questionNumber < 11 ? (
 					<div className="questionBox" ref={this.background}>
-						<h2>Question {this.state.questionNumber}</h2>
+						
+						<div className= "questionTextBox">
+							
+							<h2>Question {this.state.questionNumber}</h2>
 
-						<Link className="goHome mainButton" to="/whatDoYouNo/">
-							Go Home
-						</Link>
-						<div className="timer">
-							<p>time: {this.state.timer}</p>
+							<div className="timer">
+								<p>time: {this.state.timer}</p>
+								<p className="scoreCounter">score: {this.state.score}</p>
+							</div>
+
+
 						</div>
-						<p className="scoreCounter">score: {this.state.score}</p>
-
-						<div className="progressBar">
-							<span style={{ width: `${this.state.questionNumber * 10}%` }} className="questionSpan"></span>
-						</div>
-
+						
 						{this.state.isLoading ? <Preloader /> : null}
 
 						<p className="definition">
@@ -273,6 +272,7 @@ class Question extends Component {
 											>
 												{(button.word, button.word)}
 											</button>
+											
 										);
 								  })
 								: null}
@@ -284,6 +284,9 @@ class Question extends Component {
 									</Link>
 								</div>
 							) : null}
+						</div>
+						<div className="progressBar">
+							<span style={{ width: `${this.state.questionNumber * 10}%` }} className="questionSpan"></span>
 						</div>
 					</div>
 				) : (
