@@ -212,6 +212,7 @@
 
     .wordButtonCongrats.wordButton {
         margin-bottom: 10px;
+    }
 
     .buttonContainer{
         flex-direction: column;
