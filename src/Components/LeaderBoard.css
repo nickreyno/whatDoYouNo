@@ -1,23 +1,24 @@
 .leaderBoard {
 	position: fixed;
 	width: 35vw;
-	height: 70vh;
-    /* top: 99.5px; */
     top: 124.5px;
+	height: calc(100vh - 249.5px);
 	left: 0;
 	transition: all 0.3s cubic-bezier(0, 0.52, 0, 1);
 	z-index: 1000;
 	background: #e3f4f3;
 	padding: 20px;
-	border-radius: 20px;
+	border-radius: 0 0 20px;
 	box-shadow: 2px 2px 4px 1px #d7d7d7;
 }
 
 .leaderBoard:after {
-	content: "Leaderboard";
+	/* content: "Leaderboard"; */
+	content: "Close";
 	position: absolute;
-	right: -179px;
-	top: 0;
+	/* right: -179px; */
+	right: -78px;
+	top: -35.5px;
 	font-size: 3rem;
 	border: none;
 	background: #e3f4f3;
@@ -53,13 +54,7 @@
 
 
 /* Leaderboard/Dictionary */
-.leaderboard {
-	padding: 0 3.5% 2%;
-	background: #e3f4f3;
-	border-radius: 2rem;
-	width: 80%;
-	margin: 0 auto;
-}
+
 .leaderboardHeader {
     text-align: center;
     font-size: 2.7rem;
