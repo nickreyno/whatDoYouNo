@@ -42,7 +42,7 @@ class Results extends Component {
 			<div className="resultsCont">
 				<h3 className="resultsHeader">great work!</h3>
 				<Link className="goHome mainButton" to="/whatDoYouNo/">
-							Go Home
+							Home
 						</Link>
 				<div className="resultsScore">
 					<h4>Your Score: {this.props.score}</h4>
