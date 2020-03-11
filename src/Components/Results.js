@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./firebase.js";
+import {Link} from "react-router-dom";
 
 class Results extends Component {
 	constructor() {
@@ -93,7 +94,7 @@ class Results extends Component {
 						})}
 					</ul>
 				</div>
-
+				<Link to="/whatDoYouNo/dictionary" className='dictionaryPlease'>my dictionary</Link>
 				{/* end of dictionary */}
 			</div>
 		);

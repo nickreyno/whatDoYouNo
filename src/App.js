@@ -10,6 +10,7 @@ import library from "./Components/library";
 import firebase from "./Components/firebase.js";
 import { easyWords, mediumWords, hardWords } from "./Components/library";
 import ToggleBttn from "./Components/ToggleBttn.js";
+import "./Components/mediaQuery.css";
 
 class App extends Component {
 	constructor() {
@@ -27,7 +28,7 @@ class App extends Component {
 			wrongAnswers: [],
 			wrongWords: [],
 			rightAnswers: [],
-			rightWordsWrongAnswers: [],
+			rightWordsWrongAnswers: []
 		};
 
 		this.levelButton = React.createRef();
@@ -121,12 +122,12 @@ class App extends Component {
 			wrongAnswers,
 			wrongWords,
 			rightAnswers,
-			rightWordsWrongAnswers,
+			rightWordsWrongAnswers
 		});
 	};
-	
+
 	addToDictionary = (word1, word2) => {
-		console.log(word1, word2)
+		console.log(word1, word2);
 
 		const entriesToMod = [...this.state.entries];
 
@@ -147,62 +148,59 @@ class App extends Component {
 				<div className="wrapper">
 					<header>
 						<div className="innerWrapper">
-							<Link to="/">
-								<h1>What Do You No</h1>
-							</Link>
+							{/* <Link to="/whatDoYouNo/"> */}
+							<h1>What Do You No</h1>
+							{/* </Link> */}
 						</div>
 					</header>
 
 					<main>
-
 						<div className="innerWrapper">
-							
-							<Route path="/" exact>
-							{/* start of mainBackground */}
-							<div className="mainBackground">
-								<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
+							<Route path="/whatDoYouNo/" exact>
+								{/* start of mainBackground */}
+								<div className="mainBackground">
+									<h2 className="headerText">Expand Your Vocabulary with Homophones</h2>
 
-								<p className="homophoneDef">
-									A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced the
-									same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and{" "}
-									<span className="homophoneItalic">too</span> are homophones, along with{" "}
-									<span className="homophoneItalic">presents</span> and <span className="homophoneItalic">presence</span>.
-								</p>
+									<p className="homophoneDef">
+										A <span className="homophoneItalic">homophone</span> is one of two or more words that are pronounced
+										the same, but are different in meaning. <span className="homophoneItalic">Two, to</span> and{" "}
+										<span className="homophoneItalic">too</span> are homophones, along with{" "}
+										<span className="homophoneItalic">presents</span> and{" "}
+										<span className="homophoneItalic">presence</span>.
+									</p>
 
-								<h2 className="instructions">Instructions</h2>
+									<h2 className="instructions">Instructions</h2>
 
-								<p className="homophoneDef">
-									Select your level of difficulty below and click start. Click on the word that matches the definition
-									shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!
-								</p>
+									<p className="homophoneDef">
+										Select your level of difficulty below and click start. Click on the word that matches the definition
+										shown. Your number of correct answers and time determine your place on the leaderboard! Good luck!
+									</p>
 
-								<div ref={this.levelButton} className="buttonContainer">
-									<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
-									<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
-									<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
+									<div ref={this.levelButton} className="buttonContainer">
+										<button onClick={() => this.randomizer(easyWords, 0)}>easy</button>
+										<button onClick={() => this.randomizer(mediumWords, 1)}>medium</button>
+										<button onClick={() => this.randomizer(hardWords, 2)}>hard</button>
+									</div>
+
+									{this.state.levelSelected ? (
+										<Link className="mainButton" to="/whatDoYouNo/questions">
+											start game
+										</Link>
+									) : null}
+									{/* end of mainBackground */}
+								<Link to="/whatDoYouNo/dictionary" className="dictionaryPlease">
+									my dictionary
+								</Link>
 								</div>
-
-								
-
-								{this.state.levelSelected ? (
-									<Link className="mainButton" to="/questions">
-										start game
-									</Link>
-								) : null}
-								{/* end of mainBackground */}
-							</div>
 							</Route>
-
-							
 
 							<ToggleBttn handleMouseDown={this.handleMouseDown} />
 
-
-							<Route path="/questions">
+							<Route path="/whatDoYouNo/questions">
 								<Question words={this.state.words} triggerResults={this.displayResults} />
 							</Route>
 
-							<Route path="/results">
+							<Route path="/whatDoYouNo/results">
 								<Results
 									score={this.state.playerScore}
 									dictionaryWords={this.state.dictionary}
@@ -216,9 +214,7 @@ class App extends Component {
 								/>
 							</Route>
 
-							<Link to="/dictionary" className='dictionaryPlease'>dictionary please</Link>
-
-							<Route path="/dictionary">
+							<Route path="/whatDoYouNo/dictionary">
 								<Dictionary entries={this.state.entries} />
 							</Route>
 						</div>
@@ -235,11 +231,8 @@ class App extends Component {
 					</aside>
 
 					<footer>
-						
 						<p>a team GRRR8t game</p>
-
 					</footer>
-					
 				</div>
 			</Router>
 		);
