@@ -41,6 +41,9 @@ class Results extends Component {
 			// start of resultsCont
 			<div className="resultsCont">
 				<h3 className="resultsHeader">great work!</h3>
+				<Link className="goHome mainButton" to="/whatDoYouNo/">
+							Go Home
+						</Link>
 				<div className="resultsScore">
 					<h4>Your Score: {this.props.score}</h4>
 					<h4>Time (in secs): {this.props.playerTime}</h4>
@@ -65,7 +68,7 @@ class Results extends Component {
 				{/* end of form */}
 				{/* start of dictionary */}
 				<div className="addToDictionList">
-					<h3>add words to your dictionary list by clicking on them</h3>
+					<h3>click to add words to your dictionary</h3>
 					<h4>right answers</h4>
 					<h4>wrong answers</h4>
 
