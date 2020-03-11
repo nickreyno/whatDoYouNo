@@ -241,6 +241,10 @@ background: #6056f9;
     transition: all 0.2s;
 }
 
+.questionBox h2 {
+    font-size: 4rem;
+}
+
 .questionBox.correct {
     background-color: #cfff31;
     pointer-events: none;
@@ -514,6 +518,7 @@ margin: 15px 10% 15px 15px;
     letter-spacing: 1px;
     height: auto;
     box-shadow: 2px -2px 4px 1px #d7d7d7;
+    z-index: 999;
 }
 
 .toggleBttn:hover {
@@ -645,6 +650,7 @@ font-size: 3rem;
 font-size: 2.3rem;
 border-radius: 2rem;
 transition: all 0.2s;
+width: 40%;
 }
 
 .resultsButton:hover {
