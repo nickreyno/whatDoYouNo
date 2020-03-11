@@ -9,6 +9,17 @@
     .show.leaderBoard {
         width: 65%;
     }
+
+    .questionImage {
+        width: 48%;
+    }
+
+}
+
+@media(max-width: 1000px) {
+    .questionImage {
+        width: 55%;
+    }
 }
 
 @media(max-width: 850px) {
@@ -47,6 +58,10 @@
     .show.leaderBoard {
         width: 75%;
     }
+
+    .questionImage {
+        width: 70%;
+    }
 }
 
 @media(max-width: 650px) {
@@ -76,6 +91,10 @@
     div.addToDictionList,
     .show.leaderBoard {
         width: 80%;
+    }
+
+    .questionImage {
+        width: 75%;
     }
 }
 
@@ -125,6 +144,10 @@
     .addToDictionList h4 {
         font-size: 2rem;
     }
+
+    .questionImage {
+        width: 95%;
+    }
 }
 
 @media(max-width: 424px) {
@@ -147,5 +170,9 @@
 
     .show.leaderBoard p{
         font-size: 1.6rem;
+    }
+
+    .questionImage {
+        width: 100%;
     }
 }
